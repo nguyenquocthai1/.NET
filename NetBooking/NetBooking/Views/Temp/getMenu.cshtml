@@ -1,0 +1,9 @@
+﻿@model IEnumerable<NetBooking.Models.Menu> 
+<nav class="tm-nav"></nav>
+<ul>
+    @foreach(var i in Model)
+    {
+        <li><a href="#">@i.hname</a></li>
+    }
+</ul>
+
