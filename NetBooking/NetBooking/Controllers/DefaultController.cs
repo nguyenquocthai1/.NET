@@ -13,7 +13,5 @@ namespace NetBooking.Controllers
         {
             return View();
         }
-
-
     }
 }
