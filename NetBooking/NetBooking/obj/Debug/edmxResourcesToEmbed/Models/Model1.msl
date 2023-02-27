@@ -36,5 +36,18 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Footers">
+      <EntityTypeMapping TypeName="NetBookingModel.Footer">
+        <MappingFragment StoreEntitySet="Footer">
+          <ScalarProperty Name="datebegin" ColumnName="datebegin" />
+          <ScalarProperty Name="order" ColumnName="order" />
+          <ScalarProperty Name="hide" ColumnName="hide" />
+          <ScalarProperty Name="meta" ColumnName="meta" />
+          <ScalarProperty Name="link" ColumnName="link" />
+          <ScalarProperty Name="content" ColumnName="content" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

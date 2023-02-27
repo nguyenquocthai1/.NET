@@ -51,25 +51,27 @@
             <ul class="slides">
                 <li>
                     <div class="tm-banner-inner">
-                        <h1 class="tm-banner-title">Find <span class="tm-yellow-text">The Best</span> Place</h1>
-                        <p class="tm-banner-subtitle">For Your Holidays</p>
+                        <h1 class="tm-banner-title">Đến <span class="tm-yellow-text">Vịnh Hạ Long</span></h1>
+                        <p class="tm-banner-subtitle">Quảng Ninh</p>
                         <a href="#more" class="tm-banner-link">Learn More</a>
                     </div>
-                    <img src="~/Upload/img/banner-1.jpg" alt="Image" />
+                    <img style="height: 527px;" src="~/Upload/img/Ha_Long_Bay.jpg" alt="Image" />
                 </li>
                 <li>
                     <div class="tm-banner-inner">
-                        @RenderBody();
+                        <h1 class="tm-banner-title">Đến <span class="tm-yellow-text">Hà Tiên</span></h1>
+                        <p class="tm-banner-subtitle">Kiên Giang</p>
+                        <a href="#more" class="tm-banner-link">Learn More</a>
                     </div>
-                    <img src="~/Upload/img/banner-2.jpg" alt="Image" />
+                    <img style="height: 527px;" src="~/Upload/img/Ha_Tien.jpg" alt="Image" />
                 </li>
                 <li>
                     <div class="tm-banner-inner">
-                        <h1 class="tm-banner-title">Proin <span class="tm-yellow-text">Gravida</span> Nibhvell</h1>
-                        <p class="tm-banner-subtitle">Velit Auctor</p>
+                        <h1 class="tm-banner-title">Đến <span class="tm-yellow-text">Mộc Châu</span></h1>
+                        <p class="tm-banner-subtitle">Sơn La</p>
                         <a href="#more" class="tm-banner-link">Learn More</a>
                     </div>
-                    <img src="~/Upload/img/banner-3.jpg" alt="Image" />
+                    <img style="height: 527px;" src="~/Upload/img/Moc_Chau.jpg" alt="Image" />
                 </li>
             </ul>
         </div>
@@ -214,7 +216,7 @@
             <div class="row">
                 <div class="tm-section-header">
                     <div class="col-lg-3 col-md-3 col-sm-3"><hr></div>
-                    <div class="col-lg-6 col-md-6 col-sm-6"><h2 class="tm-section-title">Lorem Ipsum Dolor</h2></div>
+                    @RenderBody();
                     <div class="col-lg-3 col-md-3 col-sm-3"><hr></div>
                 </div>
             </div>
@@ -348,10 +350,12 @@
             </div>
         </div>
     </section>
+
+    <!-- footer -->
     <footer class="tm-black-bg">
         <div class="container">
-            <div class="row">
-                <p class="tm-copyright-text">Copyright &copy; 2084 Your Company Name</p>
+            <div class="row" style="color:white; margin-top: 15px;">
+                @{ Html.RenderAction("getFooter", "Temp");}
             </div>
         </div>
     </footer>
@@ -366,90 +370,90 @@
     -->
     <script type="text/javascript" src="~/Scripts/js/templatemo-script.js"></script>      		<!-- Templatemo Script -->
     <script>
-		// HTML document is loaded. DOM is ready.
-		$(function() {
+        // HTML document is loaded. DOM is ready.
+        $(function () {
 
-			$('#hotelCarTabs a').click(function (e) {
-			  e.preventDefault()
-			  $(this).tab('show')
-			})
+            $('#hotelCarTabs a').click(function (e) {
+                e.preventDefault()
+                $(this).tab('show')
+            })
 
-        	$('.date').datetimepicker({
-            	format: 'MM/DD/YYYY'
+            $('.date').datetimepicker({
+                format: 'MM/DD/YYYY'
             });
             $('.date-time').datetimepicker();
 
-			// https://css-tricks.com/snippets/jquery/smooth-scrolling/
-		  	$('a[href*=#]:not([href=#])').click(function() {
-			    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-			      var target = $(this.hash);
-			      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-			      if (target.length) {
-			        $('html,body').animate({
-			          scrollTop: target.offset().top
-			        }, 1000);
-			        return false;
-			      }
-			    }
-		  	});
-		});
+            // https://css-tricks.com/snippets/jquery/smooth-scrolling/
+            $('a[href*=#]:not([href=#])').click(function () {
+                if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+                    var target = $(this.hash);
+                    target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                    if (target.length) {
+                        $('html,body').animate({
+                            scrollTop: target.offset().top
+                        }, 1000);
+                        return false;
+                    }
+                }
+            });
+        });
 
-		// Load Flexslider when everything is loaded.
-		$(window).load(function() {
-			// Vimeo API nonsense
+        // Load Flexslider when everything is loaded.
+        $(window).load(function () {
+            // Vimeo API nonsense
 
-/*
-			  var player = document.getElementById('player_1');
-			  $f(player).addEvent('ready', ready);
+            /*
+                          var player = document.getElementById('player_1');
+                          $f(player).addEvent('ready', ready);
 
-			  function addEvent(element, eventName, callback) {
-			    if (element.addEventListener) {
-			      element.addEventListener(eventName, callback, false)
-			    } else {
-			      element.attachEvent(eventName, callback, false);
-			    }
-			  }
+                          function addEvent(element, eventName, callback) {
+                            if (element.addEventListener) {
+                              element.addEventListener(eventName, callback, false)
+                            } else {
+                              element.attachEvent(eventName, callback, false);
+                            }
+                          }
 
-			  function ready(player_id) {
-			    var froogaloop = $f(player_id);
-			    froogaloop.addEvent('play', function(data) {
-			      $('.flexslider').flexslider("pause");
-			    });
-			    froogaloop.addEvent('pause', function(data) {
-			      $('.flexslider').flexslider("play");
-			    });
-			  }
-*/
-
-
-
-			  // Call fitVid before FlexSlider initializes, so the proper initial height can be retrieved.
-/*
-
-			  $(".flexslider")
-			    .fitVids()
-			    .flexslider({
-			      animation: "slide",
-			      useCSS: false,
-			      animationLoop: false,
-			      smoothHeight: true,
-			      controlNav: false,
-			      before: function(slider){
-			        $f(player).api('pause');
-			      }
-			  });
-*/
+                          function ready(player_id) {
+                            var froogaloop = $f(player_id);
+                            froogaloop.addEvent('play', function(data) {
+                              $('.flexslider').flexslider("pause");
+                            });
+                            froogaloop.addEvent('pause', function(data) {
+                              $('.flexslider').flexslider("play");
+                            });
+                          }
+            */
 
 
 
+            // Call fitVid before FlexSlider initializes, so the proper initial height can be retrieved.
+            /*
 
-//	For images only
-		    $('.flexslider').flexslider({
-			    controlNav: false
-		    });
+                          $(".flexslider")
+                            .fitVids()
+                            .flexslider({
+                              animation: "slide",
+                              useCSS: false,
+                              animationLoop: false,
+                              smoothHeight: true,
+                              controlNav: false,
+                              before: function(slider){
+                                $f(player).api('pause');
+                              }
+                          });
+            */
 
 
-	  	});
+
+
+            //	For images only
+            $('.flexslider').flexslider({
+                controlNav: false
+            });
+
+
+        });
     </script>
 </body>
 </html>

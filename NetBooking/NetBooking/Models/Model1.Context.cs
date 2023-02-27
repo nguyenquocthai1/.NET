@@ -28,5 +28,6 @@ namespace NetBooking.Models
         public virtual DbSet<Menu> Menus { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<TaiKhoan> TaiKhoans { get; set; }
+        public virtual DbSet<Footer> Footers { get; set; }
     }
 }

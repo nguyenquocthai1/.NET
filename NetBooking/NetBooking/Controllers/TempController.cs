@@ -24,5 +24,14 @@ namespace NetBooking.Controllers
                    select t;
             return PartialView(v.ToList());
        }
+
+        public ActionResult getFooter()
+        {
+            var f = from t in db.Footers
+                    where t.hide == true
+                    orderby t.order ascending
+                    select t;
+            return PartialView(f.ToList());
+        }
     }
 }
