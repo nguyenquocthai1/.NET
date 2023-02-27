@@ -5,9 +5,12 @@
       <PropertyRef Name="id" />
     </Key>
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="content" Type="nvarchar" MaxLength="100" />
-    <Property Name="link" Type="nvarchar(max)" />
-    <Property Name="meta" Type="nvarchar" MaxLength="50" />
+    <Property Name="webname" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="diachi" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="sdt" Type="nvarchar" MaxLength="50" />
+    <Property Name="copyright" Type="varchar" MaxLength="100" />
+    <Property Name="link" Type="varchar(max)" />
+    <Property Name="meta" Type="varchar(max)" />
     <Property Name="hide" Type="bit" />
     <Property Name="order" Type="int" />
     <Property Name="datebegin" Type="smalldatetime" />

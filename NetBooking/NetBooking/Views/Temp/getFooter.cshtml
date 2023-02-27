@@ -1,10 +1,9 @@
-﻿@model IEnumerable<NetBooking.Models.Footer>
-<div class="row" style="color:white; margin-top: 15px;">
-    @foreach (var i in Model)
-    {
-        <p>@i.content</p>
-    }
-</div>
+﻿@model NetBooking.Models.Footer
+
+<h4 class="row" style="color:white; margin-top: 15px;">@Model.webname</h4>
+<p class="row" style="color: white;margin-top: 5px">@Model.diachi</p>
+<p class="row" style="color: white;margin-top: 5px">@Model.sdt</p>
+
 <div class="row">
-    <p class="tm-copyright-text">Copyright &copy; 2023 NetBooking</p>
+    <p class="tm-copyright-text">Copyright &copy; @Model.copyright</p>
 </div>

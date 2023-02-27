@@ -10,9 +10,12 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="content" Type="nvarchar" MaxLength="100" />
-          <Property Name="link" Type="nvarchar(max)" />
-          <Property Name="meta" Type="nvarchar" MaxLength="50" />
+          <Property Name="webname" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="diachi" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="sdt" Type="nvarchar" MaxLength="50" />
+          <Property Name="copyright" Type="varchar" MaxLength="100" />
+          <Property Name="link" Type="varchar(max)" />
+          <Property Name="meta" Type="varchar(max)" />
           <Property Name="hide" Type="bit" />
           <Property Name="order" Type="int" />
           <Property Name="datebegin" Type="smalldatetime" />
@@ -102,9 +105,12 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="content" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="link" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="meta" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="webname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="diachi" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="sdt" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="copyright" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="link" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="meta" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="hide" Type="Boolean" />
           <Property Name="order" Type="Int32" />
           <Property Name="datebegin" Type="DateTime" Precision="0" />
@@ -158,7 +164,10 @@
                 <ScalarProperty Name="hide" ColumnName="hide" />
                 <ScalarProperty Name="meta" ColumnName="meta" />
                 <ScalarProperty Name="link" ColumnName="link" />
-                <ScalarProperty Name="content" ColumnName="content" />
+                <ScalarProperty Name="copyright" ColumnName="copyright" />
+                <ScalarProperty Name="sdt" ColumnName="sdt" />
+                <ScalarProperty Name="diachi" ColumnName="diachi" />
+                <ScalarProperty Name="webname" ColumnName="webname" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>

@@ -31,7 +31,7 @@ namespace NetBooking.Controllers
                     where t.hide == true
                     orderby t.order ascending
                     select t;
-            return PartialView(f.ToList());
+            return PartialView(f.FirstOrDefault());
         }
     }
 }

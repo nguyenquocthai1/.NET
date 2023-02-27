@@ -15,7 +15,10 @@ namespace NetBooking.Models
     public partial class Footer
     {
         public int id { get; set; }
-        public string content { get; set; }
+        public string webname { get; set; }
+        public string diachi { get; set; }
+        public string sdt { get; set; }
+        public string copyright { get; set; }
         public string link { get; set; }
         public string meta { get; set; }
         public Nullable<bool> hide { get; set; }

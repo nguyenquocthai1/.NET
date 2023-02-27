@@ -44,7 +44,10 @@
           <ScalarProperty Name="hide" ColumnName="hide" />
           <ScalarProperty Name="meta" ColumnName="meta" />
           <ScalarProperty Name="link" ColumnName="link" />
-          <ScalarProperty Name="content" ColumnName="content" />
+          <ScalarProperty Name="copyright" ColumnName="copyright" />
+          <ScalarProperty Name="sdt" ColumnName="sdt" />
+          <ScalarProperty Name="diachi" ColumnName="diachi" />
+          <ScalarProperty Name="webname" ColumnName="webname" />
           <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>
       </EntityTypeMapping>

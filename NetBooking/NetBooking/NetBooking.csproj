@@ -242,6 +242,7 @@
     <Content Include="Upload\img\banner-1.jpg" />
     <Content Include="Upload\img\banner-2.jpg" />
     <Content Include="Upload\img\banner-3.jpg" />
+    <Content Include="Upload\img\camau_1.jpg" />
     <Content Include="Upload\img\Ha_Long_Bay.jpg" />
     <Content Include="Upload\img\Ha_Tien.jpg" />
     <Content Include="Upload\img\Ha_Tien_HPT.jpg" />
@@ -255,6 +256,7 @@
     <Content Include="Upload\img\index-08.jpg" />
     <Content Include="Upload\img\index-09.jpg" />
     <Content Include="Upload\img\index-10.jpg" />
+    <Content Include="Upload\img\kiengiang_1.jpg" />
     <Content Include="Upload\img\Moc_Chau.jpg" />
     <Content Include="Upload\img\Phu_Quoc.jpg" />
     <Content Include="Upload\img\rating.png" />
