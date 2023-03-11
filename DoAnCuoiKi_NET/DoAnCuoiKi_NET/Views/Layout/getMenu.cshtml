@@ -48,7 +48,7 @@
     </div>
     <div class="humberger__menu__contact">
         <ul>
-            <li><i class="fa fa-envelope"></i> Linhkiendientu.com</li>
+            <li><i class="fa fa-envelope"></i> SHMILYShoesShop.com</li>
             <li>Giao hàng tận nơi miễn phí</li>
         </ul>
     </div>
@@ -62,7 +62,7 @@
                 <div class="col-lg-6 col-md-6">
                     <div class="header__top__left">
                         <ul>
-                            <li><i class="fa fa-envelope"></i> Linhkiendientu.com</li>
+                            <li><i class="fa fa-envelope"></i> SHMILYShoesShop.com</li>
                             <li>Giao hàng tận nơi miễn phí</li>
                         </ul>
                     </div>
@@ -102,25 +102,17 @@
                 <a href="./index.html"><img src="~/Upload/images/Logo/logo.jpg" alt=""></a>
             </div>
         </div>
-        <div class="col-lg-6">
-            <nav class="header__menu" style="margin: 50px">
-                <ul>
+        <div class="col-lg-9">
+            <nav class="header__menu" style="margin: 3px; font-size:13px;">
+                <ul style="margin-top: 70px">
                     @foreach (var i in Model)
                     {
-                        <li><a href=# style="font-size: 20px">@i.name_menu</a></li>
+                        <li><a href=# style="font-size: 19px">@i.name_menu</a></li>
                     }
                 </ul>
             </nav>
         </div>
-        <div class="col-lg-3">
-            <div class="header__cart">
-                <ul>
-                    <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
-                    <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
-                </ul>
-                <div class="header__cart__price">item: <span>$150.00</span></div>
-            </div>
-        </div>
+        
     </div>
     <div class="humberger__open">
         <i class="fa fa-bars"></i>
