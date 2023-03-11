@@ -13,6 +13,14 @@ namespace DoAnCuoiKi_NET
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            routes.MapRoute("Product", "{type}/{meta}",
+            new { controller = "Product", action = "Index", meta = UrlParameter.Optional },
+            new RouteValueDictionary
+            {
+                {"type", "san-pham" }
+            },
+            new[] { "DoAnCuoiKi_NET.Controllers" });
+
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",

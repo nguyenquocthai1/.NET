@@ -17,8 +17,9 @@ namespace DoAnCuoiKi_NET.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Category()
         {
-            this.Product = new HashSet<Product>();
+            this.Menu = new HashSet<Menu>();
             this.ProductCategory = new HashSet<ProductCategory>();
+            this.Product = new HashSet<Product>();
         }
     
         public int id_cate { get; set; }
@@ -30,8 +31,10 @@ namespace DoAnCuoiKi_NET.Models
         public Nullable<System.DateTime> datebegin { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Product> Product { get; set; }
+        public virtual ICollection<Menu> Menu { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ProductCategory> ProductCategory { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Product> Product { get; set; }
     }
 }

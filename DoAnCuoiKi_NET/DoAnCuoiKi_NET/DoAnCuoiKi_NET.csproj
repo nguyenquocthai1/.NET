@@ -129,6 +129,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LayoutController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -139,6 +140,9 @@
       <DependentUpon>SHMILY_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Menu.cs">
+      <DependentUpon>SHMILY_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\New.cs">
       <DependentUpon>SHMILY_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Product.cs">
@@ -263,10 +267,78 @@
       <DependentUpon>SHMILY_Model.edmx</DependentUpon>
       <LastGenOutput>SHMILY_Model.cs</LastGenOutput>
     </Content>
-    <Content Include="Upload\images\GiayNu\GiayTheThaoNu\1.jpg" />
-    <Content Include="Upload\images\GiayNu\GiayTheThaoNu\2.jpg" />
-    <Content Include="Upload\images\GiayNu\GiayTheThaoNu\3.jpg" />
+    <Content Include="Upload\images\Banner\banner_1.jpg" />
+    <Content Include="Upload\images\Banner\banner_2.jpg" />
+    <Content Include="Upload\images\Banner\banner_cate.jpg" />
+    <Content Include="Upload\images\Banner\banner_product.jpg" />
     <Content Include="Upload\images\Logo\logo.jpg" />
+    <Content Include="Upload\images\San-Pham\Balo-Tui\Balo\1125.jpg" />
+    <Content Include="Upload\images\San-Pham\Balo-Tui\Balo\1137.jpg" />
+    <Content Include="Upload\images\San-Pham\Balo-Tui\Balo\1145.jpg" />
+    <Content Include="Upload\images\San-Pham\Balo-Tui\Balo\1165.jpg" />
+    <Content Include="Upload\images\San-Pham\Balo-Tui\Tui\0800.jpg" />
+    <Content Include="Upload\images\San-Pham\Balo-Tui\Tui\0823.jpg" />
+    <Content Include="Upload\images\San-Pham\Balo-Tui\Tui\0829.jpg" />
+    <Content Include="Upload\images\San-Pham\Balo-Tui\Tui\0834.jpg" />
+    <Content Include="Upload\images\San-Pham\Giay-Nam\Giay-The-Thao-Nam\5010.jpg" />
+    <Content Include="Upload\images\San-Pham\Giay-Nam\Giay-The-Thao-Nam\5366.jpg" />
+    <Content Include="Upload\images\San-Pham\Giay-Nam\Giay-The-Thao-Nam\5380.jpg" />
+    <Content Include="Upload\images\San-Pham\Giay-Nam\Giay-The-Thao-Nam\5417.jpg" />
+    <Content Include="Upload\images\San-Pham\Giay-Nam\Giay-The-Thao-Nam\5418.jpg" />
+    <Content Include="Upload\images\San-Pham\Giay-Nam\Giay-The-Thao-Nam\5419.jpg" />
+    <Content Include="Upload\images\San-Pham\Giay-Nam\Giay-The-Thao-Nam\5436.jpg" />
+    <Content Include="Upload\images\San-Pham\Giay-Nam\Giay-The-Thao-Nam\5442.jpg" />
+    <Content Include="Upload\images\San-Pham\Giay-Nu\Dep-Nu\1.jpg" />
+    <Content Include="Upload\images\San-Pham\Giay-Nu\Dep-Nu\2.jpg" />
+    <Content Include="Upload\images\San-Pham\Giay-Nu\Dep-Nu\3.jpg" />
+    <Content Include="Upload\images\San-Pham\Giay-Nu\Dep-Nu\4.jpg" />
+    <Content Include="Upload\images\San-Pham\Giay-Nu\Dep-Nu\5.jpg" />
+    <Content Include="Upload\images\San-Pham\Giay-Nu\Dep-Nu\6.jpg" />
+    <Content Include="Upload\images\San-Pham\Giay-Nu\Dep-Nu\7.jpg" />
+    <Content Include="Upload\images\San-Pham\Giay-Nu\Dep-Nu\8.jpg" />
+    <Content Include="Upload\images\San-Pham\Giay-Nu\Dep-Suc\1.jpg" />
+    <Content Include="Upload\images\San-Pham\Giay-Nu\Dep-Suc\2.jpg" />
+    <Content Include="Upload\images\San-Pham\Giay-Nu\Dep-Suc\3.jpg" />
+    <Content Include="Upload\images\San-Pham\Giay-Nu\Dep-Suc\4.jpg" />
+    <Content Include="Upload\images\San-Pham\Giay-Nu\Dep-Suc\5.jpg" />
+    <Content Include="Upload\images\San-Pham\Giay-Nu\Dep-Suc\6.jpg" />
+    <Content Include="Upload\images\San-Pham\Giay-Nu\Dep-Suc\7.jpg" />
+    <Content Include="Upload\images\San-Pham\Giay-Nu\Dep-Suc\8.jpg" />
+    <Content Include="Upload\images\San-Pham\Giay-Nu\Giay-Bup-Be\1.jpg" />
+    <Content Include="Upload\images\San-Pham\Giay-Nu\Giay-Bup-Be\2.jpg" />
+    <Content Include="Upload\images\San-Pham\Giay-Nu\Giay-Bup-Be\3.jpg" />
+    <Content Include="Upload\images\San-Pham\Giay-Nu\Giay-Bup-Be\4.jpg" />
+    <Content Include="Upload\images\San-Pham\Giay-Nu\Giay-Bup-Be\5.jpg" />
+    <Content Include="Upload\images\San-Pham\Giay-Nu\Giay-Bup-Be\6.jpg" />
+    <Content Include="Upload\images\San-Pham\Giay-Nu\Giay-Bup-Be\7.jpg" />
+    <Content Include="Upload\images\San-Pham\Giay-Nu\Giay-Bup-Be\8.jpg" />
+    <Content Include="Upload\images\San-Pham\Giay-Nu\Giay-Cao-Got\1.jpg" />
+    <Content Include="Upload\images\San-Pham\Giay-Nu\Giay-Cao-Got\2.jpg" />
+    <Content Include="Upload\images\San-Pham\Giay-Nu\Giay-Cao-Got\3.jpg" />
+    <Content Include="Upload\images\San-Pham\Giay-Nu\Giay-Cao-Got\4.jpg" />
+    <Content Include="Upload\images\San-Pham\Giay-Nu\Giay-Cao-Got\5.jpg" />
+    <Content Include="Upload\images\San-Pham\Giay-Nu\Giay-Cao-Got\6.jpg" />
+    <Content Include="Upload\images\San-Pham\Giay-Nu\Giay-Cao-Got\7.jpg" />
+    <Content Include="Upload\images\San-Pham\Giay-Nu\Giay-Cao-Got\8.jpg" />
+    <Content Include="Upload\images\San-Pham\Giay-Nu\Giay-The-Thao-Nu\0578.jpg" />
+    <Content Include="Upload\images\San-Pham\Giay-Nu\Giay-The-Thao-Nu\0601.jpg" />
+    <Content Include="Upload\images\San-Pham\Giay-Nu\Giay-The-Thao-Nu\0642.jpg" />
+    <Content Include="Upload\images\San-Pham\Giay-Nu\Giay-The-Thao-Nu\0643.jpg" />
+    <Content Include="Upload\images\San-Pham\Giay-Nu\Giay-The-Thao-Nu\0645.jpg" />
+    <Content Include="Upload\images\San-Pham\Giay-Nu\Giay-The-Thao-Nu\0678.jpg" />
+    <Content Include="Upload\images\San-Pham\Giay-Nu\Giay-The-Thao-Nu\0686.jpg" />
+    <Content Include="Upload\images\San-Pham\Giay-Nu\Giay-The-Thao-Nu\0696.jpg" />
+    <Content Include="Upload\images\San-Pham\Giay-Nu\Giay-The-Thao-Nu\0752.jpg" />
+    <Content Include="Upload\images\San-Pham\Giay-Nu\Giay-The-Thao-Nu\0764.jpg" />
+    <Content Include="Upload\images\San-Pham\Giay-Nu\Giay-The-Thao-Nu\0777.jpg" />
+    <Content Include="Upload\images\San-Pham\Phu-Kien\Day-Giay\9005.jpg" />
+    <Content Include="Upload\images\San-Pham\Phu-Kien\Day-Giay\9006.jpg" />
+    <Content Include="Upload\images\San-Pham\Phu-Kien\Day-Giay\9007.jpg" />
+    <Content Include="Upload\images\San-Pham\Phu-Kien\Day-Giay\9015.jpg" />
+    <Content Include="Upload\images\San-Pham\Phu-Kien\Vo\AT106.jpg" />
+    <Content Include="Upload\images\San-Pham\Phu-Kien\Vo\AT16.jpg" />
+    <Content Include="Upload\images\San-Pham\Phu-Kien\Vo\AT50.jpg" />
+    <Content Include="Upload\images\San-Pham\Phu-Kien\Vo\AT53.jpg" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -279,6 +351,13 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Upload\images\San-Pham\Giay-Nam\Dep-Nam\" />
+    <Folder Include="Upload\images\San-Pham\Giay-Nam\Giay-Tay-Slip-On\" />
+    <Folder Include="Upload\images\San-Pham\Giay-Nam\Sandal-Nam\" />
+    <Folder Include="Upload\images\San-Pham\Giay-Nu\Oxford-Boot\" />
+    <Folder Include="Upload\images\San-Pham\Giay-Nu\Sandal-Nu\" />
+    <Folder Include="Upload\images\San-Pham\Phu-Kien\De-Lot\" />
+    <Folder Include="Upload\images\San-Pham\Phu-Kien\Ve-Sinh-Giay\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\fonts\ElegantIcons.eot" />
@@ -401,6 +480,15 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\getCategory_1.cshtml" />
+    <Content Include="Views\Home\getCategory_2.cshtml" />
+    <Content Include="Views\Home\getCategory_3.cshtml" />
+    <Content Include="Views\Home\getProduct.cshtml" />
+    <Content Include="Views\Home\getProd_Category.cshtml" />
+    <Content Include="Views\Product\Index.cshtml" />
+    <Content Include="Views\Product\getProduct.cshtml" />
+    <Content Include="Views\Product\getBestSaleProduct.cshtml" />
+    <Content Include="Views\Product\getNewProduct.cshtml" />
+    <Content Include="Views\Home\getNews.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

@@ -15,11 +15,14 @@ namespace DoAnCuoiKi_NET.Models
     public partial class Menu
     {
         public int id_menu { get; set; }
+        public Nullable<int> id_cate { get; set; }
         public string name_menu { get; set; }
         public string link { get; set; }
         public string meta { get; set; }
         public Nullable<bool> hide { get; set; }
         public Nullable<int> order { get; set; }
         public Nullable<System.DateTime> datebegin { get; set; }
+    
+        public virtual Category Category { get; set; }
     }
 }

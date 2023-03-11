@@ -15,7 +15,6 @@
             <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
             <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
         </ul>
-        <div class="header__cart__price">item: <span>$150.00</span></div>
     </div>
     <div class="humberger__menu__widget">
         <div class="header__top__right__language">
@@ -28,7 +27,7 @@
             </ul>
         </div>
         <div class="header__top__right__auth">
-            <a href="#"><i class="fa fa-user"></i> Login</a>
+            <a href="#"><i class="fa fa-user"></i>Đăng nhập</a>
         </div>
     </div>
     <nav class="humberger__menu__nav mobile-menu">
@@ -48,12 +47,18 @@
     </div>
     <div class="humberger__menu__contact">
         <ul>
+<<<<<<< Updated upstream
             <li><i class="fa fa-envelope"></i> SHMILYShoesShop.com</li>
             <li>Giao hàng tận nơi miễn phí</li>
+=======
+            <li><i class="fa fa-envelope"></i> SHMILYShoesStore.com</li>
+            <li>Thế giới giày tuyệt vời dành cho bạn</li>
+>>>>>>> Stashed changes
         </ul>
     </div>
 </div>
 <!-- Humberger End -->
+
 <!-- Header Section Begin -->
 <header class="header">
     <div class="header__top">
@@ -62,8 +67,13 @@
                 <div class="col-lg-6 col-md-6">
                     <div class="header__top__left">
                         <ul>
+<<<<<<< Updated upstream
                             <li><i class="fa fa-envelope"></i> SHMILYShoesShop.com</li>
                             <li>Giao hàng tận nơi miễn phí</li>
+=======
+                            <li><i class="fa fa-envelope"></i> SHMILYShoesStore.com</li>
+                            <li>Thế giới giày tuyệt vời dành cho bạn</li>
+>>>>>>> Stashed changes
                         </ul>
                     </div>
                 </div>
@@ -85,7 +95,7 @@
                             </ul>
                         </div>
                         <div class="header__top__right__auth">
-                            <a href="login.html"><i class="fa fa-user"></i> Login</a>
+                            <a href="login.html"><i class="fa fa-user"></i>Đăng nhập</a>
                         </div>
                     </div>
                 </div>
@@ -99,7 +109,7 @@
     <div class="row">
         <div class="col-lg-3">
             <div class="header__logo">
-                <a href="./index.html"><img src="~/Upload/images/Logo/logo.jpg" alt=""></a>
+                <a href="~/"><img src="~/Upload/images/Logo/logo.jpg" alt=""></a>
             </div>
         </div>
         <div class="col-lg-9">
@@ -107,12 +117,34 @@
                 <ul style="margin-top: 70px">
                     @foreach (var i in Model)
                     {
+<<<<<<< Updated upstream
                         <li><a href=# style="font-size: 19px">@i.name_menu</a></li>
                     }
                 </ul>
             </nav>
         </div>
         
+=======
+                        <li>
+                            <a href="~/Product/Index?meta=@i.meta" style="font-size: 35.69px">@i.name_menu</a>
+                            <ul class="header__menu__dropdown">
+                                {
+                                    @Html.Action("getProd_Category", "Home", new { id_cate = @i.id_cate })
+                                }
+                            </ul>
+                         </li>
+                    }
+                </ul>
+            </nav>
+            <div class="header__cart">
+                <ul>
+                    <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
+                    <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
+                </ul>
+                <div class="header__cart__price">Tổng tiền: <span>999 $</span></div>
+            </div>
+        </div>
+>>>>>>> Stashed changes
     </div>
     <div class="humberger__open">
         <i class="fa fa-bars"></i>

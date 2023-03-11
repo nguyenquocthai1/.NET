@@ -22,6 +22,8 @@ namespace DoAnCuoiKi_NET.Models
         public string color { get; set; }
         public string size { get; set; }
         public Nullable<int> amount { get; set; }
+        public Nullable<int> sale_amount { get; set; }
+        public Nullable<double> discount { get; set; }
         public string status { get; set; }
         public string img { get; set; }
         public string img1 { get; set; }

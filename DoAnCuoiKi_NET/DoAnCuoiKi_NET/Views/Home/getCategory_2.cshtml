@@ -1,0 +1,10 @@
+﻿@model List<DoAnCuoiKi_NET.Models.Category>
+@foreach (var i in Model)
+{
+    <div class="col-lg-3">
+        <div class="categories__item set-bg" data-setbg="/Upload/images/Logo/logo.jpg">
+            <h5><a href="#">@i.name_cate</a></h5>
+        </div>
+    </div>
+}
+

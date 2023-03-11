@@ -1,5 +1,3 @@
-D:\K23\CN .Net\CuoiKi\DoAnCuoiKi_NET\DoAnCuoiKi_NET\obj\Debug\DoAnCuoiKi_NET.csproj.AssemblyReference.cache
-D:\K23\CN .Net\CuoiKi\DoAnCuoiKi_NET\DoAnCuoiKi_NET\obj\Debug\DoAnCuoiKi_NET.csproj.CoreCompileInputs.cache
 D:\K23\CN .Net\CuoiKi\DoAnCuoiKi_NET\DoAnCuoiKi_NET\bin\DoAnCuoiKi_NET.dll.config
 D:\K23\CN .Net\CuoiKi\DoAnCuoiKi_NET\DoAnCuoiKi_NET\bin\DoAnCuoiKi_NET.dll
 D:\K23\CN .Net\CuoiKi\DoAnCuoiKi_NET\DoAnCuoiKi_NET\bin\DoAnCuoiKi_NET.pdb
@@ -78,6 +76,8 @@ D:\K23\CN .Net\CuoiKi\DoAnCuoiKi_NET\DoAnCuoiKi_NET\bin\System.Web.WebPages.Razo
 D:\K23\CN .Net\CuoiKi\DoAnCuoiKi_NET\DoAnCuoiKi_NET\bin\Newtonsoft.Json.xml
 D:\K23\CN .Net\CuoiKi\DoAnCuoiKi_NET\DoAnCuoiKi_NET\bin\Antlr3.Runtime.pdb
 D:\K23\CN .Net\CuoiKi\DoAnCuoiKi_NET\DoAnCuoiKi_NET\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\K23\CN .Net\CuoiKi\DoAnCuoiKi_NET\DoAnCuoiKi_NET\obj\Debug\DoAnCuoiKi_NET.csproj.AssemblyReference.cache
+D:\K23\CN .Net\CuoiKi\DoAnCuoiKi_NET\DoAnCuoiKi_NET\obj\Debug\DoAnCuoiKi_NET.csproj.CoreCompileInputs.cache
 D:\K23\CN .Net\CuoiKi\DoAnCuoiKi_NET\DoAnCuoiKi_NET\obj\Debug\DoAnCuoiKi_NET.csproj.CopyComplete
 D:\K23\CN .Net\CuoiKi\DoAnCuoiKi_NET\DoAnCuoiKi_NET\obj\Debug\DoAnCuoiKi_NET.dll
 D:\K23\CN .Net\CuoiKi\DoAnCuoiKi_NET\DoAnCuoiKi_NET\obj\Debug\DoAnCuoiKi_NET.pdb

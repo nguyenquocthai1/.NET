@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="SHMLY_Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="SHMLY_Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Category">
           <Key>
             <PropertyRef Name="id_cate" />
@@ -37,9 +37,24 @@
             <PropertyRef Name="id_menu" />
           </Key>
           <Property Name="id_menu" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_cate" Type="int" />
           <Property Name="name_menu" Type="nvarchar" MaxLength="50" />
           <Property Name="link" Type="nvarchar(max)" />
           <Property Name="meta" Type="nvarchar" MaxLength="50" />
+          <Property Name="hide" Type="bit" />
+          <Property Name="order" Type="int" />
+          <Property Name="datebegin" Type="smalldatetime" />
+        </EntityType>
+        <EntityType Name="New">
+          <Key>
+            <PropertyRef Name="id_new" />
+          </Key>
+          <Property Name="id_new" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name_new" Type="nvarchar" MaxLength="50" />
+          <Property Name="img" Type="varchar" MaxLength="150" />
+          <Property Name="description" Type="ntext" />
+          <Property Name="link" Type="varchar(max)" />
+          <Property Name="meta" Type="varchar(max)" />
           <Property Name="hide" Type="bit" />
           <Property Name="order" Type="int" />
           <Property Name="datebegin" Type="smalldatetime" />
@@ -51,18 +66,20 @@
           <Property Name="id_product" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="id_cate" Type="int" />
           <Property Name="id_pcate" Type="int" />
-          <Property Name="name_product" Type="nvarchar" MaxLength="50" />
+          <Property Name="name_product" Type="nvarchar" MaxLength="100" />
           <Property Name="price" Type="float" />
           <Property Name="color" Type="nvarchar" MaxLength="50" />
           <Property Name="size" Type="varchar" MaxLength="30" />
           <Property Name="amount" Type="int" />
+          <Property Name="sale_amount" Type="int" />
+          <Property Name="discount" Type="float" />
           <Property Name="status" Type="nvarchar" MaxLength="1" />
-          <Property Name="img" Type="varchar" MaxLength="50" />
-          <Property Name="img1" Type="varchar" MaxLength="50" />
-          <Property Name="img2" Type="varchar" MaxLength="50" />
-          <Property Name="img3" Type="varchar" MaxLength="50" />
-          <Property Name="img4" Type="varchar" MaxLength="50" />
-          <Property Name="img5" Type="varchar" MaxLength="50" />
+          <Property Name="img" Type="varchar" MaxLength="150" />
+          <Property Name="img1" Type="varchar" MaxLength="150" />
+          <Property Name="img2" Type="varchar" MaxLength="150" />
+          <Property Name="img3" Type="varchar" MaxLength="150" />
+          <Property Name="img4" Type="varchar" MaxLength="150" />
+          <Property Name="img5" Type="varchar" MaxLength="150" />
           <Property Name="detail" Type="ntext" />
           <Property Name="description" Type="ntext" />
           <Property Name="link" Type="varchar(max)" />
@@ -84,7 +101,19 @@
           <Property Name="order" Type="int" />
           <Property Name="datebegin" Type="smalldatetime" />
         </EntityType>
-        <Association Name="FK__Product__id_cate__36B12243">
+        <Association Name="FK__Menu__id_cate__3A81B327">
+          <End Role="Category" Type="Self.Category" Multiplicity="0..1" />
+          <End Role="Menu" Type="Self.Menu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="id_cate" />
+            </Principal>
+            <Dependent Role="Menu">
+              <PropertyRef Name="id_cate" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Product__id_cate__5070F446">
           <End Role="Category" Type="Self.Category" Multiplicity="0..1" />
           <End Role="Product" Type="Self.Product" Multiplicity="*" />
           <ReferentialConstraint>
@@ -96,7 +125,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Product__id_pcat__37A5467C">
+        <Association Name="FK__Product__id_pcat__5165187F">
           <End Role="ProductCategory" Type="Self.ProductCategory" Multiplicity="0..1" />
           <End Role="Product" Type="Self.Product" Multiplicity="*" />
           <ReferentialConstraint>
@@ -108,7 +137,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__ProductCa__id_ca__300424B4">
+        <Association Name="FK__ProductCa__id_ca__3D5E1FD2">
           <End Role="Category" Type="Self.Category" Multiplicity="0..1" />
           <End Role="ProductCategory" Type="Self.ProductCategory" Multiplicity="*" />
           <ReferentialConstraint>
@@ -124,26 +153,54 @@
           <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Footer" EntityType="Self.Footer" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Menu" EntityType="Self.Menu" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="New" EntityType="Self.New" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ProductCategory" EntityType="Self.ProductCategory" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__Product__id_cate__36B12243" Association="Self.FK__Product__id_cate__36B12243">
+          <AssociationSet Name="FK__Menu__id_cate__3A81B327" Association="Self.FK__Menu__id_cate__3A81B327">
+            <End Role="Category" EntitySet="Category" />
+            <End Role="Menu" EntitySet="Menu" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Product__id_cate__5070F446" Association="Self.FK__Product__id_cate__5070F446">
             <End Role="Category" EntitySet="Category" />
             <End Role="Product" EntitySet="Product" />
           </AssociationSet>
-          <AssociationSet Name="FK__Product__id_pcat__37A5467C" Association="Self.FK__Product__id_pcat__37A5467C">
+          <AssociationSet Name="FK__Product__id_pcat__5165187F" Association="Self.FK__Product__id_pcat__5165187F">
             <End Role="ProductCategory" EntitySet="ProductCategory" />
             <End Role="Product" EntitySet="Product" />
           </AssociationSet>
-          <AssociationSet Name="FK__ProductCa__id_ca__300424B4" Association="Self.FK__ProductCa__id_ca__300424B4">
+          <AssociationSet Name="FK__ProductCa__id_ca__3D5E1FD2" Association="Self.FK__ProductCa__id_ca__3D5E1FD2">
             <End Role="Category" EntitySet="Category" />
             <End Role="ProductCategory" EntitySet="ProductCategory" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="SHMLY_Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="SHMLYEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Category" EntityType="SHMLY_Model.Category" />
+          <EntitySet Name="Footer" EntityType="SHMLY_Model.Footer" />
+          <EntitySet Name="Menu" EntityType="SHMLY_Model.Menu" />
+          <EntitySet Name="ProductCategory" EntityType="SHMLY_Model.ProductCategory" />
+          <AssociationSet Name="FK__Menu__id_cate__3A81B327" Association="SHMLY_Model.FK__Menu__id_cate__3A81B327">
+            <End Role="Category" EntitySet="Category" />
+            <End Role="Menu" EntitySet="Menu" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ProductCa__id_ca__3D5E1FD2" Association="SHMLY_Model.FK__ProductCa__id_ca__3D5E1FD2">
+            <End Role="Category" EntitySet="Category" />
+            <End Role="ProductCategory" EntitySet="ProductCategory" />
+          </AssociationSet>
+          <EntitySet Name="Product" EntityType="SHMLY_Model.Product" />
+          <AssociationSet Name="FK__Product__id_cate__5070F446" Association="SHMLY_Model.FK__Product__id_cate__5070F446">
+            <End Role="Category" EntitySet="Category" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Product__id_pcat__5165187F" Association="SHMLY_Model.FK__Product__id_pcat__5165187F">
+            <End Role="ProductCategory" EntitySet="ProductCategory" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+          <EntitySet Name="New" EntityType="SHMLY_Model.New" />
+        </EntityContainer>
         <EntityType Name="Category">
           <Key>
             <PropertyRef Name="id_cate" />
@@ -155,8 +212,9 @@
           <Property Name="hide" Type="Boolean" />
           <Property Name="order" Type="Int32" />
           <Property Name="datebegin" Type="DateTime" Precision="0" />
-          <NavigationProperty Name="Product" Relationship="Self.FK__Product__id_cate__36B12243" FromRole="Category" ToRole="Product" />
-          <NavigationProperty Name="ProductCategory" Relationship="Self.FK__ProductCa__id_ca__300424B4" FromRole="Category" ToRole="ProductCategory" />
+          <NavigationProperty Name="Menu" Relationship="SHMLY_Model.FK__Menu__id_cate__3A81B327" FromRole="Category" ToRole="Menu" />
+          <NavigationProperty Name="ProductCategory" Relationship="SHMLY_Model.FK__ProductCa__id_ca__3D5E1FD2" FromRole="Category" ToRole="ProductCategory" />
+          <NavigationProperty Name="Product" Relationship="SHMLY_Model.FK__Product__id_cate__5070F446" FromRole="Category" ToRole="Product" />
         </EntityType>
         <EntityType Name="Footer">
           <Key>
@@ -178,41 +236,14 @@
             <PropertyRef Name="id_menu" />
           </Key>
           <Property Name="id_menu" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_cate" Type="Int32" />
           <Property Name="name_menu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="link" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="meta" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="hide" Type="Boolean" />
           <Property Name="order" Type="Int32" />
           <Property Name="datebegin" Type="DateTime" Precision="0" />
-        </EntityType>
-        <EntityType Name="Product">
-          <Key>
-            <PropertyRef Name="id_product" />
-          </Key>
-          <Property Name="id_product" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="id_cate" Type="Int32" />
-          <Property Name="id_pcate" Type="Int32" />
-          <Property Name="name_product" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="price" Type="Double" />
-          <Property Name="color" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="size" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="amount" Type="Int32" />
-          <Property Name="status" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
-          <Property Name="img" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="img1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="img2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="img3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="img4" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="img5" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="detail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="link" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="meta" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="hide" Type="Boolean" />
-          <Property Name="order" Type="Int32" />
-          <Property Name="datebegin" Type="DateTime" Precision="0" />
-          <NavigationProperty Name="Category" Relationship="Self.FK__Product__id_cate__36B12243" FromRole="Product" ToRole="Category" />
-          <NavigationProperty Name="ProductCategory" Relationship="Self.FK__Product__id_pcat__37A5467C" FromRole="Product" ToRole="ProductCategory" />
+          <NavigationProperty Name="Category" Relationship="SHMLY_Model.FK__Menu__id_cate__3A81B327" FromRole="Menu" ToRole="Category" />
         </EntityType>
         <EntityType Name="ProductCategory">
           <Key>
@@ -226,24 +257,24 @@
           <Property Name="hide" Type="Boolean" />
           <Property Name="order" Type="Int32" />
           <Property Name="datebegin" Type="DateTime" Precision="0" />
-          <NavigationProperty Name="Category" Relationship="Self.FK__ProductCa__id_ca__300424B4" FromRole="ProductCategory" ToRole="Category" />
-          <NavigationProperty Name="Product" Relationship="Self.FK__Product__id_pcat__37A5467C" FromRole="ProductCategory" ToRole="Product" />
+          <NavigationProperty Name="Category" Relationship="SHMLY_Model.FK__ProductCa__id_ca__3D5E1FD2" FromRole="ProductCategory" ToRole="Category" />
+          <NavigationProperty Name="Product" Relationship="SHMLY_Model.FK__Product__id_pcat__5165187F" FromRole="ProductCategory" ToRole="Product" />
         </EntityType>
-        <Association Name="FK__Product__id_cate__36B12243">
-          <End Role="Category" Type="Self.Category" Multiplicity="0..1" />
-          <End Role="Product" Type="Self.Product" Multiplicity="*" />
+        <Association Name="FK__Menu__id_cate__3A81B327">
+          <End Type="SHMLY_Model.Category" Role="Category" Multiplicity="0..1" />
+          <End Type="SHMLY_Model.Menu" Role="Menu" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Category">
               <PropertyRef Name="id_cate" />
             </Principal>
-            <Dependent Role="Product">
+            <Dependent Role="Menu">
               <PropertyRef Name="id_cate" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__ProductCa__id_ca__300424B4">
-          <End Role="Category" Type="Self.Category" Multiplicity="0..1" />
-          <End Role="ProductCategory" Type="Self.ProductCategory" Multiplicity="*" />
+        <Association Name="FK__ProductCa__id_ca__3D5E1FD2">
+          <End Type="SHMLY_Model.Category" Role="Category" Multiplicity="0..1" />
+          <End Type="SHMLY_Model.ProductCategory" Role="ProductCategory" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Category">
               <PropertyRef Name="id_cate" />
@@ -253,9 +284,52 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Product__id_pcat__37A5467C">
-          <End Role="ProductCategory" Type="Self.ProductCategory" Multiplicity="0..1" />
-          <End Role="Product" Type="Self.Product" Multiplicity="*" />
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="id_product" />
+          </Key>
+          <Property Name="id_product" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_cate" Type="Int32" />
+          <Property Name="id_pcate" Type="Int32" />
+          <Property Name="name_product" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="price" Type="Double" />
+          <Property Name="color" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="size" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="amount" Type="Int32" />
+          <Property Name="sale_amount" Type="Int32" />
+          <Property Name="discount" Type="Double" />
+          <Property Name="status" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="img" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="img1" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="img2" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="img3" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="img4" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="img5" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="detail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="link" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="meta" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="hide" Type="Boolean" />
+          <Property Name="order" Type="Int32" />
+          <Property Name="datebegin" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Category" Relationship="SHMLY_Model.FK__Product__id_cate__5070F446" FromRole="Product" ToRole="Category" />
+          <NavigationProperty Name="ProductCategory" Relationship="SHMLY_Model.FK__Product__id_pcat__5165187F" FromRole="Product" ToRole="ProductCategory" />
+        </EntityType>
+        <Association Name="FK__Product__id_cate__5070F446">
+          <End Type="SHMLY_Model.Category" Role="Category" Multiplicity="0..1" />
+          <End Type="SHMLY_Model.Product" Role="Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="id_cate" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="id_cate" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Product__id_pcat__5165187F">
+          <End Type="SHMLY_Model.ProductCategory" Role="ProductCategory" Multiplicity="0..1" />
+          <End Type="SHMLY_Model.Product" Role="Product" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="ProductCategory">
               <PropertyRef Name="id_pcate" />
@@ -265,25 +339,20 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="SHMLYEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Category" EntityType="Self.Category" />
-          <EntitySet Name="Footer" EntityType="Self.Footer" />
-          <EntitySet Name="Menu" EntityType="Self.Menu" />
-          <EntitySet Name="Product" EntityType="Self.Product" />
-          <EntitySet Name="ProductCategory" EntityType="Self.ProductCategory" />
-          <AssociationSet Name="FK__Product__id_cate__36B12243" Association="Self.FK__Product__id_cate__36B12243">
-            <End Role="Category" EntitySet="Category" />
-            <End Role="Product" EntitySet="Product" />
-          </AssociationSet>
-          <AssociationSet Name="FK__ProductCa__id_ca__300424B4" Association="Self.FK__ProductCa__id_ca__300424B4">
-            <End Role="Category" EntitySet="Category" />
-            <End Role="ProductCategory" EntitySet="ProductCategory" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Product__id_pcat__37A5467C" Association="Self.FK__Product__id_pcat__37A5467C">
-            <End Role="ProductCategory" EntitySet="ProductCategory" />
-            <End Role="Product" EntitySet="Product" />
-          </AssociationSet>
-        </EntityContainer>
+        <EntityType Name="New">
+          <Key>
+            <PropertyRef Name="id_new" />
+          </Key>
+          <Property Name="id_new" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name_new" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="img" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="link" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="meta" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="hide" Type="Boolean" />
+          <Property Name="order" Type="Int32" />
+          <Property Name="datebegin" Type="DateTime" Precision="0" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -293,84 +362,102 @@
           <EntitySetMapping Name="Category">
             <EntityTypeMapping TypeName="SHMLY_Model.Category">
               <MappingFragment StoreEntitySet="Category">
-                <ScalarProperty Name="id_cate" ColumnName="id_cate" />
-                <ScalarProperty Name="name_cate" ColumnName="name_cate" />
-                <ScalarProperty Name="link" ColumnName="link" />
-                <ScalarProperty Name="meta" ColumnName="meta" />
-                <ScalarProperty Name="hide" ColumnName="hide" />
-                <ScalarProperty Name="order" ColumnName="order" />
                 <ScalarProperty Name="datebegin" ColumnName="datebegin" />
+                <ScalarProperty Name="order" ColumnName="order" />
+                <ScalarProperty Name="hide" ColumnName="hide" />
+                <ScalarProperty Name="meta" ColumnName="meta" />
+                <ScalarProperty Name="link" ColumnName="link" />
+                <ScalarProperty Name="name_cate" ColumnName="name_cate" />
+                <ScalarProperty Name="id_cate" ColumnName="id_cate" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Footer">
             <EntityTypeMapping TypeName="SHMLY_Model.Footer">
               <MappingFragment StoreEntitySet="Footer">
-                <ScalarProperty Name="id_footer" ColumnName="id_footer" />
-                <ScalarProperty Name="name_web" ColumnName="name_web" />
-                <ScalarProperty Name="address" ColumnName="address" />
-                <ScalarProperty Name="phone_number" ColumnName="phone_number" />
-                <ScalarProperty Name="copyright" ColumnName="copyright" />
-                <ScalarProperty Name="link" ColumnName="link" />
-                <ScalarProperty Name="meta" ColumnName="meta" />
-                <ScalarProperty Name="hide" ColumnName="hide" />
-                <ScalarProperty Name="order" ColumnName="order" />
                 <ScalarProperty Name="datebegin" ColumnName="datebegin" />
+                <ScalarProperty Name="order" ColumnName="order" />
+                <ScalarProperty Name="hide" ColumnName="hide" />
+                <ScalarProperty Name="meta" ColumnName="meta" />
+                <ScalarProperty Name="link" ColumnName="link" />
+                <ScalarProperty Name="copyright" ColumnName="copyright" />
+                <ScalarProperty Name="phone_number" ColumnName="phone_number" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="name_web" ColumnName="name_web" />
+                <ScalarProperty Name="id_footer" ColumnName="id_footer" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Menu">
             <EntityTypeMapping TypeName="SHMLY_Model.Menu">
               <MappingFragment StoreEntitySet="Menu">
-                <ScalarProperty Name="id_menu" ColumnName="id_menu" />
+                <ScalarProperty Name="datebegin" ColumnName="datebegin" />
+                <ScalarProperty Name="order" ColumnName="order" />
+                <ScalarProperty Name="hide" ColumnName="hide" />
+                <ScalarProperty Name="meta" ColumnName="meta" />
+                <ScalarProperty Name="link" ColumnName="link" />
                 <ScalarProperty Name="name_menu" ColumnName="name_menu" />
-                <ScalarProperty Name="link" ColumnName="link" />
-                <ScalarProperty Name="meta" ColumnName="meta" />
-                <ScalarProperty Name="hide" ColumnName="hide" />
-                <ScalarProperty Name="order" ColumnName="order" />
-                <ScalarProperty Name="datebegin" ColumnName="datebegin" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Product">
-            <EntityTypeMapping TypeName="SHMLY_Model.Product">
-              <MappingFragment StoreEntitySet="Product">
-                <ScalarProperty Name="id_product" ColumnName="id_product" />
                 <ScalarProperty Name="id_cate" ColumnName="id_cate" />
-                <ScalarProperty Name="id_pcate" ColumnName="id_pcate" />
-                <ScalarProperty Name="name_product" ColumnName="name_product" />
-                <ScalarProperty Name="price" ColumnName="price" />
-                <ScalarProperty Name="color" ColumnName="color" />
-                <ScalarProperty Name="size" ColumnName="size" />
-                <ScalarProperty Name="amount" ColumnName="amount" />
-                <ScalarProperty Name="status" ColumnName="status" />
-                <ScalarProperty Name="img" ColumnName="img" />
-                <ScalarProperty Name="img1" ColumnName="img1" />
-                <ScalarProperty Name="img2" ColumnName="img2" />
-                <ScalarProperty Name="img3" ColumnName="img3" />
-                <ScalarProperty Name="img4" ColumnName="img4" />
-                <ScalarProperty Name="img5" ColumnName="img5" />
-                <ScalarProperty Name="detail" ColumnName="detail" />
-                <ScalarProperty Name="description" ColumnName="description" />
-                <ScalarProperty Name="link" ColumnName="link" />
-                <ScalarProperty Name="meta" ColumnName="meta" />
-                <ScalarProperty Name="hide" ColumnName="hide" />
-                <ScalarProperty Name="order" ColumnName="order" />
-                <ScalarProperty Name="datebegin" ColumnName="datebegin" />
+                <ScalarProperty Name="id_menu" ColumnName="id_menu" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ProductCategory">
             <EntityTypeMapping TypeName="SHMLY_Model.ProductCategory">
               <MappingFragment StoreEntitySet="ProductCategory">
+                <ScalarProperty Name="datebegin" ColumnName="datebegin" />
+                <ScalarProperty Name="order" ColumnName="order" />
+                <ScalarProperty Name="hide" ColumnName="hide" />
+                <ScalarProperty Name="meta" ColumnName="meta" />
+                <ScalarProperty Name="link" ColumnName="link" />
+                <ScalarProperty Name="name_pcate" ColumnName="name_pcate" />
+                <ScalarProperty Name="id_cate" ColumnName="id_cate" />
+                <ScalarProperty Name="id_pcate" ColumnName="id_pcate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Product">
+            <EntityTypeMapping TypeName="SHMLY_Model.Product">
+              <MappingFragment StoreEntitySet="Product">
+                <ScalarProperty Name="datebegin" ColumnName="datebegin" />
+                <ScalarProperty Name="order" ColumnName="order" />
+                <ScalarProperty Name="hide" ColumnName="hide" />
+                <ScalarProperty Name="meta" ColumnName="meta" />
+                <ScalarProperty Name="link" ColumnName="link" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="detail" ColumnName="detail" />
+                <ScalarProperty Name="img5" ColumnName="img5" />
+                <ScalarProperty Name="img4" ColumnName="img4" />
+                <ScalarProperty Name="img3" ColumnName="img3" />
+                <ScalarProperty Name="img2" ColumnName="img2" />
+                <ScalarProperty Name="img1" ColumnName="img1" />
+                <ScalarProperty Name="img" ColumnName="img" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="discount" ColumnName="discount" />
+                <ScalarProperty Name="sale_amount" ColumnName="sale_amount" />
+                <ScalarProperty Name="amount" ColumnName="amount" />
+                <ScalarProperty Name="size" ColumnName="size" />
+                <ScalarProperty Name="color" ColumnName="color" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="name_product" ColumnName="name_product" />
                 <ScalarProperty Name="id_pcate" ColumnName="id_pcate" />
                 <ScalarProperty Name="id_cate" ColumnName="id_cate" />
-                <ScalarProperty Name="name_pcate" ColumnName="name_pcate" />
-                <ScalarProperty Name="link" ColumnName="link" />
-                <ScalarProperty Name="meta" ColumnName="meta" />
-                <ScalarProperty Name="hide" ColumnName="hide" />
-                <ScalarProperty Name="order" ColumnName="order" />
+                <ScalarProperty Name="id_product" ColumnName="id_product" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="New">
+            <EntityTypeMapping TypeName="SHMLY_Model.New">
+              <MappingFragment StoreEntitySet="New">
                 <ScalarProperty Name="datebegin" ColumnName="datebegin" />
+                <ScalarProperty Name="order" ColumnName="order" />
+                <ScalarProperty Name="hide" ColumnName="hide" />
+                <ScalarProperty Name="meta" ColumnName="meta" />
+                <ScalarProperty Name="link" ColumnName="link" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="img" ColumnName="img" />
+                <ScalarProperty Name="name_new" ColumnName="name_new" />
+                <ScalarProperty Name="id_new" ColumnName="id_new" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -1,0 +1,19 @@
+﻿@model List<DoAnCuoiKi_NET.Models.New>
+@foreach (var i in Model)
+{
+    <div class="col-lg-4 col-md-4 col-sm-6">
+        <div class="blog__item">
+            <div class="blog__item__pic">
+                <img src="/Upload/images/@i.img" alt="">
+            </div>
+            <div class="blog__item__text">
+                <ul>
+                    <li><i class="fa fa-calendar-o"></i> May 4,2022</li>
+                    <li><i class="fa fa-comment-o"></i> 5</li>
+                </ul>
+                <h5><a href="#">@i.name_new</a></h5>
+                <p>@i.description</p>
+            </div>
+        </div>
+    </div>
+}
