@@ -48,5 +48,13 @@ namespace DoAnCuoiKi_NET.Controllers
             return PartialView(prod.ToList());
 
         }
+
+        public ActionResult Detail(long id)
+        {
+            var detail = from i in db.Product
+                        where i.id_product == id
+                        select i;
+            return View(detail.FirstOrDefault());
+        }
     }
 }

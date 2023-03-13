@@ -21,6 +21,14 @@ namespace DoAnCuoiKi_NET
             },
             new[] { "DoAnCuoiKi_NET.Controllers" });
 
+            routes.MapRoute("Detail", "{type}/{meta}/{id}",
+            new { controller = "Product", action = "Detail", id = UrlParameter.Optional },
+            new RouteValueDictionary
+            {
+                {"type", "san-pham" }
+            },
+            new[] { "DoAnCuoiKi_NET.Controllers" });
+
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",

@@ -52,6 +52,7 @@ namespace DoAnCuoiKi_NET.Controllers
         }
         public ActionResult getProduct(int id_cate, string meta)
         {
+            ViewBag.meta = meta;
             var prod = from i in db.Product
                        where i.hide == true && i.id_cate == id_cate
                          orderby i.order ascending
