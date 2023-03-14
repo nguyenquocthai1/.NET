@@ -16,7 +16,6 @@ namespace DoAnCuoiKi_NET.Models
     {
         public int id_product { get; set; }
         public Nullable<int> id_cate { get; set; }
-        public Nullable<int> id_pcate { get; set; }
         public string name_product { get; set; }
         public Nullable<double> price { get; set; }
         public string color { get; set; }
@@ -38,8 +37,8 @@ namespace DoAnCuoiKi_NET.Models
         public Nullable<bool> hide { get; set; }
         public Nullable<int> order { get; set; }
         public Nullable<System.DateTime> datebegin { get; set; }
+        public string meta_paren { get; set; }
     
         public virtual Category Category { get; set; }
-        public virtual ProductCategory ProductCategory { get; set; }
     }
 }

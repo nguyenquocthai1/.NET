@@ -105,17 +105,24 @@
         <div class="col-lg-9">
             <nav class="header__menu" style="margin: 3px; font-size:13px;">
                 <ul style="margin-top: 70px">
-                    @foreach (var i in Model)
-                    {
-                        <li>
-                            <a href="~/Product/Index?meta=@i.meta" style="font-size: 35.69px">@i.name_menu</a>
-                            <ul class="header__menu__dropdown">
-                                {
-                                    @Html.Action("getProd_Category", "Home", new { id_cate = @i.id_cate })
-                                }
-                            </ul>
-                         </li>
-                    }
+                        @foreach (var i in Model)
+                        {
+                            <li>
+                            @if (@i.isCategory == true)
+                            {
+                                <a href="/san-pham/@i.meta" style="font-size: 20.5px">@i.name_menu</a>
+                                            <ul class="header__menu__dropdown">
+                                    {
+                                    @Html.Action("getSub_Category", "Home", new { meta_paren = @i.meta })
+                                    }
+                                </ul>
+                            }
+                            else
+                            {
+                                <a href="/@i.meta/" style="font-size: 20.5px">@i.name_menu</a>
+                            }
+                        </li>
+                        }
                 </ul>
             </nav>
             <div class="header__cart">

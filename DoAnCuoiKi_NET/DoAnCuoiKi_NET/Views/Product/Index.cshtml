@@ -1,7 +1,7 @@
 ﻿@{
-    ViewBag.Title = "Product";
-    Layout = "~/Views/Shared/_MyLayout.cshtml";
     @model DoAnCuoiKi_NET.Models.Category
+    ViewBag.Title = Model.name_cate;
+    Layout = "~/Views/Shared/_MyLayout.cshtml";
 }
 
 <!-- Hero Section Begin -->
@@ -71,7 +71,7 @@
                     <div class="sidebar__item">
                         <h4>Department</h4>
                         <ul>
-                            @Html.Action("getProd_Category", "Home", new { id_cate = @Model.id_cate })
+                            @Html.Action("getSub_Category", "Home", new { id_cate = @Model.id_cate })
                         </ul>
                     </div>
                     <div class="sidebar__item">
@@ -208,7 +208,15 @@
                     </div>
                 </div>
                 <div class="row">
-                    @Html.Action("getProduct", "Product", new { id_cate = @Model.id_cate })
+                    @{
+                        if (Model.meta_paren == "0")
+                        {
+                            @Html.Action("getParent_Product", "Product", new { meta_paren = @Model.meta })
+                        }
+                            else {
+                                    @Html.Action("getChild_Product", "Product", new { id_cate = @Model.id_cate })
+                                 }
+                        }
                 </div>
                 <div class="product__pagination">
                     <a href="#">1</a>

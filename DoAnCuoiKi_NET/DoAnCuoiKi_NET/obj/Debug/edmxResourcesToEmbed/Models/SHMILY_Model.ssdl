@@ -11,6 +11,7 @@
     <Property Name="hide" Type="bit" />
     <Property Name="order" Type="int" />
     <Property Name="datebegin" Type="smalldatetime" />
+    <Property Name="meta_paren" Type="varchar(max)" />
   </EntityType>
   <EntityType Name="Footer">
     <Key>
@@ -32,13 +33,13 @@
       <PropertyRef Name="id_menu" />
     </Key>
     <Property Name="id_menu" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="id_cate" Type="int" />
     <Property Name="name_menu" Type="nvarchar" MaxLength="50" />
     <Property Name="link" Type="nvarchar(max)" />
     <Property Name="meta" Type="nvarchar" MaxLength="50" />
     <Property Name="hide" Type="bit" />
     <Property Name="order" Type="int" />
     <Property Name="datebegin" Type="smalldatetime" />
+    <Property Name="isCategory" Type="bit" />
   </EntityType>
   <EntityType Name="New">
     <Key>
@@ -60,7 +61,6 @@
     </Key>
     <Property Name="id_product" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="id_cate" Type="int" />
-    <Property Name="id_pcate" Type="int" />
     <Property Name="name_product" Type="nvarchar" MaxLength="100" />
     <Property Name="price" Type="float" />
     <Property Name="color" Type="nvarchar" MaxLength="50" />
@@ -68,7 +68,7 @@
     <Property Name="amount" Type="int" />
     <Property Name="sale_amount" Type="int" />
     <Property Name="discount" Type="float" />
-    <Property Name="status" Type="nvarchar" MaxLength="1" />
+    <Property Name="status" Type="nvarchar" MaxLength="50" />
     <Property Name="img" Type="varchar" MaxLength="150" />
     <Property Name="img1" Type="varchar" MaxLength="150" />
     <Property Name="img2" Type="varchar" MaxLength="150" />
@@ -82,32 +82,8 @@
     <Property Name="hide" Type="bit" />
     <Property Name="order" Type="int" />
     <Property Name="datebegin" Type="smalldatetime" />
+    <Property Name="meta_paren" Type="varchar(max)" />
   </EntityType>
-  <EntityType Name="ProductCategory">
-    <Key>
-      <PropertyRef Name="id_pcate" />
-    </Key>
-    <Property Name="id_pcate" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="id_cate" Type="int" />
-    <Property Name="name_pcate" Type="nvarchar" MaxLength="50" />
-    <Property Name="link" Type="varchar(max)" />
-    <Property Name="meta" Type="varchar(max)" />
-    <Property Name="hide" Type="bit" />
-    <Property Name="order" Type="int" />
-    <Property Name="datebegin" Type="smalldatetime" />
-  </EntityType>
-  <Association Name="FK__Menu__id_cate__3A81B327">
-    <End Role="Category" Type="Self.Category" Multiplicity="0..1" />
-    <End Role="Menu" Type="Self.Menu" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Category">
-        <PropertyRef Name="id_cate" />
-      </Principal>
-      <Dependent Role="Menu">
-        <PropertyRef Name="id_cate" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK__Product__id_cate__5070F446">
     <End Role="Category" Type="Self.Category" Multiplicity="0..1" />
     <End Role="Product" Type="Self.Product" Multiplicity="*" />
@@ -120,52 +96,15 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Product__id_pcat__5165187F">
-    <End Role="ProductCategory" Type="Self.ProductCategory" Multiplicity="0..1" />
-    <End Role="Product" Type="Self.Product" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="ProductCategory">
-        <PropertyRef Name="id_pcate" />
-      </Principal>
-      <Dependent Role="Product">
-        <PropertyRef Name="id_pcate" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__ProductCa__id_ca__3D5E1FD2">
-    <End Role="Category" Type="Self.Category" Multiplicity="0..1" />
-    <End Role="ProductCategory" Type="Self.ProductCategory" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Category">
-        <PropertyRef Name="id_cate" />
-      </Principal>
-      <Dependent Role="ProductCategory">
-        <PropertyRef Name="id_cate" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <EntityContainer Name="SHMLY_ModelStoreContainer">
     <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Footer" EntityType="Self.Footer" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Menu" EntityType="Self.Menu" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="New" EntityType="Self.New" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="ProductCategory" EntityType="Self.ProductCategory" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK__Menu__id_cate__3A81B327" Association="Self.FK__Menu__id_cate__3A81B327">
-      <End Role="Category" EntitySet="Category" />
-      <End Role="Menu" EntitySet="Menu" />
-    </AssociationSet>
     <AssociationSet Name="FK__Product__id_cate__5070F446" Association="Self.FK__Product__id_cate__5070F446">
       <End Role="Category" EntitySet="Category" />
       <End Role="Product" EntitySet="Product" />
-    </AssociationSet>
-    <AssociationSet Name="FK__Product__id_pcat__5165187F" Association="Self.FK__Product__id_pcat__5165187F">
-      <End Role="ProductCategory" EntitySet="ProductCategory" />
-      <End Role="Product" EntitySet="Product" />
-    </AssociationSet>
-    <AssociationSet Name="FK__ProductCa__id_ca__3D5E1FD2" Association="Self.FK__ProductCa__id_ca__3D5E1FD2">
-      <End Role="Category" EntitySet="Category" />
-      <End Role="ProductCategory" EntitySet="ProductCategory" />
     </AssociationSet>
   </EntityContainer>
 </Schema>
