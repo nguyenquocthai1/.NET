@@ -25,11 +25,10 @@ namespace DoAnCuoiKi_NET.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Category> Category { get; set; }
         public virtual DbSet<Footer> Footer { get; set; }
-        public virtual DbSet<Menu> Menu { get; set; }
-        public virtual DbSet<ProductCategory> ProductCategory { get; set; }
-        public virtual DbSet<Product> Product { get; set; }
         public virtual DbSet<New> New { get; set; }
+        public virtual DbSet<Category> Category { get; set; }
+        public virtual DbSet<Menu> Menu { get; set; }
+        public virtual DbSet<Product> Product { get; set; }
     }
 }

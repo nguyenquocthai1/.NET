@@ -149,9 +149,6 @@
     <Compile Include="Models\Product.cs">
       <DependentUpon>SHMILY_Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\ProductCategory.cs">
-      <DependentUpon>SHMILY_Model.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\SHMILY_Model.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -480,18 +477,19 @@
     <Content Include="Views\Shared\_MyLayout.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\getCategory_1.cshtml" />
-    <Content Include="Views\Home\getCategory_2.cshtml" />
-    <Content Include="Views\Home\getCategory_3.cshtml" />
+    <Content Include="Views\Home\getList_Category_1.cshtml" />
+    <Content Include="Views\Home\getList_Category_2.cshtml" />
+    <Content Include="Views\Home\getMain_Category.cshtml" />
     <Content Include="Views\Home\getProduct.cshtml" />
-    <Content Include="Views\Home\getProd_Category.cshtml" />
+    <Content Include="Views\Home\getSub_Category.cshtml" />
     <Content Include="Views\Product\Index.cshtml" />
-    <Content Include="Views\Product\getProduct.cshtml" />
+    <Content Include="Views\Product\getChild_Product.cshtml" />
     <Content Include="Views\Product\getBestSaleProduct.cshtml" />
     <Content Include="Views\Product\getNewProduct.cshtml" />
     <Content Include="Views\Home\getNews.cshtml" />
     <Content Include="Views\Cart\Index.cshtml" />
-    <Content Include="Views\Product\Detail.cshtml" />
+    <Content Include="Views\Product\getDetail.cshtml" />
+    <Content Include="Views\Product\getParent_Product.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

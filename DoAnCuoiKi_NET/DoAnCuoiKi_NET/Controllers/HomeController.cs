@@ -15,48 +15,48 @@ namespace DoAnCuoiKi_NET.Controllers
             return View();
         }
 
-        public ActionResult getCategory_1()
+        public ActionResult getList_Category_1()
         {
             var cate_1 = from i in db.Category
-                       where i.hide == true
-                       orderby i.order ascending
-                       select i;
+                         where i.hide == true && i.meta_paren == "0"
+                         orderby i.order ascending
+                         select i;
             return PartialView(cate_1.ToList());
         }
-        public ActionResult getCategory_2()
+        public ActionResult getList_Category_2()
         {
             var cate_2 = from i in db.Category
-                         where i.hide == true
+                         where i.hide == true && i.meta_paren == "0"
                          orderby i.order ascending
                          select i;
             return PartialView(cate_2.ToList());
         }
 
-        public ActionResult getCategory_3()
+        public ActionResult getMain_Category()
         {
             ViewBag.meta = "san-pham";
             var cate_3 = from i in db.Category
-                         where i.hide == true
+                         where i.hide == true && i.meta_paren == "0"
                          orderby i.order ascending
                          select i;
             return PartialView(cate_3.ToList());
         }
 
-        public ActionResult getProd_Category(int id_cate, string meta)
+        public ActionResult getSub_Category(string meta_paren)
         {
-            var pcate = from i in db.ProductCategory
-                         where i.hide == true && i.id_cate == id_cate
-                         orderby i.order ascending
-                         select i;
+            var pcate = from i in db.Category
+                        where i.hide == true && i.meta_paren == meta_paren
+                        orderby i.order ascending
+                        select i;
             return PartialView(pcate.ToList());
         }
-        public ActionResult getProduct(int id_cate, string meta)
+        public ActionResult getProduct(string meta_paren, string meta)
         {
             ViewBag.meta = meta;
             var prod = from i in db.Product
-                       where i.hide == true && i.id_cate == id_cate
-                         orderby i.order ascending
-                         select i;
+                       where i.hide == true && i.meta_paren == meta_paren
+                       orderby i.order ascending
+                       select i;
             return PartialView(prod.ToList());
         }
         public ActionResult getNews()

@@ -12,7 +12,7 @@ namespace DoAnCuoiKi_NET
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
-
+            
             routes.MapRoute("Product", "{type}/{meta}",
             new { controller = "Product", action = "Index", meta = UrlParameter.Optional },
             new RouteValueDictionary
@@ -22,7 +22,7 @@ namespace DoAnCuoiKi_NET
             new[] { "DoAnCuoiKi_NET.Controllers" });
 
             routes.MapRoute("Detail", "{type}/{meta}/{id}",
-            new { controller = "Product", action = "Detail", id = UrlParameter.Optional },
+            new { controller = "Product", action = "getDetail", id = UrlParameter.Optional },
             new RouteValueDictionary
             {
                 {"type", "san-pham" }

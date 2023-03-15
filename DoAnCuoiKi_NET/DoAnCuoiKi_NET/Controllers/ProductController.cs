@@ -1,4 +1,6 @@
 ﻿using DoAnCuoiKi_NET.Models;
+using Microsoft.Ajax.Utilities;
+using Microsoft.Win32.SafeHandles;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +13,7 @@ namespace DoAnCuoiKi_NET.Controllers
     {
         SHMLYEntities db = new SHMLYEntities();
         // GET: Product
+
         public ActionResult Index(string meta)
         {
             var index = from i in db.Category
@@ -19,8 +22,9 @@ namespace DoAnCuoiKi_NET.Controllers
             return View(index.FirstOrDefault());
         }
 
-        public ActionResult getProduct(int id_cate)
+        public ActionResult getChild_Product(int id_cate)
         {
+            ViewBag.meta = "san-pham";
             var prod = from i in db.Product
                        where i.hide == true && i.id_cate == id_cate
                        orderby i.order ascending
@@ -29,8 +33,20 @@ namespace DoAnCuoiKi_NET.Controllers
 
         }
 
+        public ActionResult getParent_Product(string meta_paren)
+        {
+            ViewBag.meta = "san-pham";
+            var prod = from i in db.Product
+                       where i.hide == true && i.meta_paren == meta_paren
+                       orderby i.order ascending
+                       select i;
+            return PartialView(prod.ToList());
+
+        }
+
         public ActionResult getBestSaleProduct(int id_cate)
         {
+            ViewBag.meta = "san-pham";
             var prod = (from i in db.Product
                         where i.hide == true && i.id_cate == id_cate
                         orderby i.sale_amount descending
@@ -49,7 +65,7 @@ namespace DoAnCuoiKi_NET.Controllers
 
         }
 
-        public ActionResult Detail(long id)
+        public ActionResult getDetail(long id)
         {
             var detail = from i in db.Product
                         where i.id_product == id

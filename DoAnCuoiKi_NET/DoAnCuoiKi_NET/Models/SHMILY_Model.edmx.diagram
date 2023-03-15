@@ -5,16 +5,12 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="f28b1ae4f531415a8592db4dd42b5c03" Name="Diagram1">
-        <EntityTypeShape EntityType="SHMLY_Model.Category" Width="1.5" PointX="0.75" PointY="6.375" />
         <EntityTypeShape EntityType="SHMLY_Model.Footer" Width="1.5" PointX="0.75" PointY="0.75" />
-        <EntityTypeShape EntityType="SHMLY_Model.Menu" Width="1.5" PointX="3" PointY="4.625" />
-        <EntityTypeShape EntityType="SHMLY_Model.ProductCategory" Width="1.5" PointX="3" PointY="14.5" />
-        <AssociationConnector Association="SHMLY_Model.FK__Menu__id_cate__3A81B327" />
-        <AssociationConnector Association="SHMLY_Model.FK__ProductCa__id_ca__3D5E1FD2" />
-        <EntityTypeShape EntityType="SHMLY_Model.Product" Width="1.5" PointX="5.25" PointY="8.875" />
-        <AssociationConnector Association="SHMLY_Model.FK__Product__id_cate__5070F446" />
-        <AssociationConnector Association="SHMLY_Model.FK__Product__id_pcat__5165187F" />
         <EntityTypeShape EntityType="SHMLY_Model.New" Width="1.5" PointX="3.375" PointY="0.75" />
+        <EntityTypeShape EntityType="SHMLY_Model.Category" Width="1.5" PointX="0.75" PointY="6.5" />
+        <EntityTypeShape EntityType="SHMLY_Model.Menu" Width="1.5" PointX="5.75" PointY="0.75" />
+        <EntityTypeShape EntityType="SHMLY_Model.Product" Width="1.5" PointX="3" PointY="5" />
+        <AssociationConnector Association="SHMLY_Model.FK__Product__id_cate__5070F446" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

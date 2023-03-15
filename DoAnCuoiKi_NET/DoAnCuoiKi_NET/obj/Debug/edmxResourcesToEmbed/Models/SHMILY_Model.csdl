@@ -1,44 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="SHMLY_Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
   <EntityContainer Name="SHMLYEntities" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="Category" EntityType="SHMLY_Model.Category" />
     <EntitySet Name="Footer" EntityType="SHMLY_Model.Footer" />
+    <EntitySet Name="New" EntityType="SHMLY_Model.New" />
+    <EntitySet Name="Category" EntityType="SHMLY_Model.Category" />
     <EntitySet Name="Menu" EntityType="SHMLY_Model.Menu" />
-    <EntitySet Name="ProductCategory" EntityType="SHMLY_Model.ProductCategory" />
-    <AssociationSet Name="FK__Menu__id_cate__3A81B327" Association="SHMLY_Model.FK__Menu__id_cate__3A81B327">
-      <End Role="Category" EntitySet="Category" />
-      <End Role="Menu" EntitySet="Menu" />
-    </AssociationSet>
-    <AssociationSet Name="FK__ProductCa__id_ca__3D5E1FD2" Association="SHMLY_Model.FK__ProductCa__id_ca__3D5E1FD2">
-      <End Role="Category" EntitySet="Category" />
-      <End Role="ProductCategory" EntitySet="ProductCategory" />
-    </AssociationSet>
     <EntitySet Name="Product" EntityType="SHMLY_Model.Product" />
     <AssociationSet Name="FK__Product__id_cate__5070F446" Association="SHMLY_Model.FK__Product__id_cate__5070F446">
       <End Role="Category" EntitySet="Category" />
       <End Role="Product" EntitySet="Product" />
     </AssociationSet>
-    <AssociationSet Name="FK__Product__id_pcat__5165187F" Association="SHMLY_Model.FK__Product__id_pcat__5165187F">
-      <End Role="ProductCategory" EntitySet="ProductCategory" />
-      <End Role="Product" EntitySet="Product" />
-    </AssociationSet>
-    <EntitySet Name="New" EntityType="SHMLY_Model.New" />
   </EntityContainer>
-  <EntityType Name="Category">
-    <Key>
-      <PropertyRef Name="id_cate" />
-    </Key>
-    <Property Name="id_cate" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="name_cate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="link" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-    <Property Name="meta" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-    <Property Name="hide" Type="Boolean" />
-    <Property Name="order" Type="Int32" />
-    <Property Name="datebegin" Type="DateTime" Precision="0" />
-    <NavigationProperty Name="Menu" Relationship="SHMLY_Model.FK__Menu__id_cate__3A81B327" FromRole="Category" ToRole="Menu" />
-    <NavigationProperty Name="ProductCategory" Relationship="SHMLY_Model.FK__ProductCa__id_ca__3D5E1FD2" FromRole="Category" ToRole="ProductCategory" />
-    <NavigationProperty Name="Product" Relationship="SHMLY_Model.FK__Product__id_cate__5070F446" FromRole="Category" ToRole="Product" />
-  </EntityType>
   <EntityType Name="Footer">
     <Key>
       <PropertyRef Name="id_footer" />
@@ -54,114 +26,6 @@
     <Property Name="order" Type="Int32" />
     <Property Name="datebegin" Type="DateTime" Precision="0" />
   </EntityType>
-  <EntityType Name="Menu">
-    <Key>
-      <PropertyRef Name="id_menu" />
-    </Key>
-    <Property Name="id_menu" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="id_cate" Type="Int32" />
-    <Property Name="name_menu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="link" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="meta" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="hide" Type="Boolean" />
-    <Property Name="order" Type="Int32" />
-    <Property Name="datebegin" Type="DateTime" Precision="0" />
-    <NavigationProperty Name="Category" Relationship="SHMLY_Model.FK__Menu__id_cate__3A81B327" FromRole="Menu" ToRole="Category" />
-  </EntityType>
-  <EntityType Name="ProductCategory">
-    <Key>
-      <PropertyRef Name="id_pcate" />
-    </Key>
-    <Property Name="id_pcate" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="id_cate" Type="Int32" />
-    <Property Name="name_pcate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="link" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-    <Property Name="meta" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-    <Property Name="hide" Type="Boolean" />
-    <Property Name="order" Type="Int32" />
-    <Property Name="datebegin" Type="DateTime" Precision="0" />
-    <NavigationProperty Name="Category" Relationship="SHMLY_Model.FK__ProductCa__id_ca__3D5E1FD2" FromRole="ProductCategory" ToRole="Category" />
-    <NavigationProperty Name="Product" Relationship="SHMLY_Model.FK__Product__id_pcat__5165187F" FromRole="ProductCategory" ToRole="Product" />
-  </EntityType>
-  <Association Name="FK__Menu__id_cate__3A81B327">
-    <End Type="SHMLY_Model.Category" Role="Category" Multiplicity="0..1" />
-    <End Type="SHMLY_Model.Menu" Role="Menu" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Category">
-        <PropertyRef Name="id_cate" />
-      </Principal>
-      <Dependent Role="Menu">
-        <PropertyRef Name="id_cate" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__ProductCa__id_ca__3D5E1FD2">
-    <End Type="SHMLY_Model.Category" Role="Category" Multiplicity="0..1" />
-    <End Type="SHMLY_Model.ProductCategory" Role="ProductCategory" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Category">
-        <PropertyRef Name="id_cate" />
-      </Principal>
-      <Dependent Role="ProductCategory">
-        <PropertyRef Name="id_cate" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <EntityType Name="Product">
-    <Key>
-      <PropertyRef Name="id_product" />
-    </Key>
-    <Property Name="id_product" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="id_cate" Type="Int32" />
-    <Property Name="id_pcate" Type="Int32" />
-    <Property Name="name_product" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-    <Property Name="price" Type="Double" />
-    <Property Name="color" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="size" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-    <Property Name="amount" Type="Int32" />
-    <Property Name="sale_amount" Type="Int32" />
-    <Property Name="discount" Type="Double" />
-    <Property Name="status" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
-    <Property Name="img" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
-    <Property Name="img1" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
-    <Property Name="img2" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
-    <Property Name="img3" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
-    <Property Name="img4" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
-    <Property Name="img5" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
-    <Property Name="detail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="link" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-    <Property Name="meta" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-    <Property Name="hide" Type="Boolean" />
-    <Property Name="order" Type="Int32" />
-    <Property Name="datebegin" Type="DateTime" Precision="0" />
-    <NavigationProperty Name="Category" Relationship="SHMLY_Model.FK__Product__id_cate__5070F446" FromRole="Product" ToRole="Category" />
-    <NavigationProperty Name="ProductCategory" Relationship="SHMLY_Model.FK__Product__id_pcat__5165187F" FromRole="Product" ToRole="ProductCategory" />
-  </EntityType>
-  <Association Name="FK__Product__id_cate__5070F446">
-    <End Type="SHMLY_Model.Category" Role="Category" Multiplicity="0..1" />
-    <End Type="SHMLY_Model.Product" Role="Product" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Category">
-        <PropertyRef Name="id_cate" />
-      </Principal>
-      <Dependent Role="Product">
-        <PropertyRef Name="id_cate" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__Product__id_pcat__5165187F">
-    <End Type="SHMLY_Model.ProductCategory" Role="ProductCategory" Multiplicity="0..1" />
-    <End Type="SHMLY_Model.Product" Role="Product" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="ProductCategory">
-        <PropertyRef Name="id_pcate" />
-      </Principal>
-      <Dependent Role="Product">
-        <PropertyRef Name="id_pcate" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <EntityType Name="New">
     <Key>
       <PropertyRef Name="id_new" />
@@ -176,4 +40,73 @@
     <Property Name="order" Type="Int32" />
     <Property Name="datebegin" Type="DateTime" Precision="0" />
   </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="id_cate" />
+    </Key>
+    <Property Name="id_cate" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name_cate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="link" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="meta" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="hide" Type="Boolean" />
+    <Property Name="order" Type="Int32" />
+    <Property Name="datebegin" Type="DateTime" Precision="0" />
+    <Property Name="meta_paren" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Product" Relationship="SHMLY_Model.FK__Product__id_cate__5070F446" FromRole="Category" ToRole="Product" />
+  </EntityType>
+  <EntityType Name="Menu">
+    <Key>
+      <PropertyRef Name="id_menu" />
+    </Key>
+    <Property Name="id_menu" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name_menu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="link" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="meta" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="hide" Type="Boolean" />
+    <Property Name="order" Type="Int32" />
+    <Property Name="datebegin" Type="DateTime" Precision="0" />
+    <Property Name="isCategory" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="id_product" />
+    </Key>
+    <Property Name="id_product" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="id_cate" Type="Int32" />
+    <Property Name="name_product" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="price" Type="Double" />
+    <Property Name="color" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="size" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="amount" Type="Int32" />
+    <Property Name="sale_amount" Type="Int32" />
+    <Property Name="discount" Type="Double" />
+    <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="img" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="img1" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="img2" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="img3" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="img4" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="img5" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="detail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="link" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="meta" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="hide" Type="Boolean" />
+    <Property Name="order" Type="Int32" />
+    <Property Name="datebegin" Type="DateTime" Precision="0" />
+    <Property Name="meta_paren" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Category" Relationship="SHMLY_Model.FK__Product__id_cate__5070F446" FromRole="Product" ToRole="Category" />
+  </EntityType>
+  <Association Name="FK__Product__id_cate__5070F446">
+    <End Type="SHMLY_Model.Category" Role="Category" Multiplicity="0..1" />
+    <End Type="SHMLY_Model.Product" Role="Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="id_cate" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="id_cate" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>
