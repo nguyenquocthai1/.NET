@@ -245,6 +245,10 @@ insert into Product (id_cate, name_product, price, color, size, amount, sale_amo
 values(7, N'Giày cao gót SHM- 4112', 195.000, N'Kem, Đen, Trắng', N'35, 36, 37, 38, 39', 20, 17, N'Còn Hàng','San-Pham/Giay-Nu/Giay-Cao-Got/4112.jpg',
 'San-Pham/Giay-Nu/Giay-Cao-Got/4112_1.jpg','San-Pham/Giay-Nu/Giay-Cao-Got/4112_2.jpg','San-Pham/Giay-Nu/Giay-Cao-Got/4112_3.jpg','San-Pham/Giay-Nu/Giay-Cao-Got/4112_4.jpg','giay-cao-got', 1, 3, 'giay-nu')
 
+insert into Product (id_cate, name_product, price, color, size, amount, sale_amount, [status], img, img1, img2, img3, img4, meta, hide, [order], meta_paren)
+values(7, N'Giày cao gót SHM- 4326', 235.000, N'Đen', N'35, 36, 37, 38, 39', 15, 20, N'Còn Hàng','San-Pham/Giay-Nu/Giay-Cao-Got/4326.jpg',
+'San-Pham/Giay-Nu/Giay-Cao-Got/4326_1.jpg','San-Pham/Giay-Nu/Giay-Cao-Got/4326_2.jpg','San-Pham/Giay-Nu/Giay-Cao-Got/4326_3.jpg','San-Pham/Giay-Nu/Giay-Cao-Got/4326_4.jpg','giay-cao-got', 1, 4, 'giay-nu')
+
 insert into Product (id_cate, id_pcate, name_product, price, img, meta, hide, [order])
 values(2, 8, N'Giày thể thao nam MWC NATT- 5419',235.000,'San-Pham/Giay-Nam/Giay-The-Thao-Nam/5419.jpg','NATT-5419', 1, 1)
 
