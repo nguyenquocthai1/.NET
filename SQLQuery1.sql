@@ -377,6 +377,110 @@ values(4, 14, N'Vớ nam nữ MWC- AT50',20.000,'San-Pham/Phu-Kien/Vo/AT50.jpg',
 insert into Product (id_cate, id_pcate, name_product, price, img, meta, hide, [order])
 values(4, 14, N'Vớ nam nữ MWC- AT53',35.000,'San-Pham/Phu-Kien/Vo/AT53.jpg','Vo-AT53', 1, 8)
 
+insert into Product (id_cate, name_product, price, color, size, amount, sale_amount, [status], img, img1, img2, img3, img4, meta, hide, [order], meta_paren)
+values(15, N'Giày Sandal Nam SHM - 7038', 225.000, N'Đen, Xám, Xanh Dương', N'39, 40, 41, 42, 43', 23, 22, N'Còn Hàng','San-Pham/Giay-Nam/Sandal-Nam/7038.jpg',
+'San-Pham/Giay-Nam/Sandal-Nam/7038_1.jpg','San-Pham/Giay-Nam/Sandal-Nam/7038_2.jpg','San-Pham/Giay-Nam/Sandal-Nam/7038_3.jpg','San-Pham/Giay-Nam/Sandal-Nam/7038_4.jpg','sandal-nam', 1, 1, 'giay-nam')
+
+insert into Product (id_cate, name_product, price, color, size, amount, sale_amount, [status], img, img1, img2, img3, img4, meta, hide, [order], meta_paren)
+values(15, N'Giày sandal nam SHM NASD - 7045', 195.000, N'Đen', N'39, 40, 41, 42, 43, 44', 30, 29, N'Còn Hàng','San-Pham/Giay-Nam/Sandal-Nam/7045.jpg',
+'San-Pham/Giay-Nam/Sandal-Nam/7045_1.jpg','San-Pham/Giay-Nam/Sandal-Nam/7045_2.jpg','San-Pham/Giay-Nam/Sandal-Nam/7045_3.jpg','San-Pham/Giay-Nam/Sandal-Nam/7045_4.jpg','sandal-nam', 1, 2, 'giay-nam')
+
+insert into Product (id_cate, name_product, price, color, size, amount, sale_amount, [status], img, img1, img2, img3, img4, meta, hide, [order], meta_paren)
+values(15, N'Giày Sandal Nam SHM - 7048', 195.000, N'Đen, Xám', N'39, 40, 41, 42, 43', 33, 22, N'Còn Hàng','San-Pham/Giay-Nam/Sandal-Nam/7048.jpg',
+'San-Pham/Giay-Nam/Sandal-Nam/7048_1.jpg','San-Pham/Giay-Nam/Sandal-Nam/7048_2.jpg','San-Pham/Giay-Nam/Sandal-Nam/7048_3.jpg','San-Pham/Giay-Nam/Sandal-Nam/7048_4.jpg','sandal-nam', 1, 3, 'giay-nam')
+
+insert into Product (id_cate, name_product, price, color, size, amount, sale_amount, [status], img, img1, img2, img3, img4, meta, hide, [order], meta_paren)
+values(15, N'Giày Sandal Nam SHM - 7057', 235.000, N'Đen, Kem', N'39, 40, 41, 42, 43', 27, 38, N'Còn Hàng','San-Pham/Giay-Nam/Sandal-Nam/7048.jpg',
+'San-Pham/Giay-Nam/Sandal-Nam/7057_1.jpg','San-Pham/Giay-Nam/Sandal-Nam/7057_2.jpg','San-Pham/Giay-Nam/Sandal-Nam/7057_3.jpg','San-Pham/Giay-Nam/Sandal-Nam/7057_4.jpg','sandal-nam', 1, 4, 'giay-nam')
+
+insert into Product (id_cate, name_product, price, color, size, amount, sale_amount, [status], img, img1, img2, img3, img4, meta, hide, [order], meta_paren)
+values(15, N'Giày Sandal Nam SHM - 7061', 235.000, N'Đen, Xám', N'39, 40, 41, 42, 43', 53, 44, N'Còn Hàng','San-Pham/Giay-Nam/Sandal-Nam/7061.jpg',
+'San-Pham/Giay-Nam/Sandal-Nam/7061_1.jpg','San-Pham/Giay-Nam/Sandal-Nam/7061_2.jpg','San-Pham/Giay-Nam/Sandal-Nam/7061_3.jpg','San-Pham/Giay-Nam/Sandal-Nam/7061_4.jpg','sandal-nam', 1, 5, 'giay-nam')
+
+insert into Product (id_cate, name_product, price, color, size, amount, sale_amount, [status], img, img1, img2, img3, img4, meta, hide, [order], meta_paren)
+values(15, N'Giày sandal nam SHM NASD- 7068', 225.000, N'Đen', N'39, 40, 41, 42, 43', 27, 26, N'Còn Hàng','San-Pham/Giay-Nam/Sandal-Nam/7068.jpg',
+'San-Pham/Giay-Nam/Sandal-Nam/7068_1.jpg','San-Pham/Giay-Nam/Sandal-Nam/7068_2.jpg','San-Pham/Giay-Nam/Sandal-Nam/7068_3.jpg','San-Pham/Giay-Nam/Sandal-Nam/7068_4.jpg','sandal-nam', 1, 6, 'giay-nam')
+
+
+insert into Product (id_cate, name_product, price, color, size, amount, sale_amount, [status], img, img1, img2, img3, img4, meta, hide, [order], meta_paren)
+values(15, N'Giày Sandal Nam SHM - 7070', 225.000, N'Đen', N'39, 40, 41, 42, 43', 64, 42, N'Còn Hàng','San-Pham/Giay-Nam/Sandal-Nam/7061.jpg',
+'San-Pham/Giay-Nam/Sandal-Nam/7070_1.jpg','San-Pham/Giay-Nam/Sandal-Nam/7070_2.jpg','San-Pham/Giay-Nam/Sandal-Nam/7070_3.jpg','San-Pham/Giay-Nam/Sandal-Nam/7070_4.jpg','sandal-nam', 1, 7, 'giay-nam')
+
+insert into Product (id_cate, name_product, price, color, size, amount, sale_amount, [status], img, img1, img2, img3, img4, meta, hide, [order], meta_paren)
+values(15, N'Giày sandal nam SHM NASD- 7071', 225.000, N'Đen, Xám', N'39, 40, 41, 42, 43', 56, 33, N'Còn Hàng','San-Pham/Giay-Nam/Sandal-Nam/7061.jpg',
+'San-Pham/Giay-Nam/Sandal-Nam/7071_1.jpg','San-Pham/Giay-Nam/Sandal-Nam/7071_2.jpg','San-Pham/Giay-Nam/Sandal-Nam/7071_3.jpg','San-Pham/Giay-Nam/Sandal-Nam/7071_4.jpg','sandal-nam', 1, 8, 'giay-nam')
+
+insert into Product (id_cate, name_product, price, color, size, amount, sale_amount, [status], img, img1, img2, img3, img4, meta, hide, [order], meta_paren)
+values(15, N'Giày sandal nam SHM NASD- 7073', 195.000, N'Đen', N'39, 40, 41, 42, 43', 23, 22, N'Còn Hàng','San-Pham/Giay-Nam/Sandal-Nam/7073.jpg',
+'San-Pham/Giay-Nam/Sandal-Nam/7073_1.jpg','San-Pham/Giay-Nam/Sandal-Nam/7073_2.jpg','San-Pham/Giay-Nam/Sandal-Nam/7073_3.jpg','San-Pham/Giay-Nam/Sandal-Nam/7073_4.jpg','sandal-nam', 1, 9, 'giay-nam')
+
+insert into Product (id_cate, name_product, price, color, size, amount, sale_amount, [status], img, img1, img2, img3, img4, meta, hide, [order], meta_paren)
+values(14, N'Giày Boot Nam SHM - 8032', 295.000, N'Đen', N'38, 39, 40, 41, 42, 43', 32, 13, N'Còn Hàng','San-Pham/Giay-Nam/Sandal-Nam/8032.jpg',
+'San-Pham/Giay-Nam/Giay-Tay-Clip-On/8032_1.jpg','San-Pham/Giay-Nam/Giay-Tay-Clip-On/8032_2.jpg','San-Pham/Giay-Nam/Giay-Tay-Clip-On/8032_3.jpg','San-Pham/Giay-Nam/Giay-Tay-Clip-On/8032_4.jpg','giay-tay-slip-on', 1, 1, 'giay-nam')
+
+insert into Product (id_cate, name_product, price, color, size, amount, sale_amount, [status], img, img1, img2, img3, img4, meta, hide, [order], meta_paren)
+values(14, N'Giày mọi nam SHM - 6632', 295.000, N'Đen', N'38, 39, 40, 41, 42, 43', 42, 42, N'Còn Hàng','San-Pham/Giay-Nam/Sandal-Nam/6632.jpg',
+'San-Pham/Giay-Nam/Giay-Tay-Clip-On/6632_1.jpg','San-Pham/Giay-Nam/Giay-Tay-Clip-On/6632_2.jpg','San-Pham/Giay-Nam/Giay-Tay-Clip-On/6632_3.jpg','San-Pham/Giay-Nam/Giay-Tay-Clip-On/6632_4.jpg','giay-tay-slip-on', 1, 2, 'giay-nam')
+
+insert into Product (id_cate, name_product, price, color, size, amount, sale_amount, [status], img, img1, img2, img3, img4, meta, hide, [order], meta_paren)
+values(14, N'Giày mọi nam SHM - 6611', 235.000, N'Đen', N'38, 39, 40, 41, 42, 43', 53, 21, N'Còn Hàng','San-Pham/Giay-Nam/Sandal-Nam/6611.jpg',
+'San-Pham/Giay-Nam/Giay-Tay-Clip-On/6611_1.jpg','San-Pham/Giay-Nam/Giay-Tay-Clip-On/6611_2.jpg','San-Pham/Giay-Nam/Giay-Tay-Clip-On/6611_3.jpg','San-Pham/Giay-Nam/Giay-Tay-Clip-On/6611_4.jpg','giay-tay-slip-on', 1, 3, 'giay-nam')
+
+insert into Product (id_cate, name_product, price, color, size, amount, sale_amount, [status], img, img1, img2, img3, img4, meta, hide, [order], meta_paren)
+values(14, N'Giày Boot Nam SHM - 8031', 250.000, N'Đen', N'38, 39, 40, 41, 42, 43', 82, 52, N'Còn Hàng','San-Pham/Giay-Nam/Sandal-Nam/8031.jpg',
+'San-Pham/Giay-Nam/Giay-Tay-Clip-On/8031_1.jpg','San-Pham/Giay-Nam/Giay-Tay-Clip-On/68031_2.jpg','San-Pham/Giay-Nam/Giay-Tay-Clip-On/8031_3.jpg','San-Pham/Giay-Nam/Giay-Tay-Clip-On/8031_4.jpg','giay-tay-slip-on', 1, 4, 'giay-nam')
+
+insert into Product (id_cate, name_product, price, color, size, amount, sale_amount, [status], img, img1, img2, img3, img4, meta, hide, [order], meta_paren)
+values(14, N'Giày mọi nam SHM NAMO- 6639', 235.000, N'Đen, Nâu', N'38, 39, 40, 41, 42, 43', 36, 23, N'Còn Hàng','San-Pham/Giay-Nam/Sandal-Nam/6639.jpg',
+'San-Pham/Giay-Nam/Giay-Tay-Clip-On/6639_1.jpg','San-Pham/Giay-Nam/Giay-Tay-Clip-On/6639_2.jpg','San-Pham/Giay-Nam/Giay-Tay-Clip-On/6639_3.jpg','San-Pham/Giay-Nam/Giay-Tay-Clip-On/6639_4.jpg','giay-tay-slip-on', 1, 5, 'giay-nam')
+
+insert into Product (id_cate, name_product, price, color, size, amount, sale_amount, [status], img, img1, img2, img3, img4, meta, hide, [order], meta_paren)
+values(14, N'Giày mọi nam SHM - 6597', 235.000, N'Đen', N'38, 39, 40, 41, 42, 43', 54, 22, N'Còn Hàng','San-Pham/Giay-Nam/Sandal-Nam/6632.jpg',
+'San-Pham/Giay-Nam/Giay-Tay-Clip-On/6597_1.jpg','San-Pham/Giay-Nam/Giay-Tay-Clip-On/6597_2.jpg','San-Pham/Giay-Nam/Giay-Tay-Clip-On/6597_3.jpg','San-Pham/Giay-Nam/Giay-Tay-Clip-On/6597_4.jpg','giay-tay-slip-on', 1, 6, 'giay-nam')
+
+insert into Product (id_cate, name_product, price, color, size, amount, sale_amount, [status], img, img1, img2, img3, img4, meta, hide, [order], meta_paren)
+values(14, N'Giày mọi nam SHM - 6631', 235.000, N'Đen, Nâu', N'38, 39, 40, 41, 42, 43', 66, 27, N'Còn Hàng','San-Pham/Giay-Nam/Sandal-Nam/6631.jpg',
+'San-Pham/Giay-Nam/Giay-Tay-Clip-On/6631_1.jpg','San-Pham/Giay-Nam/Giay-Tay-Clip-On/6631_2.jpg','San-Pham/Giay-Nam/Giay-Tay-Clip-On/6631_3.jpg','San-Pham/Giay-Nam/Giay-Tay-Clip-On/6631_4.jpg','giay-tay-slip-on', 1, 7, 'giay-nam')
+
+insert into Product (id_cate, name_product, price, color, size, amount, sale_amount, [status], img, img1, img2, img3, img4, meta, hide, [order], meta_paren)
+values(14, N'Giày Tây nam SHM - 6630', 295.000, N'Đen', N'38, 39, 40, 41, 42, 43', 32, 13, N'Còn Hàng','San-Pham/Giay-Nam/Sandal-Nam/6630.jpg',
+'San-Pham/Giay-Nam/Giay-Tay-Clip-On/6630_1.jpg','San-Pham/Giay-Nam/Giay-Tay-Clip-On/6630_2.jpg','San-Pham/Giay-Nam/Giay-Tay-Clip-On/6630_3.jpg','San-Pham/Giay-Nam/Giay-Tay-Clip-On/6630_4.jpg','giay-tay-slip-on', 1, 8, 'giay-nam')
+
+insert into Product (id_cate, name_product, price, color, size, amount, sale_amount, [status], img, img1, img2, img3, img4, meta, hide, [order], meta_paren)
+values(14, N'Giày mọi nam SHM - 6624', 235.000, N'Đen', N'38, 39, 40, 41, 42, 43', 56, 53, N'Còn Hàng','San-Pham/Giay-Nam/Sandal-Nam/6624.jpg',
+'San-Pham/Giay-Nam/Giay-Tay-Clip-On/6624_1.jpg','San-Pham/Giay-Nam/Giay-Tay-Clip-On/6624_2.jpg','San-Pham/Giay-Nam/Giay-Tay-Clip-On/6624_3.jpg','San-Pham/Giay-Nam/Giay-Tay-Clip-On/6624_4.jpg','giay-tay-slip-on', 1, 9, 'giay-nam')
+
+insert into Product (id_cate, name_product, price, color, size, amount, sale_amount, [status], img, img1, img2, img3, img4, meta, hide, [order], meta_paren)
+values(16, N'Dép nam SHM NADE- 7605', 79.000, N'Đen, Xám', N'39, 40, 41, 42', 73, 52, N'Còn Hàng','San-Pham/Giay-Nam/Dep-Nam/7605.jpg',
+'San-Pham/Giay-Nam/Dep-Nam/7605_1.jpg','San-Pham/Giay-Nam/Dep-Nam/7605_2.jpg','San-Pham/Giay-Nam/Dep-Nam/7605_3.jpg','San-Pham/Giay-Nam/Dep-Nam/7605_4.jpg','dep-nam', 1, 1, 'giay-nam')
+
+insert into Product (id_cate, name_product, price, color, size, amount, sale_amount, [status], img, img1, img2, img3, img4, meta, hide, [order], meta_paren)
+values(16, N'Dép nam SHM - 7673', 195.000, N'Đen, Xám', N'39, 40, 41, 42', 73, 52, N'Còn Hàng','San-Pham/Giay-Nam/Dep-Nam/7673.jpg',
+'San-Pham/Giay-Nam/Dep-Nam/7673_1.jpg','San-Pham/Giay-Nam/Dep-Nam/7673_2.jpg','San-Pham/Giay-Nam/Dep-Nam/7673_3.jpg','San-Pham/Giay-Nam/Dep-Nam/7673_4.jpg','dep-nam', 1, 3, 'giay-nam')
+
+insert into Product (id_cate, name_product, price, color, size, amount, sale_amount, [status], img, img1, img2, img3, img4, meta, hide, [order], meta_paren)
+values(16, N'Dép SHM - 7713', 215.000, N'Đen, Xám', N'39, 40, 41, 42', 73, 52, N'Còn Hàng','San-Pham/Giay-Nam/Dep-Nam/7713.jpg',
+'San-Pham/Giay-Nam/Dep-Nam/7713_1.jpg','San-Pham/Giay-Nam/Dep-Nam/7713_2.jpg','San-Pham/Giay-Nam/Dep-Nam/7713_3.jpg','San-Pham/Giay-Nam/Dep-Nam/7713_4.jpg','dep-nam', 1, 4, 'giay-nam')
+
+insert into Product (id_cate, name_product, price, color, size, amount, sale_amount, [status], img, img1, img2, img3, img4, meta, hide, [order], meta_paren)
+values(16, N'Dép nam SHM - 7741', 62.500, N'Vàng, Đen, Xám', N'39, 40, 41, 42, 43, 44', 64, 72, N'Còn Hàng','San-Pham/Giay-Nam/Dep-Nam/7741.jpg',
+'San-Pham/Giay-Nam/Dep-Nam/7741_1.jpg','San-Pham/Giay-Nam/Dep-Nam/7741_2.jpg','San-Pham/Giay-Nam/Dep-Nam/7741_3.jpg','San-Pham/Giay-Nam/Dep-Nam/7741_4.jpg','dep-nam', 1, 5, 'giay-nam')
+
+insert into Product (id_cate, name_product, price, color, size, amount, sale_amount, [status], img, img1, img2, img3, img4, meta, hide, [order], meta_paren)
+values(16, N'Dép nam SHM NADE- 7746', 150.000, N'Trắng, Đen, Xám', N'39, 40, 41, 42', 75, 76, N'Còn Hàng','San-Pham/Giay-Nam/Dep-Nam/7746.jpg',
+'San-Pham/Giay-Nam/Dep-Nam/7746_1.jpg','San-Pham/Giay-Nam/Dep-Nam/7746_2.jpg','San-Pham/Giay-Nam/Dep-Nam/7746_3.jpg', 'San-Pham/Giay-Nam/Dep-Nam/7746_4.jpg','dep-nam', 1, 6, 'giay-nam')
+
+insert into Product (id_cate, name_product, price, color, size, amount, sale_amount, [status], img, img1, img2, img3, img4, meta, hide, [order], meta_paren)
+values(16, N'Dép nam SHM - 7787', 150.000, N'Đen, Trắng', N'39, 40, 41, 42', 73, 52, N'Còn Hàng','San-Pham/Giay-Nam/Dep-Nam/7787.jpg',
+'San-Pham/Giay-Nam/Dep-Nam/7787_1.jpg','San-Pham/Giay-Nam/Dep-Nam/7787_2.jpg','San-Pham/Giay-Nam/Dep-Nam/7787_3.jpg','San-Pham/Giay-Nam/Dep-Nam/7787_4.jpg','dep-nam', 1, 7, 'giay-nam')
+
+insert into Product (id_cate, name_product, price, color, size, amount, sale_amount, [status], img, img1, img2, img3, img4, meta, hide, [order], meta_paren)
+values(16, N'Dép nam SHM - 7791', 79.000, N'Đen, Xám, Trắng', N'39, 40, 41, 42', 73, 52, N'Còn Hàng','San-Pham/Giay-Nam/Dep-Nam/7791.jpg',
+'San-Pham/Giay-Nam/Dep-Nam/7791_1.jpg','San-Pham/Giay-Nam/Dep-Nam/7791_2.jpg','San-Pham/Giay-Nam/Dep-Nam/7791_3.jpg','San-Pham/Giay-Nam/Dep-Nam/7791_4.jpg','dep-nam', 1, 8, 'giay-nam')
+
+insert into Product (id_cate, name_product, price, color, size, amount, sale_amount, [status], img, img1, img2, img3, img4, meta, hide, [order], meta_paren)
+values(16, N'Dép nam SHM NADE- 7749', 150.000, N'Trắng', N'39, 40, 41, 42', 85, 56, N'Còn Hàng','San-Pham/Giay-Nam/Dep-Nam/7749.jpg',
+'San-Pham/Giay-Nam/Dep-Nam/7749_1.jpg','San-Pham/Giay-Nam/Dep-Nam/7749_2.jpg','San-Pham/Giay-Nam/Dep-Nam/7749_3.jpg','','dep-nam', 1, 9, 'giay-nam')
 
 Create Table New(
 	id_new int IDENTITY(1,1) NOT NULL,
