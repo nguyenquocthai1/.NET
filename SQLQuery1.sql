@@ -481,6 +481,171 @@ values(16, N'Dép nam SHM - 7791', 79.000, N'Đen, Xám, Trắng', N'39, 40, 41,
 insert into Product (id_cate, name_product, price, color, size, amount, sale_amount, [status], img, img1, img2, img3, img4, meta, hide, [order], meta_paren)
 values(16, N'Dép nam SHM NADE- 7749', 150.000, N'Trắng', N'39, 40, 41, 42', 85, 56, N'Còn Hàng','San-Pham/Giay-Nam/Dep-Nam/7749.jpg',
 'San-Pham/Giay-Nam/Dep-Nam/7749_1.jpg','San-Pham/Giay-Nam/Dep-Nam/7749_2.jpg','San-Pham/Giay-Nam/Dep-Nam/7749_3.jpg','','dep-nam', 1, 9, 'giay-nam')
+<<<<<<< HEAD
+
+insert into Product (id_cate, name_product, price, color, size, amount, sale_amount, [status], img, img1, img2, img3, img4, meta, hide, [order], meta_paren)
+values(19, N'Vớ nam nữ SHM - AT11', 39.000, N'Đen, Xám, Xanh Dương, Hồng, Kem, Trắng', N'Free Size', 47, 72, N'Còn Hàng','San-Pham/Phu-Kien/Vo/AT11.jpg',
+'San-Pham/Phu-Kien/Vo/AT11_1.jpg','San-Pham/Phu-Kien/Vo/AT11_2.jpg','San-Pham/Phu-Kien/Vo/AT11_3.jpg','San-Pham/Phu-Kien/Vo/AT11_4.jpg','vo-giay', 1, 1, 'phu-kien')
+
+insert into Product (id_cate, name_product, price, color, size, amount, sale_amount, [status], img, img1, img2, img3, img4, meta, hide, [order], meta_paren)
+values(19, N'Vớ nam nữ SHM - AT13', 35.000, N'Đen, Xám, Trắng', N'Free Size', 84, 32, N'Còn Hàng','San-Pham/Phu-Kien/Vo/AT13.jpg',
+'San-Pham/Phu-Kien/Vo/AT13_1.jpg','San-Pham/Phu-Kien/Vo/AT13_2.jpg','San-Pham/Phu-Kien/Vo/AT13_3.jpg','San-Pham/Phu-Kien/Vo/AT13_4.jpg','vo-giay', 1, 2, 'phu-kien')
+
+insert into Product (id_cate, name_product, price, color, size, amount, sale_amount, [status], img, img1, img2, img3, img4, meta, hide, [order], meta_paren)
+values(19, N'Vớ nam nữ SHM - AT14', 45.000, N'Đen, Xám, Trắng', N'Free Size', 96, 85, N'Còn Hàng','San-Pham/Phu-Kien/Vo/AT14.jpg',
+'San-Pham/Phu-Kien/Vo/AT14_1.jpg','San-Pham/Phu-Kien/Vo/AT14_2.jpg','San-Pham/Phu-Kien/Vo/AT14_3.jpg','San-Pham/Phu-Kien/Vo/AT14_4.jpg','vo-giay', 1, 3, 'phu-kien')
+
+insert into Product (id_cate, name_product, price, color, size, amount, sale_amount, [status], img, img1, img2, img3, img4, meta, hide, [order], meta_paren)
+values(19, N'Vớ nam nữ SHM - AT16', 35.000, N'Đen, Xám, Xanh Dương, Hồng, Trắng', N'Free Size', 83, 58, N'Còn Hàng','San-Pham/Phu-Kien/Vo/AT16.jpg',
+'San-Pham/Phu-Kien/Vo/AT16_1.jpg','San-Pham/Phu-Kien/Vo/AT16_2.jpg','San-Pham/Phu-Kien/Vo/AT16_3.jpg','San-Pham/Phu-Kien/Vo/AT16_4.jpg','vo-giay', 1, 4, 'phu-kien')
+
+
+insert into Product (id_cate, name_product, price, color, size, amount, sale_amount, [status], img, img1, img2, img3, img4, meta, hide, [order], meta_paren)
+values(19, N'Vớ nam nữ SHM - AT19', 39.000, N'Đen, Xám, Trắng', N'Free Size', 84, 33, N'Còn Hàng','San-Pham/Phu-Kien/Vo/AT11.jpg',
+'San-Pham/Phu-Kien/Vo/AT19_1.jpg','San-Pham/Phu-Kien/Vo/AT19_2.jpg','San-Pham/Phu-Kien/Vo/AT19_3.jpg','','vo-giay', 1, 5, 'phu-kien')
+
+insert into Product (id_cate, name_product, price, color, size, amount, sale_amount, [status], img, img1, img2, img3, img4, meta, hide, [order], meta_paren)
+values(19, N'Vớ nam nữ SHM - AT21', 35.000, N'Đen, Xám, Xanh Dương, Tím, Trắng', N'Free Size', 47, 72, N'Còn Hàng','San-Pham/Phu-Kien/Vo/AT11.jpg',
+'San-Pham/Phu-Kien/Vo/AT21_1.jpg','San-Pham/Phu-Kien/Vo/AT21_2.jpg','San-Pham/Phu-Kien/Vo/AT21_3.jpg','San-Pham/Phu-Kien/Vo/AT21_4.jpg','vo-giay', 1, 6, 'phu-kien')
+
+insert into Product (id_cate, name_product, price, color, size, amount, sale_amount, [status], img, img1, img2, img3, img4, meta, hide, [order], meta_paren)
+values(19, N'Vớ nam nữ SHM - AT50', 25.000, N'Đen, Hồng, Trắng', N'Free Size', 87, 73, N'Còn Hàng','San-Pham/Phu-Kien/Vo/AT11.jpg',
+'San-Pham/Phu-Kien/Vo/AT50_1.jpg','San-Pham/Phu-Kien/Vo/AT50_2.jpg','San-Pham/Phu-Kien/Vo/AT50_3.jpg','','vo-giay', 1, 7, 'phu-kien')
+
+insert into Product (id_cate, name_product, price, color, size, amount, sale_amount, [status], img, img1, img2, img3, img4, meta, hide, [order], meta_paren)
+values(19, N'Vớ nam nữ SHM - AT54', 25.000, N'Đen, Xám, Trắng', N'Free Size', 83, 94, N'Còn Hàng','San-Pham/Phu-Kien/Vo/AT54.jpg',
+'San-Pham/Phu-Kien/Vo/AT11_1.jpg','San-Pham/Phu-Kien/Vo/AT54_2.jpg','San-Pham/Phu-Kien/Vo/AT54_3.jpg','San-Pham/Phu-Kien/Vo/AT54_4.jpg','vo-giay', 1, 8, 'phu-kien')
+
+insert into Product (id_cate, name_product, price, color, size, amount, sale_amount, [status], img, img1, img2, img3, img4, meta, hide, [order], meta_paren)
+values(19, N'Vớ nam nữ SHM - AT57', 30.000, N'Đen, Xám, Trắng', N'Free Size', 94, 37, N'Còn Hàng','San-Pham/Phu-Kien/Vo/AT57.jpg',
+'San-Pham/Phu-Kien/Vo/AT57_1.jpg','San-Pham/Phu-Kien/Vo/AT57_2.jpg','San-Pham/Phu-Kien/Vo/AT57_3.jpg','','vo-giay', 1, 9, 'phu-kien')
+
+insert into Product (id_cate, name_product, price, color, size, amount, sale_amount, [status], img, img1, img2, img3, img4, meta, hide, [order], meta_paren)
+values(21, N'Dây giày Hoa Cúc SHM - 9005', 15.000, N'Đen, Trắng', N'Free Size', 83, 22, N'Còn Hàng','San-Pham/Phu-Kien/Day-Giay/9005.jpg',
+'San-Pham/Phu-Kien/Day-Giay/9005_1.jpg','San-Pham/Phu-Kien/Day-Giay/9005_2.jpg','San-Pham/Phu-Kien/Day-Giay/9005_3.jpg','San-Pham/Phu-Kien/Day-Giay/9005_4.jpg','day-giay', 1, 1, 'phu-kien')
+
+insert into Product (id_cate, name_product, price, color, size, amount, sale_amount, [status], img, img1, img2, img3, img4, meta, hide, [order], meta_paren)
+values(21, N'Dây giày thể thao bản dẹp SHM - 9006', 10.000, N'Nâu, Hồng, Kem, Trắng', N'Free Size', 49, 25, N'Còn Hàng','San-Pham/Phu-Kien/Day-Giay/9006.jpg',
+'San-Pham/Phu-Kien/Day-Giay/9006_1.jpg','San-Pham/Phu-Kien/Day-Giay/9006_2.jpg','San-Pham/Phu-Kien/Day-Giay/9005_3.jpg','San-Pham/Phu-Kien/Day-Giay/9005_4.jpg','day-giay', 1, 2, 'phu-kien')
+
+insert into Product (id_cate, name_product, price, color, size, amount, sale_amount, [status], img, img1, img2, img3, img4, meta, hide, [order], meta_paren)
+values(21, N'Dây giày thể thao bản tròn SHM - 9007', 15.000, N'Đen, Xám, Trắng', N'Free Size', 49, 25, N'Còn Hàng','San-Pham/Phu-Kien/Day-Giay/9007.jpg',
+'San-Pham/Phu-Kien/Day-Giay/9007_1.jpg','','','','day-giay', 1, 3, 'phu-kien')
+
+insert into Product (id_cate, name_product, price, color, size, amount, sale_amount, [status], img, img1, img2, img3, img4, meta, hide, [order], meta_paren)
+values(21, N'Dây giày thể thao bản tròn SHM - 9015', 15.000, N'Caro', N'Free Size', 84, 37, N'Còn Hàng','San-Pham/Phu-Kien/Day-Giay/9007.jpg',
+'San-Pham/Phu-Kien/Day-Giay/9007_1.jpg','','','','day-giay', 1, 4, 'phu-kien')
+
+insert into Product (id_cate, name_product, price, color, size, amount, sale_amount, [status], img, img1, img2, img3, img4, meta, hide, [order], meta_paren)
+values(13, N'Giày Thể Thao Nam SHM - 5418', 255.000, N'Đen, Xám, Kem', N'39, 40, 41, 42, 43', 83, 22, N'Còn Hàng','San-Pham/Giay-Nam/Giay-The-Thao-Nam/5418.jpg',
+'San-Pham/Giay-Nam/Giay-The-Thao-Nam/5418_1.jpg','San-Pham/Giay-Nam/Giay-The-Thao-Nam/5418_2.jpg','San-Pham/Giay-Nam/Giay-The-Thao-Nam/5418_3.jpg','San-Pham/Giay-Nam/Giay-The-Thao-Nam/5418_4.jpg','giay-the-thao-nam', 1, 1, 'giay-nam')
+
+insert into Product (id_cate, name_product, price, color, size, amount, sale_amount, [status], img, img1, img2, img3, img4, meta, hide, [order], meta_paren)
+values(13, N'Giày Thể Thao Nam SHM NATT  - 5419', 250.000, N'Đen, Xám, Trắng', N'39, 40, 41, 42, 43', 84, 38, N'Còn Hàng','San-Pham/Giay-Nam/Giay-The-Thao-Nam/5419.jpg',
+'San-Pham/Giay-Nam/Giay-The-Thao-Nam/5419_1.jpg','San-Pham/Giay-Nam/Giay-The-Thao-Nam/5419_2.jpg','San-Pham/Giay-Nam/Giay-The-Thao-Nam/5419_3.jpg','San-Pham/Giay-Nam/Giay-The-Thao-Nam/5419_4.jpg','giay-the-thao-nam', 1, 2, 'giay-nam')
+
+insert into Product (id_cate, name_product, price, color, size, amount, sale_amount, [status], img, img1, img2, img3, img4, meta, hide, [order], meta_paren)
+values(13, N'Giày Thể Thao Nam SHM NATT - 5010', 150.000, N'Đen, Xám, Xanh Dương, Xanh Biển, Trắng', N'39, 40, 41, 42, 43', 83, 22, N'Còn Hàng','San-Pham/Giay-Nam/Giay-The-Thao-Nam/5010.jpg',
+'San-Pham/Giay-Nam/Giay-The-Thao-Nam/5010_1.jpg','San-Pham/Giay-Nam/Giay-The-Thao-Nam/5010_2.jpg','San-Pham/Giay-Nam/Giay-The-Thao-Nam/5010_3.jpg','San-Pham/Giay-Nam/Giay-The-Thao-Nam/5010_4.jpg','giay-the-thao-nam', 1, 3, 'giay-nam')
+
+insert into Product (id_cate, name_product, price, color, size, amount, sale_amount, [status], img, img1, img2, img3, img4, meta, hide, [order], meta_paren)
+values(13, N'Giày Thể Thao Nam SHM NATT - 5366', 295.000, N'Trắng, Kem', N'39, 40, 41, 42, 43', 83, 22, N'Còn Hàng','San-Pham/Giay-Nam/Giay-The-Thao-Nam/5366.jpg',
+'San-Pham/Giay-Nam/Giay-The-Thao-Nam/5366_1.jpg','San-Pham/Giay-Nam/Giay-The-Thao-Nam/5366_2.jpg','San-Pham/Giay-Nam/Giay-The-Thao-Nam/5366_3.jpg','San-Pham/Giay-Nam/Giay-The-Thao-Nam/5366_4.jpg','giay-the-thao-nam', 1, 4, 'giay-nam')
+
+insert into Product (id_cate, name_product, price, color, size, amount, sale_amount, [status], img, img1, img2, img3, img4, meta, hide, [order], meta_paren)
+values(13, N'Giày Thể Thao Nam SHM NATT - 5366', 295.000, N'Trắng, Kem', N'39, 40, 41, 42, 43', 83, 22, N'Còn Hàng','San-Pham/Giay-Nam/Giay-The-Thao-Nam/5366.jpg',
+'San-Pham/Giay-Nam/Giay-The-Thao-Nam/5366_1.jpg','San-Pham/Giay-Nam/Giay-The-Thao-Nam/5366_2.jpg','San-Pham/Giay-Nam/Giay-The-Thao-Nam/5366_3.jpg','San-Pham/Giay-Nam/Giay-The-Thao-Nam/5366_4.jpg','giay-the-thao-nam', 1, 4, 'giay-nam')
+
+insert into Product (id_cate, name_product, price, color, size, amount, sale_amount, [status], img, img1, img2, img3, img4, meta, hide, [order], meta_paren)
+values(13, N'Giày Thể Thao Nam SHM - 5433', 250.000, N'Đen, Xám, Xanh Dương, Trắng', N'39, 40, 41, 42, 43', 99, 83, N'Còn Hàng','San-Pham/Giay-Nam/Giay-The-Thao-Nam/5433.jpg',
+'San-Pham/Giay-Nam/Giay-The-Thao-Nam/5433_1.jpg','San-Pham/Giay-Nam/Giay-The-Thao-Nam/5433_2.jpg','San-Pham/Giay-Nam/Giay-The-Thao-Nam/5433_3.jpg','San-Pham/Giay-Nam/Giay-The-Thao-Nam/5433_4.jpg','giay-the-thao-nam', 1, 6, 'giay-nam')
+
+insert into Product (id_cate, name_product, price, color, size, amount, sale_amount, [status], img, img1, img2, img3, img4, meta, hide, [order], meta_paren)
+values(13, N'Giày Thể Thao Nam SHM NATT - 5436', 270.000, N'Đen, Xám, Trắng', N'39, 40, 41, 42, 43', 38, 22, N'Còn Hàng','San-Pham/Giay-Nam/Giay-The-Thao-Nam/5436.jpg',
+'San-Pham/Giay-Nam/Giay-The-Thao-Nam/5436_1.jpg','San-Pham/Giay-Nam/Giay-The-Thao-Nam/5436_2.jpg','San-Pham/Giay-Nam/Giay-The-Thao-Nam/5436_3.jpg','San-Pham/Giay-Nam/Giay-The-Thao-Nam/5436_4.jpg','giay-the-thao-nam', 1, 7, 'giay-nam')
+
+insert into Product (id_cate, name_product, price, color, size, amount, sale_amount, [status], img, img1, img2, img3, img4, meta, hide, [order], meta_paren)
+values(13, N'Giày Thể Thao Nam SHM NATT - 5439', 295.000, N'Đen, Xám, Đen Đỏ', N'39, 40, 41, 42, 43', 83, 22, N'Còn Hàng','San-Pham/Giay-Nam/Giay-The-Thao-Nam/5418.jpg',
+'San-Pham/Giay-Nam/Giay-The-Thao-Nam/5439_1.jpg','San-Pham/Giay-Nam/Giay-The-Thao-Nam/5439_2.jpg','San-Pham/Giay-Nam/Giay-The-Thao-Nam/5439_3.jpg','San-Pham/Giay-Nam/Giay-The-Thao-Nam/5439_4.jpg','giay-the-thao-nam', 1, 8, 'giay-nam')
+
+insert into Product (id_cate, name_product, price, color, size, amount, sale_amount, [status], img, img1, img2, img3, img4, meta, hide, [order], meta_paren)
+values(13, N'Giày Thể Thao Nam SHM NATT - 5442', 295.000, N'Đen, Xám, Kem', N'39, 40, 41, 42, 43', 89, 33, N'Còn Hàng','San-Pham/Giay-Nam/Giay-The-Thao-Nam/5442.jpg',
+'San-Pham/Giay-Nam/Giay-The-Thao-Nam/5442_1.jpg','San-Pham/Giay-Nam/Giay-The-Thao-Nam/5442_2.jpg','San-Pham/Giay-Nam/Giay-The-Thao-Nam/5442_3.jpg','San-Pham/Giay-Nam/Giay-The-Thao-Nam/5442_4.jpg','giay-the-thao-nam', 1, 9, 'giay-nam')
+
+insert into Product (id_cate, name_product, price, color, size, amount, sale_amount, [status], img, img1, img2, img3, img4, meta, hide, [order], meta_paren)
+values(12, N'Dép Nữ SHM - 8090', 79.000, N'Đen,Kem', N'35, 36, 37, 38, 39', 84, 33, N'Còn Hàng','San-Pham/Giay-Nu/Dep-Nu/8090.jpg',
+'San-Pham/Giay-Nu/Dep-Nu/8090_1.jpg','San-Pham/Giay-Nu/Dep-Nu/8090_2.jpg','San-Pham/Giay-Nu/Dep-Nu/8090_3.jpg','San-Pham/Giay-Nu/Dep-Nu/8090_4.jpg','dep-nu', 1, 1, 'giay-nu')
+
+insert into Product (id_cate, name_product, price, color, size, amount, sale_amount, [status], img, img1, img2, img3, img4, meta, hide, [order], meta_paren)
+values(12, N'Dép Nữ SHM - 8094', 79.000, N'Đen,Kem', N'35, 36, 37, 38, 39', 28, 58, N'Còn Hàng','San-Pham/Giay-Nu/Dep-Nu/8094.jpg',
+'San-Pham/Giay-Nu/Dep-Nu/8094_1.jpg','San-Pham/Giay-Nu/Dep-Nu/8094_2.jpg','San-Pham/Giay-Nu/Dep-Nu/8094_3.jpg','San-Pham/Giay-Nu/Dep-Nu/8094_4.jpg','dep-nu', 1, 2, 'giay-nu')
+
+insert into Product (id_cate, name_product, price, color, size, amount, sale_amount, [status], img, img1, img2, img3, img4, meta, hide, [order], meta_paren)
+values(12, N'Dép Nữ SHM - 8130', 150.000, N'Đen, Xám, Trắng', N'35, 36, 37, 38', 76, 22, N'Còn Hàng','San-Pham/Giay-Nu/Dep-Nu/8130.jpg',
+'San-Pham/Giay-Nu/Dep-Nu/8130_1.jpg','San-Pham/Giay-Nu/Dep-Nu/8130_2.jpg','San-Pham/Giay-Nu/Dep-Nu/8130_3.jpg','San-Pham/Giay-Nu/Dep-Nu/8130_4.jpg','dep-nu', 1, 3, 'giay-nu')
+
+insert into Product (id_cate, name_product, price, color, size, amount, sale_amount, [status], img, img1, img2, img3, img4, meta, hide, [order], meta_paren)
+values(12, N'Dép Nữ SHM - 8169', 235.000, N'Đen, Xanh Rêu', N'35, 36, 37, 38, 39', 39, 53, N'Còn Hàng','San-Pham/Giay-Nu/Dep-Nu/8169.jpg',
+'San-Pham/Giay-Nu/Dep-Nu/8169_1.jpg','San-Pham/Giay-Nu/Dep-Nu/8169_2.jpg','San-Pham/Giay-Nu/Dep-Nu/8169_3.jpg','San-Pham/Giay-Nu/Dep-Nu/8169_4.jpg','dep-nu', 1, 4, 'giay-nu')
+
+insert into Product (id_cate, name_product, price, color, size, amount, sale_amount, [status], img, img1, img2, img3, img4, meta, hide, [order], meta_paren)
+values(12, N'Dép Nữ SHM - 8185', 125.000, N'Đen, Trắng', N'35, 36, 37, 38, 39', 74, 13, N'Còn Hàng','San-Pham/Giay-Nu/Dep-Nu/8185.jpg',
+'San-Pham/Giay-Nu/Dep-Nu/8185_1.jpg','San-Pham/Giay-Nu/Dep-Nu/8185_2.jpg','San-Pham/Giay-Nu/Dep-Nu/8185_3.jpg','San-Pham/Giay-Nu/Dep-Nu/8185_4.jpg','dep-nu', 1, 5, 'giay-nu')
+
+insert into Product (id_cate, name_product, price, color, size, amount, sale_amount, [status], img, img1, img2, img3, img4, meta, hide, [order], meta_paren)
+values(12, N'Dép Nữ SHM - 8253', 150.000, N'Đen, Trắng', N'35, 36, 37, 38, 39', 54, 53, N'Còn Hàng','San-Pham/Giay-Nu/Dep-Nu/8253.jpg',
+'San-Pham/Giay-Nu/Dep-Nu/8253_1.jpg','San-Pham/Giay-Nu/Dep-Nu/8253_2.jpg','San-Pham/Giay-Nu/Dep-Nu/8253_3.jpg','San-Pham/Giay-Nu/Dep-Nu/8253_4.jpg','dep-nu', 1, 6, 'giay-nu')
+
+insert into Product (id_cate, name_product, price, color, size, amount, sale_amount, [status], img, img1, img2, img3, img4, meta, hide, [order], meta_paren)
+values(12, N'Dép Nữ SHM - 8256', 150.000, N'Đen, Trắng', N'35, 36, 37, 38, 39', 33, 23, N'Còn Hàng','San-Pham/Giay-Nu/Dep-Nu/8256.jpg',
+'San-Pham/Giay-Nu/Dep-Nu/8256_1.jpg','San-Pham/Giay-Nu/Dep-Nu/82562.jpg','San-Pham/Giay-Nu/Dep-Nu/8256_3.jpg','San-Pham/Giay-Nu/Dep-Nu/8256_4.jpg','dep-nu', 1, 7, 'giay-nu')
+
+insert into Product (id_cate, name_product, price, color, size, amount, sale_amount, [status], img, img1, img2, img3, img4, meta, hide, [order], meta_paren)
+values(12, N'Dép Nữ SHM NUDE - 8282', 235.000, N'Đen, Kem', N'35, 36, 37, 38, 39', 23, 55, N'Còn Hàng','San-Pham/Giay-Nu/Dep-Nu/8169.jpg',
+'San-Pham/Giay-Nu/Dep-Nu/8282_1.jpg','San-Pham/Giay-Nu/Dep-Nu/8282_2.jpg','San-Pham/Giay-Nu/Dep-Nu/8282_3.jpg','San-Pham/Giay-Nu/Dep-Nu/8282_4.jpg','dep-nu', 1, 8, 'giay-nu')
+
+insert into Product (id_cate, name_product, price, color, size, amount, sale_amount, [status], img, img1, img2, img3, img4, meta, hide, [order], meta_paren)
+values(12, N'Dép Nữ SHM NUDE - 8301', 235.000, N'Đen, Kem', N'35, 36, 37, 38, 39', 22, 11, N'Còn Hàng','San-Pham/Giay-Nu/Dep-Nu/8301.jpg',
+'San-Pham/Giay-Nu/Dep-Nu/8301_1.jpg','San-Pham/Giay-Nu/Dep-Nu/8301_2.jpg','San-Pham/Giay-Nu/Dep-Nu/8301_3.jpg','San-Pham/Giay-Nu/Dep-Nu/8301_4.jpg','dep-nu', 1, 9, 'giay-nu')
+
+
+insert into Product (id_cate, name_product, price, color, size, amount, sale_amount, [status], img, img1, img2, img3, img4, meta, hide, [order], meta_paren)
+values(11, N'Giày cao gót SHM - 3769', 180.000, N'Đen, Kem', N'35, 36, 37, 38, 39', 53, 54, N'Còn Hàng','San-Pham/Giay-Nu/Dep-Suc/3769.jpg',
+'San-Pham/Giay-Nu/Dep-Suc/3769_1.jpg','San-Pham/Giay-Nu/Dep-Suc/3769_2.jpg','San-Pham/Giay-Nu/Dep-Suc/3769_3.jpg','San-Pham/GGiay-Nu/Dep-Suc/3769_4.jpg','dep-suc', 1, 1, 'giay-nu')
+
+insert into Product (id_cate, name_product, price, color, size, amount, sale_amount, [status], img, img1, img2, img3, img4, meta, hide, [order], meta_paren)
+values(11, N'Giày cao gót SHM - 4180', 195.000, N'Đen, Kem', N'35, 36, 37, 38, 39', 53, 54, N'Còn Hàng','San-Pham/Giay-Nu/Dep-Suc/4180.jpg',
+'San-Pham/Giay-Nu/Dep-Suc/4180_1.jpg','San-Pham/Giay-Nu/Dep-Suc/4180_2.jpg','San-Pham/Giay-Nu/Dep-Suc/4180_3.jpg','San-Pham/Giay-Nu/Dep-Suc/4180_4.jpg','dep-suc', 1, 2, 'giay-nu')
+
+insert into Product (id_cate, name_product, price, color, size, amount, sale_amount, [status], img, img1, img2, img3, img4, meta, hide, [order], meta_paren)
+values(11, N'Giày cao gót SHM - 4317', 195.000, N'Đen, Kem', N'35, 36, 37, 38, 39', 42, 34, N'Còn Hàng','San-Pham/Giay-Nu/Dep-Suc/4317.jpg',
+'San-Pham/Giay-Nu/Dep-Suc/4317_1.jpg','San-Pham/Giay-Nu/Dep-Suc/4317_2.jpg','San-Pham/Giay-Nu/Dep-Suc/4317_3.jpg','San-Pham/Giay-Nu/Dep-Suc/4317_4.jpg','dep-suc', 1, 3, 'giay-nu')
+
+
+insert into Product (id_cate, name_product, price, color, size, amount, sale_amount, [status], img, img1, img2, img3, img4, meta, hide, [order], meta_paren)
+values(11, N'Giày cao gót SHM - 4351', 195.000, N'Đen, Kem', N'35, 36, 37, 38, 39', 53, 54, N'Còn Hàng','San-Pham/Giay-Nu/Dep-Suc/4351.jpg',
+'San-Pham/Giay-Nu/Dep-Suc/4351_1.jpg','San-Pham/Giay-Nu/Dep-Suc/4351_2.jpg','San-Pham/Giay-Nu/Dep-Suc/4351_3.jpg','San-Pham/Giay-Nu/Dep-Suc/4351_4.jpg','dep-suc', 1, 4, 'giay-nu')
+
+insert into Product (id_cate, name_product, price, color, size, amount, sale_amount, [status], img, img1, img2, img3, img4, meta, hide, [order], meta_paren)
+values(11, N'Giày cao gót SHM - 8079', 180.000, N'Đen, Kem', N'35, 36, 37, 38, 39', 85, 94, N'Còn Hàng','San-Pham/Giay-Nu/Dep-Suc/8079.jpg',
+'San-Pham/Giay-Nu/Dep-Suc/8079_1.jpg','San-Pham/Giay-Nu/Dep-Suc/8079_2.jpg','San-Pham/Giay-Nu/Dep-Suc/8079_3.jpg','San-Pham/Giay-Nu/Dep-Suc/8079_4.jpg','dep-suc', 1, 5, 'giay-nu')
+
+insert into Product (id_cate, name_product, price, color, size, amount, sale_amount, [status], img, img1, img2, img3, img4, meta, hide, [order], meta_paren)
+values(11, N'Giày cao gót SHM - 8175', 195.000, N'Đen, Kem, Xám', N'35, 36, 37, 38, 39', 26, 73, N'Còn Hàng','San-Pham/Giay-Nu/Dep-Suc/8175.jpg',
+'San-Pham/Giay-Nu/Dep-Suc/8175_1.jpg','San-Pham/Giay-Nu/Dep-Suc/8175_2.jpg','San-Pham/Giay-Nu/Dep-Suc/8175_3.jpg','San-Pham/Giay-Nu/Dep-Suc/8175_4.jpg','dep-suc', 1, 6, 'giay-nu')
+
+
+insert into Product (id_cate, name_product, price, color, size, amount, sale_amount, [status], img, img1, img2, img3, img4, meta, hide, [order], meta_paren)
+values(11, N'Giày cao gót SHM - 8184', 180.000, N'Đen, Kem', N'35, 36, 37, 38, 39', 53, 54, N'Còn Hàng','San-Pham/Giay-Nu/Dep-Suc/8184.jpg',
+'San-Pham/Giay-Nu/Dep-Suc/8184_1.jpg','San-Pham/Giay-Nu/Dep-Suc/8184_2.jpg','San-Pham/Giay-Nu/Dep-Suc/8184_3.jpg','San-Pham/Giay-Nu/Dep-Suc/8184_4.jpg','dep-suc', 1, 7, 'giay-nu')
+
+insert into Product (id_cate, name_product, price, color, size, amount, sale_amount, [status], img, img1, img2, img3, img4, meta, hide, [order], meta_paren)
+values(11, N'Dép nữ SHM NADE - 8204', 180.000, N'Đen, Vàng, Trắng', N'35, 36, 37, 38, 39', 93, 84, N'Còn Hàng','San-Pham/Giay-Nu/Dep-Suc/8204.jpg',
+'San-Pham/Giay-Nu/Dep-Suc/3769_1.jpg','San-Pham/Giay-Nu/Dep-Suc/8204_2.jpg','San-Pham/Giay-Nu/Dep-Suc/8204_3.jpg','San-Pham/Giay-Nu/Dep-Suc/8204_4.jpg','dep-suc', 1, 8, 'giay-nu')
+
+insert into Product (id_cate, name_product, price, color, size, amount, sale_amount, [status], img, img1, img2, img3, img4, meta, hide, [order], meta_paren)
+values(11, N'Dép nữ SHM NUDE - 8267', 180.000, N'Đen, Trắng', N'35, 36, 37, 38, 39', 59, 44, N'Còn Hàng','San-Pham/Giay-Nu/Dep-Suc/8267.jpg',
+'San-Pham/Giay-Nu/Dep-Suc/8267_1.jpg','San-Pham/Giay-Nu/Dep-Suc/8267_2.jpg','San-Pham/Giay-Nu/Dep-Suc/8267_3.jpg','San-Pham/Giay-Nu/Dep-Suc/8267_4.jpg','dep-suc', 1, 9, 'giay-nu')
 
 Create Table New(
 	id_new int IDENTITY(1,1) NOT NULL,
