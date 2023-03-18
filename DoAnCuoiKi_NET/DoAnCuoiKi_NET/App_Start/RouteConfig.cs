@@ -58,12 +58,31 @@ namespace DoAnCuoiKi_NET
             },
             new[] { "DoAnCuoiKi_NET.Controllers" });
 
+
+            //Map Cart
+            routes.MapRoute("Cart", "{type}/{meta}",
+            new { controller = "Cart", action = "Index", meta = UrlParameter.Optional },
+            new RouteValueDictionary
+            {
+                {"type", "gio-hang" }
+            },
+            new[] { "DoAnCuoiKi_NET.Controllers" });
+
             //Map Payment
             routes.MapRoute("Payment", "{type}/{meta}",
             new { controller = "Payment", action = "Index", meta = UrlParameter.Optional },
             new RouteValueDictionary
             {
                 {"type", "thanh-toan" }
+            },
+            new[] { "DoAnCuoiKi_NET.Controllers" });
+
+            //Map News
+            routes.MapRoute("News", "{type}/{meta}",
+            new { controller = "News", action = "Index", meta = UrlParameter.Optional },
+            new RouteValueDictionary
+            {
+                {"type", "tin-tuc" }
             },
             new[] { "DoAnCuoiKi_NET.Controllers" });
 
