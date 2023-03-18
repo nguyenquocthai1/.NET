@@ -1,0 +1,21 @@
+﻿@model List<DoAnCuoiKi_NET.Models.Product>
+
+@foreach (var i in Model)
+{
+    <div class="col-lg-4">
+        <div class="product__discount__item">
+            <div class="product__discount__item__pic set-bg"
+                 data-setbg="/Upload/images/@i.img">
+                <ul class="product__item__pic__hover">
+                    <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                    <li><a href="/@ViewBag.meta/@i.meta/@i.id_product"><i class="fa fa-eye"></i></a></li>
+                    <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                </ul>
+            </div>
+            <div class="product__discount__item__text">
+                <h5><a href="#">@i.name_product</a></h5>
+                <div class="product__item__price">@string.Format("{0:F3}", @i.price) VND</div>
+            </div>
+        </div>
+    </div>
+}

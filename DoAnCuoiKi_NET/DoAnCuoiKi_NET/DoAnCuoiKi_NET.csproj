@@ -128,9 +128,13 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\CartController.cs" />
+    <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LayoutController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\PaymentController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\RegisterController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -265,11 +269,11 @@
       <DependentUpon>SHMILY_Model.edmx</DependentUpon>
       <LastGenOutput>SHMILY_Model.cs</LastGenOutput>
     </Content>
-    <Content Include="Upload\images\Banner\banner_1.jpg" />
-    <Content Include="Upload\images\Banner\banner_2.jpg" />
-    <Content Include="Upload\images\Banner\banner_cate.jpg" />
-    <Content Include="Upload\images\Banner\banner_product.jpg" />
-    <Content Include="Upload\images\Logo\logo.jpg" />
+    <Content Include="Upload\images\Banner\Nike.jpg" />
+    <Content Include="Upload\images\Banner\KM_BlackFriday.jpg" />
+    <Content Include="Upload\images\Banner\KM_8-3.jpg" />
+    <Content Include="Upload\images\Banner\Category.jpg" />
+    <Content Include="Upload\images\Logo\SHMILY.jpg" />
     <Content Include="Upload\images\San-Pham\Balo-Tui\Balo\1125.jpg" />
     <Content Include="Upload\images\San-Pham\Balo-Tui\Balo\1137.jpg" />
     <Content Include="Upload\images\San-Pham\Balo-Tui\Balo\1145.jpg" />
@@ -479,17 +483,23 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\getList_Category_1.cshtml" />
     <Content Include="Views\Home\getList_Category_2.cshtml" />
-    <Content Include="Views\Home\getMain_Category.cshtml" />
-    <Content Include="Views\Home\getProduct.cshtml" />
-    <Content Include="Views\Home\getSub_Category.cshtml" />
+    <Content Include="Views\Home\getParent_Category.cshtml" />
+    <Content Include="Views\Home\getParent_Product.cshtml" />
+    <Content Include="Views\Home\getChild_Category.cshtml" />
     <Content Include="Views\Product\Index.cshtml" />
     <Content Include="Views\Product\getChild_Product.cshtml" />
-    <Content Include="Views\Product\getBestSaleProduct.cshtml" />
-    <Content Include="Views\Product\getNewProduct.cshtml" />
+    <Content Include="Views\Product\getChild_BestSaleProduct.cshtml" />
+    <Content Include="Views\Product\getChild_NewProduct.cshtml" />
     <Content Include="Views\Home\getNews.cshtml" />
     <Content Include="Views\Cart\Index.cshtml" />
     <Content Include="Views\Product\getDetail.cshtml" />
     <Content Include="Views\Product\getParent_Product.cshtml" />
+    <Content Include="Views\Product\getParent_NewProduct.cshtml" />
+    <Content Include="Views\Product\getParent_BestSaleProduct.cshtml" />
+    <Content Include="Views\Contact\Index.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\Register\Index.cshtml" />
+    <Content Include="Views\Payment\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

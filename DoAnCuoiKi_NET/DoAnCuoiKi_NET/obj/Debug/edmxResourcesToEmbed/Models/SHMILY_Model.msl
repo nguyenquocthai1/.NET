@@ -32,20 +32,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Category">
-      <EntityTypeMapping TypeName="SHMLY_Model.Category">
-        <MappingFragment StoreEntitySet="Category">
-          <ScalarProperty Name="meta_paren" ColumnName="meta_paren" />
-          <ScalarProperty Name="datebegin" ColumnName="datebegin" />
-          <ScalarProperty Name="order" ColumnName="order" />
-          <ScalarProperty Name="hide" ColumnName="hide" />
-          <ScalarProperty Name="meta" ColumnName="meta" />
-          <ScalarProperty Name="link" ColumnName="link" />
-          <ScalarProperty Name="name_cate" ColumnName="name_cate" />
-          <ScalarProperty Name="id_cate" ColumnName="id_cate" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Menu">
       <EntityTypeMapping TypeName="SHMLY_Model.Menu">
         <MappingFragment StoreEntitySet="Menu">
@@ -60,10 +46,24 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Category">
+      <EntityTypeMapping TypeName="SHMLY_Model.Category">
+        <MappingFragment StoreEntitySet="Category">
+          <ScalarProperty Name="meta_parent" ColumnName="meta_parent" />
+          <ScalarProperty Name="datebegin" ColumnName="datebegin" />
+          <ScalarProperty Name="order" ColumnName="order" />
+          <ScalarProperty Name="hide" ColumnName="hide" />
+          <ScalarProperty Name="meta" ColumnName="meta" />
+          <ScalarProperty Name="link" ColumnName="link" />
+          <ScalarProperty Name="name_cate" ColumnName="name_cate" />
+          <ScalarProperty Name="id_cate" ColumnName="id_cate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Product">
       <EntityTypeMapping TypeName="SHMLY_Model.Product">
         <MappingFragment StoreEntitySet="Product">
-          <ScalarProperty Name="meta_paren" ColumnName="meta_paren" />
+          <ScalarProperty Name="meta_parent" ColumnName="meta_parent" />
           <ScalarProperty Name="datebegin" ColumnName="datebegin" />
           <ScalarProperty Name="order" ColumnName="order" />
           <ScalarProperty Name="hide" ColumnName="hide" />

@@ -27,7 +27,7 @@
             </ul>
         </div>
         <div class="header__top__right__auth">
-            <a href="#"><i class="fa fa-user"></i>Đăng nhập</a>
+            <a href="/dang-nhap"><i class="fa fa-user"></i>Đăng nhập</a>
         </div>
     </div>
     <nav class="humberger__menu__nav mobile-menu">
@@ -85,7 +85,7 @@
                             </ul>
                         </div>
                         <div class="header__top__right__auth">
-                            <a href="login.html"><i class="fa fa-user"></i>Đăng nhập</a>
+                            <a href="/dang-nhap"><i class="fa fa-user"></i> Đăng nhập</a>
                         </div>
                     </div>
                 </div>
@@ -99,27 +99,27 @@
     <div class="row">
         <div class="col-lg-3">
             <div class="header__logo">
-                <a href="~/"><img src="~/Upload/images/Logo/logo.jpg" alt=""></a>
+                <a href="~/"><img src="~/Upload/images/Logo/SHMILY.jpg" alt=""></a>
             </div>
         </div>
         <div class="col-lg-9">
-            <nav class="header__menu" style="margin: 3px; font-size:13px;">
+            <nav class="header__menu" style="margin: 1px; font-size:17px;">
                 <ul style="margin-top: 70px">
                         @foreach (var i in Model)
                         {
                             <li>
                             @if (@i.isCategory == true)
                             {
-                                <a href="/san-pham/@i.meta" style="font-size: 20.5px">@i.name_menu</a>
+                                <a href="/san-pham/@i.meta" style="font-size: 18.3px">@i.name_menu</a>
                                             <ul class="header__menu__dropdown">
                                     {
-                                    @Html.Action("getSub_Category", "Home", new { meta_paren = @i.meta })
+                                    @Html.Action("getChild_Category", "Home", new { meta_parent = @i.meta })
                                     }
                                 </ul>
                             }
                             else
                             {
-                                <a href="/@i.meta/" style="font-size: 20.5px">@i.name_menu</a>
+                                <a href="/@i.meta" style="font-size: 18.3px">@i.name_menu</a>
                             }
                         </li>
                         }
@@ -127,10 +127,10 @@
             </nav>
             <div class="header__cart">
                 <ul>
-                    <li><a href=""><i class="fa fa-heart"></i> <span>1</span></a></li>
-                    <li><a href="~/Cart/Index"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
+                    <li><a href=""><i class="fa fa-heart"></i> <span>9</span></a></li>
+                    <li><a href="~/Cart/Index"><i class="fa fa-shopping-bag"></i> <span>9</span></a></li>
                 </ul>
-                <div class="header__cart__price">Tổng tiền: <span>999 $</span></div>
+                <div class="header__cart__price">Tổng tiền: <span>999.999 VND</span></div>
             </div>
         </div>
     </div>

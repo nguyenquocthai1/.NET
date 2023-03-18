@@ -7,9 +7,9 @@
       <Diagram DiagramId="f28b1ae4f531415a8592db4dd42b5c03" Name="Diagram1">
         <EntityTypeShape EntityType="SHMLY_Model.Footer" Width="1.5" PointX="0.75" PointY="0.75" />
         <EntityTypeShape EntityType="SHMLY_Model.New" Width="1.5" PointX="3.375" PointY="0.75" />
-        <EntityTypeShape EntityType="SHMLY_Model.Category" Width="1.5" PointX="0.75" PointY="6.5" />
         <EntityTypeShape EntityType="SHMLY_Model.Menu" Width="1.5" PointX="5.75" PointY="0.75" />
-        <EntityTypeShape EntityType="SHMLY_Model.Product" Width="1.5" PointX="3" PointY="5" />
+        <EntityTypeShape EntityType="SHMLY_Model.Category" Width="1.5" PointX="0.75" PointY="6.625" />
+        <EntityTypeShape EntityType="SHMLY_Model.Product" Width="1.5" PointX="3" PointY="5.125" />
         <AssociationConnector Association="SHMLY_Model.FK__Product__id_cate__5070F446" />
       </Diagram>
     </edmx:Diagrams>

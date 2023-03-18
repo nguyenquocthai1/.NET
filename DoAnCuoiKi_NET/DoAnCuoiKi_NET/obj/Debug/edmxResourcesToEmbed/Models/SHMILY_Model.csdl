@@ -3,8 +3,8 @@
   <EntityContainer Name="SHMLYEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Footer" EntityType="SHMLY_Model.Footer" />
     <EntitySet Name="New" EntityType="SHMLY_Model.New" />
-    <EntitySet Name="Category" EntityType="SHMLY_Model.Category" />
     <EntitySet Name="Menu" EntityType="SHMLY_Model.Menu" />
+    <EntitySet Name="Category" EntityType="SHMLY_Model.Category" />
     <EntitySet Name="Product" EntityType="SHMLY_Model.Product" />
     <AssociationSet Name="FK__Product__id_cate__5070F446" Association="SHMLY_Model.FK__Product__id_cate__5070F446">
       <End Role="Category" EntitySet="Category" />
@@ -40,20 +40,6 @@
     <Property Name="order" Type="Int32" />
     <Property Name="datebegin" Type="DateTime" Precision="0" />
   </EntityType>
-  <EntityType Name="Category">
-    <Key>
-      <PropertyRef Name="id_cate" />
-    </Key>
-    <Property Name="id_cate" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="name_cate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="link" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-    <Property Name="meta" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-    <Property Name="hide" Type="Boolean" />
-    <Property Name="order" Type="Int32" />
-    <Property Name="datebegin" Type="DateTime" Precision="0" />
-    <Property Name="meta_paren" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="Product" Relationship="SHMLY_Model.FK__Product__id_cate__5070F446" FromRole="Category" ToRole="Product" />
-  </EntityType>
   <EntityType Name="Menu">
     <Key>
       <PropertyRef Name="id_menu" />
@@ -66,6 +52,20 @@
     <Property Name="order" Type="Int32" />
     <Property Name="datebegin" Type="DateTime" Precision="0" />
     <Property Name="isCategory" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="id_cate" />
+    </Key>
+    <Property Name="id_cate" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name_cate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="link" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="meta" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="hide" Type="Boolean" />
+    <Property Name="order" Type="Int32" />
+    <Property Name="datebegin" Type="DateTime" Precision="0" />
+    <Property Name="meta_parent" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Product" Relationship="SHMLY_Model.FK__Product__id_cate__5070F446" FromRole="Category" ToRole="Product" />
   </EntityType>
   <EntityType Name="Product">
     <Key>
@@ -94,7 +94,7 @@
     <Property Name="hide" Type="Boolean" />
     <Property Name="order" Type="Int32" />
     <Property Name="datebegin" Type="DateTime" Precision="0" />
-    <Property Name="meta_paren" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="meta_parent" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="Category" Relationship="SHMLY_Model.FK__Product__id_cate__5070F446" FromRole="Product" ToRole="Category" />
   </EntityType>
   <Association Name="FK__Product__id_cate__5070F446">

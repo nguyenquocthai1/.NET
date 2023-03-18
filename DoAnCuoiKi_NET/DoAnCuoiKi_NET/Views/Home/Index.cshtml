@@ -10,7 +10,7 @@
                     <div class="hero__categories">
                         <div class="hero__categories__all">
                             <i class="fa fa-bars"></i>
-                            <span>Collections</span>
+                            <span>Bộ sưu tập</span>
                         </div>
                         <ul>
                             @{
@@ -28,7 +28,7 @@
                                     <span class="arrow_carrot-down"></span>
                                 </div>
                                 <input type="text" placeholder="Bạn cần tìm gì ?">
-                                <button type="submit" class="site-btn">Tìm kiếm...</button>
+                                <button type="submit" class="site-btn">Tìm kiếm</button>
                             </form>
                         </div>
                         <div class="hero__search__phone">
@@ -41,7 +41,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="hero__item set-bg" data-setbg="/Upload/images/Banner/banner_cate.jpg">
+                    <div class="hero__item set-bg" data-setbg="/Upload/images/Banner/KM_8-3.jpg">
                         <div class="hero__text">
                         </div>
                     </div>
@@ -68,7 +68,7 @@
     <!-- Featured Section Begin -->
     <section class="featured spad">
         @{
-            Html.RenderAction("getMain_Category", "Home");
+            Html.RenderAction("getParent_Category", "Home");
         }
     </section>
     <!-- Featured Section End -->
@@ -79,12 +79,12 @@
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-6">
                     <div class="banner__pic">
-                        <img src="/Upload/images/Banner/banner_1.jpg" alt="">
+                        <img src="~/Upload/images/Banner/Nike.jpg" alt="">
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-6">
                     <div class="banner__pic">
-                        <img src="/Upload/images/Banner/banner_1.jpg" alt="">
+                        <img src="~/Upload/images/Banner/Nike.jpg" alt="">
                     </div>
                 </div>
             </div>

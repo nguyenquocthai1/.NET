@@ -18,7 +18,7 @@ namespace DoAnCuoiKi_NET.Controllers
         public ActionResult getList_Category_1()
         {
             var cate_1 = from i in db.Category
-                         where i.hide == true && i.meta_paren == "0"
+                         where i.hide == true && i.meta_parent == "0"
                          orderby i.order ascending
                          select i;
             return PartialView(cate_1.ToList());
@@ -26,35 +26,35 @@ namespace DoAnCuoiKi_NET.Controllers
         public ActionResult getList_Category_2()
         {
             var cate_2 = from i in db.Category
-                         where i.hide == true && i.meta_paren == "0"
+                         where i.hide == true && i.meta_parent == "0"
                          orderby i.order ascending
                          select i;
             return PartialView(cate_2.ToList());
         }
 
-        public ActionResult getMain_Category()
+        public ActionResult getParent_Category()
         {
             ViewBag.meta = "san-pham";
             var cate_3 = from i in db.Category
-                         where i.hide == true && i.meta_paren == "0"
+                         where i.hide == true && i.meta_parent == "0"
                          orderby i.order ascending
                          select i;
             return PartialView(cate_3.ToList());
         }
 
-        public ActionResult getSub_Category(string meta_paren)
+        public ActionResult getChild_Category(string meta_parent)
         {
             var pcate = from i in db.Category
-                        where i.hide == true && i.meta_paren == meta_paren
+                        where i.hide == true && i.meta_parent == meta_parent
                         orderby i.order ascending
                         select i;
             return PartialView(pcate.ToList());
         }
-        public ActionResult getProduct(string meta_paren, string meta)
+        public ActionResult getParent_Product(string meta_parent, string meta)
         {
             ViewBag.meta = meta;
             var prod = from i in db.Product
-                       where i.hide == true && i.meta_paren == meta_paren
+                       where i.hide == true && i.meta_parent == meta_parent
                        orderby i.order ascending
                        select i;
             return PartialView(prod.ToList());

@@ -11,7 +11,7 @@
     <Property Name="hide" Type="bit" />
     <Property Name="order" Type="int" />
     <Property Name="datebegin" Type="smalldatetime" />
-    <Property Name="meta_paren" Type="varchar(max)" />
+    <Property Name="meta_parent" Type="varchar(max)" />
   </EntityType>
   <EntityType Name="Footer">
     <Key>
@@ -82,7 +82,7 @@
     <Property Name="hide" Type="bit" />
     <Property Name="order" Type="int" />
     <Property Name="datebegin" Type="smalldatetime" />
-    <Property Name="meta_paren" Type="varchar(max)" />
+    <Property Name="meta_parent" Type="varchar(max)" />
   </EntityType>
   <Association Name="FK__Product__id_cate__5070F446">
     <End Role="Category" Type="Self.Category" Multiplicity="0..1" />

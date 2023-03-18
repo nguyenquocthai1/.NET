@@ -33,18 +33,19 @@ namespace DoAnCuoiKi_NET.Controllers
 
         }
 
-        public ActionResult getParent_Product(string meta_paren)
+        public ActionResult getParent_Product(string meta_parent)
         {
             ViewBag.meta = "san-pham";
             var prod = from i in db.Product
-                       where i.hide == true && i.meta_paren == meta_paren
+                       where i.hide == true && i.meta_parent == meta_parent
                        orderby i.order ascending
                        select i;
+
             return PartialView(prod.ToList());
 
         }
 
-        public ActionResult getBestSaleProduct(int id_cate)
+        public ActionResult getChild_BestSaleProduct(int id_cate)
         {
             ViewBag.meta = "san-pham";
             var prod = (from i in db.Product
@@ -55,7 +56,18 @@ namespace DoAnCuoiKi_NET.Controllers
 
         }
 
-        public ActionResult getNewProduct(int id_cate)
+        public ActionResult getParent_BestSaleProduct(string meta_parent)
+        {
+            ViewBag.meta = "san-pham";
+            var prod = (from i in db.Product
+                        where i.hide == true && i.meta_parent == meta_parent
+                        orderby i.sale_amount descending
+                        select i).Take(6);
+            return PartialView(prod.ToList());
+
+        }
+
+        public ActionResult getChild_NewProduct(int id_cate)
         {
             var prod = (from i in db.Product
                         where i.hide == true && i.id_cate == id_cate
@@ -64,6 +76,17 @@ namespace DoAnCuoiKi_NET.Controllers
             return PartialView(prod.ToList());
 
         }
+
+        public ActionResult getParent_NewProduct(string meta_parent)
+        {
+            var prod = (from i in db.Product
+                        where i.hide == true && i.meta_parent == meta_parent
+                        orderby i.order descending
+                        select i).Take(4);
+            return PartialView(prod.ToList());
+
+        }
+
 
         public ActionResult getDetail(long id)
         {
