@@ -56,7 +56,7 @@
                         <i class="fa fa-star-half-o"></i>
                         <span>(18 reviews)</span>
                     </div>
-                    <div class="product__details__price">@Model.price $</div>
+                    <div class="product__details__price">@string.Format("{0:F3}", Model.price) VND</div>
                     <p>@Model.description</p>
                     <div class="product__details__quantity">
                         <div class="quantity">
@@ -65,7 +65,7 @@
                             </div>
                         </div>
                     </div>
-                    <a href="/gio-hang" class="primary-btn">Thêm vào giỏ hàng</a>
+                    <a href="#" class="primary-btn" data-id-product="@Model.id_product">Thêm vào giỏ hàng</a>
                     <a href="#" class="heart-icon"><span class="icon_heart_alt"></span></a>
                     <ul>
                         <li><b>Tình trạng:</b> <span>@Model.status</span></li>

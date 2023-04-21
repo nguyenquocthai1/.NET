@@ -1,0 +1,202 @@
+﻿@model DoAnCuoiKi_NET.Models.Product
+
+@{
+    ViewBag.Title = "Chỉnh sửa Sản Phẩm";
+    Layout = "~/Areas/admin/Views/Shared/_MyLayout.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="card-header py-3">
+        <h4 class="m-0 font-weight-bold text-center" style="color: #1a53bd">Chỉnh sửa sản phẩm: @Model.name_product</h4>
+    </div>
+    <div class="card-body">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.id_product)
+
+        <div class="card mb-4 py-3 border-left-dark">
+            @Html.LabelFor(model => model.id_cate, "Thuộc danh mục", htmlAttributes: new { @class = "control-label col-md-2", style = "color: #ff8c00; font-weight: bold;" })
+            <div class="col-md-12">
+                @Html.DropDownList("id_cate", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.id_cate, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="card mb-4 py-3 border-left-dark">
+            @Html.LabelFor(model => model.meta, "Meta", htmlAttributes: new { @class = "control-label col-md-2", style = "color: #ff8c00; font-weight: bold;" })
+            <div class="col-md-12">
+                @Html.TextBoxFor(model => model.meta, new { @class = "form-control", @readonly = "readonly" })
+            </div>
+        </div>
+
+        <div class="card mb-4 py-3 border-left-dark">
+            @Html.LabelFor(model => model.name_product, "Tên sản phẩm", htmlAttributes: new { @class = "control-label col-md-2", style = "color: #ff8c00; font-weight: bold;" })
+            <div class="col-md-12">
+                @Html.EditorFor(model => model.name_product, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.name_product, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="card mb-4 py-3 border-left-dark">
+            @Html.LabelFor(model => model.price, "Giá sản phẩm", htmlAttributes: new { @class = "control-label col-md-2", style = "color: #ff8c00; font-weight: bold;" })
+            <div class="col-md-12">
+                @Html.EditorFor(model => model.price, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.price, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="card mb-4 py-3 border-left-dark">
+            @Html.LabelFor(model => model.description, "Mô tả", htmlAttributes: new { @class = "control-label col-md-2", style = "color: #ff8c00; font-weight: bold;" })
+            <div class="col-md-12">
+                @Html.EditorFor(model => model.description, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.description, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="card mb-4 py-3 border-left-dark">
+            @Html.LabelFor(model => model.detail, "Chi tiết sản phẩm", htmlAttributes: new { @class = "control-label col-md-2", style = "color: #ff8c00; font-weight: bold;" })
+            <div class="col-md-12">
+                @Html.EditorFor(model => model.detail, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.detail, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="card mb-4 py-3 border-left-dark">
+            @Html.LabelFor(model => model.img, "Hình ảnh", htmlAttributes: new { @class = "control-label col-md-2", style = "color: #ff8c00; font-weight: bold;" })
+            <div class="col-md-12">
+                <input type="file" name="img" id="img" accept=".jpg,.png,.gif,.jpeg,.bmp" />
+            </div>
+        </div>
+
+        <div class="card mb-4 py-3 border-left-dark">
+            @Html.LabelFor(model => model.color, "Màu sắc", htmlAttributes: new { @class = "control-label col-md-2", style = "color: #ff8c00; font-weight: bold;" })
+            <div class="col-md-12">
+                @Html.EditorFor(model => model.color, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.color, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="card mb-4 py-3 border-left-dark">
+            @Html.LabelFor(model => model.size, "Size", htmlAttributes: new { @class = "control-label col-md-2", style = "color: #ff8c00; font-weight: bold;" })
+            <div class="col-md-12">
+                @Html.EditorFor(model => model.size, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.size, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="card mb-4 py-3 border-left-dark">
+            @Html.LabelFor(model => model.amount, "Số lượng hiện có", htmlAttributes: new { @class = "control-label col-md-2", style = "color: #ff8c00; font-weight: bold;" })
+            <div class="col-md-12">
+                @Html.EditorFor(model => model.amount, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.amount, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="card mb-4 py-3 border-left-dark">
+            @Html.LabelFor(model => model.sale_amount, "Số lượng đã bán", htmlAttributes: new { @class = "control-label col-md-2", style = "color: #ff8c00; font-weight: bold;" })
+            <div class="col-md-12">
+                @Html.EditorFor(model => model.sale_amount, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.sale_amount, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="card mb-4 py-3 border-left-dark">
+            @Html.LabelFor(model => model.discount, "Khuyến mãi (%)", htmlAttributes: new { @class = "control-label col-md-2", style = "color: #ff8c00; font-weight: bold;" })
+            <div class="col-md-12">
+                @Html.EditorFor(model => model.discount, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.discount, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="card mb-4 py-3 border-left-dark">
+            @Html.LabelFor(model => model.status, "Tình trạng", htmlAttributes: new { @class = "control-label col-md-2", style = "color: #ff8c00; font-weight: bold;" })
+            <div class="col-md-12">
+                @Html.EditorFor(model => model.status, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.status, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="card mb-4 py-3 border-left-dark">
+            @Html.LabelFor(model => model.link, "Link", htmlAttributes: new { @class = "control-label col-md-2", style = "color: #ff8c00; font-weight: bold;" })
+            <div class="col-md-12">
+                @Html.EditorFor(model => model.link, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.link, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="card mb-4 py-3 border-left-dark">
+            @Html.LabelFor(model => model.hide, "Hiển thị", htmlAttributes: new { @class = "control-label col-md-2", style = "color: #ff8c00; font-weight: bold;" })
+            <div class="col-md-12">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.hide)
+                    @Html.ValidationMessageFor(model => model.hide, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-4 py-3 border-left-dark">
+            @Html.LabelFor(model => model.order, "Thứ tự", htmlAttributes: new { @class = "control-label col-md-2", style = "color: #ff8c00; font-weight: bold;" })
+            <div class="col-md-12">
+                @Html.EditorFor(model => model.order, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.order, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="card mb-4 py-3 border-left-dark">
+            @Html.LabelFor(model => model.datebegin, "Ngày tạo", htmlAttributes: new { @class = "control-label col-md-2", style = "color: #ff8c00; font-weight: bold;" })
+            <div class="col-md-12">
+                @Html.EditorFor(model => model.datebegin, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.datebegin, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="d-flex">
+            <div class="btn btn-success btn-icon-split mr-4">
+                <span class="icon text-white-50">
+                    <i class="fas fa-save"></i>
+                </span>
+                <span>
+                    <input type="submit" value="Lưu" class="btn btn-success" />
+                </span>
+            </div>
+
+            <a href="@Url.Action("Details", "products", new { id = Model.id_product })" class="btn btn-primary btn-icon-split">
+                <span class="icon text-white-50">
+                    <i class="fas fa-info"></i>
+                </span>
+                <span class="text">Chi tiết</span>
+            </a>
+        </div>
+    </div>
+}
+
+<div class="text-center">
+    <a href="@Url.Action("Index", "products")" class="btn btn-secondary btn-icon-split">
+        <span class="icon text-white-50">
+            <i class="fa fa-reply-all"></i>
+        </span>
+        <span class="text">Về trang quản lý</span>
+    </a>
+</div>
+
+@section _Footer
+{
+    <script src="~/Areas/admin/Content/ckfinder/ckfinder.js"></script>
+    <script src="~/Areas/admin/Content/ckeditor/ckeditor.js"></script>
+    <script type="text/javascript">
+        var editor = CKEDITOR.replace("description", { height: '100px' });
+        var editor1 = CKEDITOR.replace("detail", { height: '250px' });
+        customConfig: '/Areas/admin/Content/ckeditor/config.js';
+    </script>
+    <script>
+        $(function () {
+            $("#id_cate").change(function () {
+                var text = $.trim($(this).find("option:selected").text().toLowerCase());
+                var text_create;
+                text_create = text.replace(/à|á|ạ|ả|ã|â|ầ|ấ|ậ|ẩ|ẫ|ă|ằ|ắ|ặ|ẳ|ẵ/g, "a").replace(/\ /g, '-').replace(/đ/g, "d").replace(/đ/g, "d").replace(/ỳ|ý|ỵ|ỷ|ỹ/g, "y").replace(/ù|ú|ụ|ủ|ũ|ư|ừ|ứ|ự|ử|ữ/g, "u").replace(/ò|ó|ọ|ỏ|õ|ô|ồ|ố|ộ|ổ|ỗ|ơ|ờ|ớ|ợ|ở|ỡ.+/g, "o").replace(/è|é|ẹ|ẻ|ẽ|ê|ề|ế|ệ|ể|ễ.+/g, "e").replace(/ì|í|ị|ỉ|ĩ/g, "i");
+                $('#meta').val(text_create);
+            }).keyup();
+        });
+    </script>
+}

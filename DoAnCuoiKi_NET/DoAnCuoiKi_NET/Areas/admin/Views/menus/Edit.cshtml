@@ -1,0 +1,120 @@
+﻿@model DoAnCuoiKi_NET.Models.Menu
+
+@{
+    ViewBag.Title = "Chỉnh sửa Menu";
+    Layout = "~/Areas/admin/Views/Shared/_MyLayout.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="card-header py-3">
+        <h4 class="m-0 font-weight-bold text-center" style="color: #1a53bd">Chỉnh sửa Menu: @Model.name_menu</h4>
+    </div>
+    <div class="card-body">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.id_menu)
+
+        <div class="card mb-4 py-3 border-left-dark">
+            @Html.LabelFor(model => model.name_menu, "Tên Menu", htmlAttributes: new { @class = "control-label col-md-2", style = "color: #ff8c00; font-weight: bold;" })
+            <div class="col-md-12">
+                @Html.EditorFor(model => model.name_menu, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.name_menu, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="card mb-4 py-3 border-left-dark">
+            @Html.LabelFor(model => model.meta, "Meta", htmlAttributes: new { @class = "control-label col-md-2", style = "color: #ff8c00; font-weight: bold;" })
+            <div class="col-md-12">
+                @Html.TextBoxFor(model => model.meta, new { @class = "form-control", @readonly = "readonly" })
+            </div>
+        </div>
+
+        <div class="card mb-4 py-3 border-left-dark">
+            @Html.LabelFor(model => model.link, "Link", htmlAttributes: new { @class = "control-label col-md-2", style = "color: #ff8c00; font-weight: bold;" })
+            <div class="col-md-12">
+                @Html.EditorFor(model => model.link, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.link, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="card mb-4 py-3 border-left-dark">
+            @Html.LabelFor(model => model.hide, "Hiển thị", htmlAttributes: new { @class = "control-label col-md-2", style = "color: #ff8c00; font-weight: bold;" })
+            <div class="col-md-12">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.hide)
+                    @Html.ValidationMessageFor(model => model.hide, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-4 py-3 border-left-dark">
+            @Html.LabelFor(model => model.order, "Thứ tự", htmlAttributes: new { @class = "control-label col-md-2", style = "color: #ff8c00; font-weight: bold;" })
+            <div class="col-md-12">
+                @Html.EditorFor(model => model.order, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.order, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="card mb-4 py-3 border-left-dark">
+            @Html.LabelFor(model => model.isCategory, "Chứa danh mục con", htmlAttributes: new { @class = "control-label col-md-2", style = "color: #ff8c00; font-weight: bold;" })
+            <div class="col-md-12">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.isCategory)
+                    @Html.ValidationMessageFor(model => model.isCategory, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-4 py-3 border-left-dark">
+            @Html.LabelFor(model => model.datebegin, "Ngày tạo", htmlAttributes: new { @class = "control-label col-md-2", style = "color: #ff8c00; font-weight: bold;" })
+            <div class="col-md-12">
+                @Html.EditorFor(model => model.datebegin, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.datebegin, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="d-flex">
+            <div class="btn btn-success btn-icon-split mr-4">
+                <span class="icon text-white-50">
+                    <i class="fas fa-save"></i>
+                </span>
+                <span>
+                    <input type="submit" value="Lưu" class="btn btn-success" />
+                </span>
+            </div>
+
+            <a href="@Url.Action("Details", "menus", new { id = Model.id_menu })" class="btn btn-primary btn-icon-split">
+                <span class="icon text-white-50">
+                    <i class="fas fa-info"></i>
+                </span>
+                <span class="text">Chi tiết</span>
+            </a>
+        </div>
+    </div>
+}
+
+<div class="text-center">
+    <a href="@Url.Action("Index", "menus")" class="btn btn-secondary btn-icon-split">
+        <span class="icon text-white-50">
+            <i class="fa fa-reply-all"></i>
+        </span>
+        <span class="text">Về trang quản lý</span>
+    </a>
+</div>
+
+@section _Footer
+{
+    <script src="~/Areas/admin/Content/ckfinder/ckfinder.js"></script>
+    <script src="~/Areas/admin/Content/ckeditor/ckeditor.js"></script>
+    <script>
+        $(function () {
+            $("#name_menu").keyup(function () {
+                var text = $.trim($(this).val().toLowerCase());
+                var text_create;
+                text_create = text.replace(/à|á|ạ|ả|ã|â|ầ|ấ|ậ|ẩ|ẫ|ă|ằ|ắ|ặ|ẳ|ẵ/g, "a").replace(/\ /g, '-').replace(/đ/g, "d").replace(/đ/g, "d").replace(/ỳ|ý|ỵ|ỷ|ỹ/g, "y").replace(/ù|ú|ụ|ủ|ũ|ư|ừ|ứ|ự|ử|ữ/g, "u").replace(/ò|ó|ọ|ỏ|õ|ô|ồ|ố|ộ|ổ|ỗ|ơ|ờ|ớ|ợ|ở|ỡ.+/g, "o").replace(/è|é|ẹ|ẻ|ẽ|ê|ề|ế|ệ|ể|ễ.+/g, "e").replace(/ì|í|ị|ỉ|ĩ/g, "i");
+                $('#meta').val(text_create);
+            }).keyup();
+        });
+    </script>
+}

@@ -20,7 +20,7 @@ namespace DoAnCuoiKi_NET
             {
                 {"type", "san-pham" }
             },
-            new[] { "DoAnCuoiKi_NET.Controllers" });
+            namespaces: new[] { "DoAnCuoiKi_NET.Controllers" });
 
             // Map Detail
             routes.MapRoute("Detail", "{type}/{meta}/{id}",
@@ -29,7 +29,7 @@ namespace DoAnCuoiKi_NET
             {
                 {"type", "san-pham" }
             },
-            new[] { "DoAnCuoiKi_NET.Controllers" });
+            namespaces: new[] { "DoAnCuoiKi_NET.Controllers" });
 
             //Map Contact
             routes.MapRoute("Contact", "{type}/{meta}",
@@ -38,7 +38,7 @@ namespace DoAnCuoiKi_NET
             {
                 {"type", "contact" }
             },
-            new[] { "DoAnCuoiKi_NET.Controllers" });
+            namespaces: new[] { "DoAnCuoiKi_NET.Controllers" });
 
             //Map Login
             routes.MapRoute("Login", "{type}/{meta}",
@@ -47,7 +47,7 @@ namespace DoAnCuoiKi_NET
             {
                 {"type", "dang-nhap" }
             },
-            new[] { "DoAnCuoiKi_NET.Controllers" });
+            namespaces: new[] { "DoAnCuoiKi_NET.Controllers" });
 
             //Map Register
             routes.MapRoute("Register", "{type}/{meta}",
@@ -56,8 +56,7 @@ namespace DoAnCuoiKi_NET
             {
                 {"type", "dang-ky" }
             },
-            new[] { "DoAnCuoiKi_NET.Controllers" });
-
+            namespaces: new[] { "DoAnCuoiKi_NET.Controllers" });
 
             //Map Cart
             routes.MapRoute("Cart", "{type}/{meta}",
@@ -66,7 +65,7 @@ namespace DoAnCuoiKi_NET
             {
                 {"type", "gio-hang" }
             },
-            new[] { "DoAnCuoiKi_NET.Controllers" });
+            namespaces: new[] { "DoAnCuoiKi_NET.Controllers" });
 
             //Map Payment
             routes.MapRoute("Payment", "{type}/{meta}",
@@ -75,7 +74,7 @@ namespace DoAnCuoiKi_NET
             {
                 {"type", "thanh-toan" }
             },
-            new[] { "DoAnCuoiKi_NET.Controllers" });
+            namespaces: new[] { "DoAnCuoiKi_NET.Controllers" });
 
             //Map News
             routes.MapRoute("News", "{type}/{meta}",
@@ -84,12 +83,14 @@ namespace DoAnCuoiKi_NET
             {
                 {"type", "tin-tuc" }
             },
-            new[] { "DoAnCuoiKi_NET.Controllers" });
+            namespaces: new[] { "DoAnCuoiKi_NET.Controllers" });
 
             routes.MapRoute(
-                name: "Default",
+                name: "Home",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional },
+                namespaces: new[] { "DoAnCuoiKi_NET.Controllers" }
+
             );
         }
     }

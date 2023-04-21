@@ -1,0 +1,132 @@
+﻿@model IEnumerable<DoAnCuoiKi_NET.Models.Menu>
+@{
+    ViewBag.Title = "Menu";
+    Layout = "~/Areas/admin/Views/Shared/_MyLayout.cshtml";
+}
+@section _Header
+{
+    <!-- Custom styles for this page -->
+    <link href="~/Areas/admin/Assets/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+}
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h4 class="m-0 font-weight-bold text-center" style="color: #1a53bd">Quản lý Menu</h4>
+    </div>
+    <div class="card-body">
+        <!-- /.panel-heading -->
+        <div class="table-responsive">
+            <p>
+                <a href="@Url.Action("Create", "menus")" class="btn btn-success btn-icon-split">
+                    <span class="icon text-white-50">
+                        <i class="fa fa-magic"></i>
+                    </span>
+                    <span class="text">Thêm mới</span>
+                </a>
+            </p>
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>
+                            STT
+                        </th>
+                        <th>
+                            Tên Menu
+                        </th>
+
+                        <th>
+                            Meta
+                        </th>
+
+                        <th>
+                            Hiển thị
+                        </th>
+
+                        <th>
+                            Thứ tự
+                        </th>
+
+                        <th>
+                            Ngày tạo
+                        </th>
+
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @{var Number = 1; }
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.Raw(Number++)
+                            </td>
+                            <td style="max-width: 80px; vertical-align: middle;">
+                                @Html.DisplayFor(modelItem => item.name_menu)
+                            </td>
+
+                            <td style="vertical-align: middle;">
+                                @Html.DisplayFor(modelItem => item.meta)
+                            </td>
+                            <td style= "vertical-align: middle;">
+                                @Html.DisplayFor(modelItem => item.hide)
+                            </td>
+
+                            <td style="vertical-align: middle;">
+                                @Html.DisplayFor(modelItem => item.order)
+                            </td>
+
+                            <td style="max-width: 80px;">
+                                @Html.DisplayFor(modelItem => item.datebegin)
+                            </td>
+
+                            <td style="vertical-align: middle;">
+                                <a href="@Url.Action("Edit", "menus", new { id = item.id_menu })" class="btn btn-warning btn-icon-split">
+                                    <span class="icon text-white-50">
+                                        <i class="fas fa-edit"></i>
+                                    </span>
+                                    <span class="text">Sửa</span>
+                                </a>
+
+                                <a href="@Url.Action("Details", "menus", new { id = item.id_menu })" class="btn btn-primary btn-icon-split">
+                                    <span class="icon text-white-50">
+                                        <i class="fas fa-info-circle"></i>
+                                    </span>
+                                    <span class="text">Chi tiết</span>
+                                </a>
+
+                                <a href="@Url.Action("Delete", "menus", new { id = item.id_menu })" class="btn btn-danger btn-icon-split">
+                                    <span class="icon text-white-50">
+                                        <i class="fas fa-trash"></i>
+                                    </span>
+                                    <span class="text">Xóa</span>
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        <!-- /.panel-body -->
+    </div>
+    <!-- /.panel -->
+</div>
+<!-- /.col-lg-12 -->
+</div>
+<!-- /.row -->
+@section _Footer
+{
+    <!-- Page level plugins -->
+    <script src="~/Areas/admin/Assets/vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="~/Areas/admin/Assets/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+    <!-- Page level custom scripts -->
+    <script src="~/Areas/admin/Assets/js/demo/datatables-demo.js"></script>
+
+    <style>
+        /* Set max width for table cells */
+        td, th {
+            overflow: auto;
+            white-space: nowrap;
+            text-align: center;
+        }
+    </style>
+}

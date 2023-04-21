@@ -1,0 +1,109 @@
+﻿@model DoAnCuoiKi_NET.Models.Account
+
+@{
+    ViewBag.Title = "Chỉnh sửa Tài Khoản";
+    Layout = "~/Areas/admin/Views/Shared/_MyLayout.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="card-header py-3">
+        <h4 class="m-0 font-weight-bold text-center" style="color: #1a53bd">Chỉnh sửa Tài Khoản: @Model.username</h4>
+    </div>
+    <div class="card-body">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.id_account)
+
+        <div class="card mb-4 py-3 border-left-dark">
+            @Html.LabelFor(model => model.username, "Tên tài khoản", htmlAttributes: new { @class = "control-label col-md-2", style = "color: #ff8c00; font-weight: bold;" })
+            <div class="col-md-12">
+                @Html.EditorFor(model => model.username, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.username, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="card mb-4 py-3 border-left-dark">
+            @Html.LabelFor(model => model.password, "Mật khẩu", htmlAttributes: new { @class = "control-label col-md-2", style = "color: #ff8c00; font-weight: bold;" })
+            <div class="col-md-12">
+                @Html.EditorFor(model => model.password, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.password, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="card mb-4 py-3 border-left-dark">
+            @Html.LabelFor(model => model.lastname, "Họ", htmlAttributes: new { @class = "control-label col-md-2", style = "color: #ff8c00; font-weight: bold;" })
+            <div class="col-md-12">
+                @Html.EditorFor(model => model.lastname, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.lastname, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="card mb-4 py-3 border-left-dark">
+            @Html.LabelFor(model => model.firstname, "Tên", htmlAttributes: new { @class = "control-label col-md-2", style = "color: #ff8c00; font-weight: bold;" })
+            <div class="col-md-12">
+                @Html.EditorFor(model => model.firstname, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.firstname, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="card mb-4 py-3 border-left-dark">
+            @Html.LabelFor(model => model.location, "Địa chỉ", htmlAttributes: new { @class = "control-label col-md-2", style = "color: #ff8c00; font-weight: bold;" })
+            <div class="col-md-12">
+                @Html.EditorFor(model => model.location, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.location, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="card mb-4 py-3 border-left-dark">
+            @Html.LabelFor(model => model.phone, "Số điện thoại", htmlAttributes: new { @class = "control-label col-md-2", style = "color: #ff8c00; font-weight: bold;" })
+            <div class="col-md-12">
+                @Html.EditorFor(model => model.phone, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.phone, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="card mb-4 py-3 border-left-dark">
+            @Html.LabelFor(model => model.email, "Email", htmlAttributes: new { @class = "control-label col-md-2", style = "color: #ff8c00; font-weight: bold;" })
+            <div class="col-md-12">
+                @Html.EditorFor(model => model.email, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.email, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="card mb-4 py-3 border-left-dark">
+            @Html.LabelFor(model => model.datebegin, "Ngày tạo", htmlAttributes: new { @class = "control-label col-md-2", style = "color: #ff8c00; font-weight: bold;" })
+            <div class="col-md-12">
+                @Html.EditorFor(model => model.datebegin, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.datebegin, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="d-flex">
+            <div class="btn btn-success btn-icon-split mr-4">
+                <span class="icon text-white-50">
+                    <i class="fas fa-save"></i>
+                </span>
+                <span>
+                    <input type="submit" value="Lưu" class="btn btn-success" />
+                </span>
+            </div>
+
+            <a href="@Url.Action("Details", "accounts", new { id = Model.id_account })" class="btn btn-primary btn-icon-split">
+                <span class="icon text-white-50">
+                    <i class="fas fa-info"></i>
+                </span>
+                <span class="text">Chi tiết</span>
+            </a>
+        </div>
+    </div>
+}
+
+<div class="text-center">
+    <a href="@Url.Action("Index", "accounts")" class="btn btn-secondary btn-icon-split">
+        <span class="icon text-white-50">
+            <i class="fa fa-reply-all"></i>
+        </span>
+        <span class="text">Về trang quản lý</span>
+    </a>
+</div>

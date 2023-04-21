@@ -14,6 +14,13 @@ namespace DoAnCuoiKi_NET.Models
     
     public partial class Product
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Product()
+        {
+            this.Cart = new HashSet<Cart>();
+            this.Invoice = new HashSet<Invoice>();
+        }
+    
         public int id_product { get; set; }
         public Nullable<int> id_cate { get; set; }
         public string name_product { get; set; }
@@ -40,5 +47,9 @@ namespace DoAnCuoiKi_NET.Models
         public string meta_parent { get; set; }
     
         public virtual Category Category { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Cart> Cart { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Invoice> Invoice { get; set; }
     }
 }

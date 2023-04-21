@@ -1,0 +1,108 @@
+﻿@model DoAnCuoiKi_NET.Models.Menu
+
+@{
+    ViewBag.Title = "Chi tiết Menu";
+    Layout = "~/Areas/admin/Views/Shared/_MyLayout.cshtml";
+}
+
+<div class="card-header py-3">
+    <h4 class="m-0 font-weight-bold text-center" style="color: #1a53bd">Chi tiết Menu: @Model.name_menu</h4>
+</div>
+
+<div class="card shadow mb-4 border-bottom-primary border-left-primary">
+    <dl class="card-body py-3">
+        <dt style="margin-bottom: 10px; margin-top: 15px">
+            Tên Menu:
+            @if (Model.name_menu != null)
+            {
+                <span style="color: #ff006e">@Html.DisplayFor(model => model.name_menu) </span>
+            }
+            else
+            {
+                <span style="color: #ff006e">Unknown</span>
+            }
+        </dt>
+        <dt style="margin-bottom:10px">
+            Meta:
+            @if (Model.meta != null)
+            {
+                <span style="color: #ff006e">@Html.DisplayFor(model => model.meta) </span>
+            }
+            else
+            {
+                <span style="color: #ff006e">Unknown</span>
+            }
+        </dt>
+
+        <dt style="margin-bottom:10px">
+            Link:
+            @if (Model.link != null)
+            {
+                <span style="color: #0094ff">@Html.DisplayFor(model => model.link) </span>
+            }
+            else
+            {
+                <span style="color: #0094ff">Unknown</span>
+            }
+        </dt>
+
+        <dt style="margin-bottom:10px">
+            Hiển thị:
+            <span style="color: #ff006e">@Html.DisplayFor(model => model.hide) </span>
+        </dt>
+
+        <dt style="margin-bottom:10px">
+            Thứ tự:
+            @if (Model.order != null)
+            {
+                <span style="color: #ff006e">@Html.DisplayFor(model => model.order) </span>
+            }
+            else
+            {
+                <span style="color: #ff006e">Unknown</span>
+            }
+        </dt>
+
+        <dt style="margin-bottom:10px">
+            Chứa danh mục con:
+            <span style="color: #ff006e">@Html.DisplayFor(model => model.isCategory) </span>
+        </dt>
+
+        <dt style="margin-bottom:10px">
+            Ngày tạo:
+            @if (Model.datebegin != null)
+            {
+                <span style="color: #ff006e">@Html.DisplayFor(model => model.datebegin) </span>
+            }
+            else
+            {
+                <span style="color: #ff006e">Unknown</span>
+            }
+        </dt>
+
+    </dl>
+</div>
+<div class="d-flex">
+    <a href="@Url.Action("Edit", "menus", new { id = Model.id_menu })" class="btn btn-warning btn-icon-split mr-4">
+        <span class="icon text-white-50">
+            <i class="fas fa-edit"></i>
+        </span>
+        <span class="text">Sửa</span>
+    </a>
+
+    <a href="@Url.Action("Delete", "menus", new { id = Model.id_menu })" class="btn btn-danger btn-icon-split">
+        <span class="icon text-white-50">
+            <i class="fas fa-trash"></i>
+        </span>
+        <span class="text">Xóa</span>
+    </a>
+</div>
+
+<div class="text-center">
+    <a href="@Url.Action("Index", "menus")" class="btn btn-secondary btn-icon-split">
+        <span class="icon text-white-50">
+            <i class="fa fa-reply-all"></i>
+        </span>
+        <span class="text">Về trang quản lý</span>
+    </a>
+</div>

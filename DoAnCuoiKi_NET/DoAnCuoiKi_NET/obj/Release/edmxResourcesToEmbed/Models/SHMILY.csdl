@@ -1,0 +1,252 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SHMLYModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Footer">
+    <Key>
+      <PropertyRef Name="id_footer" />
+    </Key>
+    <Property Name="id_footer" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name_web" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="address" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="phone_number" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="copyright" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="link" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="meta" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="hide" Type="Boolean" />
+    <Property Name="order" Type="Int32" />
+    <Property Name="datebegin" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="id_product" />
+    </Key>
+    <Property Name="id_product" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="id_cate" Type="Int32" />
+    <Property Name="name_product" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="price" Type="Double" />
+    <Property Name="color" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="size" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="amount" Type="Int32" />
+    <Property Name="sale_amount" Type="Int32" />
+    <Property Name="discount" Type="Double" />
+    <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="img" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="img1" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="img2" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="img3" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="img4" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="img5" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="detail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="link" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="meta" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="hide" Type="Boolean" />
+    <Property Name="order" Type="Int32" />
+    <Property Name="datebegin" Type="DateTime" Precision="0" />
+    <Property Name="meta_parent" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Cart" Relationship="SHMLYModel.FK__Cart__id_product__3E52440B" FromRole="Product" ToRole="Cart" />
+    <NavigationProperty Name="Category" Relationship="SHMLYModel.FK__Product__id_cate__2C3393D0" FromRole="Product" ToRole="Category" />
+  </EntityType>
+  <EntityContainer Name="SHMLYEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Footer" EntityType="Self.Footer" />
+    <EntitySet Name="Product" EntityType="Self.Product" />
+    <EntitySet Name="Account" EntityType="SHMLYModel.Account" />
+    <EntitySet Name="Cart" EntityType="SHMLYModel.Cart" />
+    <EntitySet Name="Invoice" EntityType="SHMLYModel.Invoice" />
+    <AssociationSet Name="FK__Cart__id_account__403A8C7D" Association="SHMLYModel.FK__Cart__id_account__403A8C7D">
+      <End Role="Account" EntitySet="Account" />
+      <End Role="Cart" EntitySet="Cart" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Cart__id_product__3E52440B" Association="SHMLYModel.FK__Cart__id_product__3E52440B">
+      <End Role="Product" EntitySet="Product" />
+      <End Role="Cart" EntitySet="Cart" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Invoice__id_cart__440B1D61" Association="SHMLYModel.FK__Invoice__id_cart__440B1D61">
+      <End Role="Cart" EntitySet="Cart" />
+      <End Role="Invoice" EntitySet="Invoice" />
+    </AssociationSet>
+    <EntitySet Name="Discount" EntityType="SHMLYModel.Discount" />
+    <AssociationSet Name="FK__Cart__id_discoun__412EB0B6" Association="SHMLYModel.FK__Cart__id_discoun__412EB0B6">
+      <End Role="Discount" EntitySet="Discount" />
+      <End Role="Cart" EntitySet="Cart" />
+    </AssociationSet>
+    <EntitySet Name="New" EntityType="SHMLYModel.New" />
+    <EntitySet Name="Category" EntityType="SHMLYModel.Category" />
+    <AssociationSet Name="FK__Product__id_cate__2C3393D0" Association="SHMLYModel.FK__Product__id_cate__2C3393D0">
+      <End Role="Category" EntitySet="Category" />
+      <End Role="Product" EntitySet="Product" />
+    </AssociationSet>
+    <EntitySet Name="Menu" EntityType="SHMLYModel.Menu" />
+  </EntityContainer>
+  <EntityType Name="Account">
+    <Key>
+      <PropertyRef Name="id_account" />
+    </Key>
+    <Property Name="id_account" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="username" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="password" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="firstname" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="lastname" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="location" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="phone" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="note" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="link" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="meta" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="hide" Type="Boolean" />
+    <Property Name="order" Type="Int32" />
+    <Property Name="datebegin" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="Cart" Relationship="SHMLYModel.FK__Cart__id_account__403A8C7D" FromRole="Account" ToRole="Cart" />
+  </EntityType>
+  <EntityType Name="Cart">
+    <Key>
+      <PropertyRef Name="id_cart" />
+    </Key>
+    <Property Name="id_cart" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="id_account" Type="Int32" />
+    <Property Name="id_product" Type="Int32" />
+    <Property Name="id_discount" Type="Int32" />
+    <Property Name="amount" Type="Int32" />
+    <Property Name="total" Type="Double" />
+    <Property Name="VAT" Type="Double" />
+    <Property Name="discount" Type="Double" />
+    <Property Name="link" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="meta" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="hide" Type="Boolean" />
+    <Property Name="order" Type="Int32" />
+    <Property Name="datebegin" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="Account" Relationship="SHMLYModel.FK__Cart__id_account__403A8C7D" FromRole="Cart" ToRole="Account" />
+    <NavigationProperty Name="Product" Relationship="SHMLYModel.FK__Cart__id_product__3E52440B" FromRole="Cart" ToRole="Product" />
+    <NavigationProperty Name="Invoice" Relationship="SHMLYModel.FK__Invoice__id_cart__440B1D61" FromRole="Cart" ToRole="Invoice" />
+    <NavigationProperty Name="Discount1" Relationship="SHMLYModel.FK__Cart__id_discoun__412EB0B6" FromRole="Cart" ToRole="Discount" />
+  </EntityType>
+  <EntityType Name="Invoice">
+    <Key>
+      <PropertyRef Name="id_invoice" />
+    </Key>
+    <Property Name="id_invoice" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="id_cart" Type="Int32" />
+    <Property Name="sale_date" Type="DateTime" Precision="3" />
+    <Property Name="link" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="meta" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="hide" Type="Boolean" />
+    <Property Name="order" Type="Int32" />
+    <Property Name="datebegin" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="Cart" Relationship="SHMLYModel.FK__Invoice__id_cart__440B1D61" FromRole="Invoice" ToRole="Cart" />
+  </EntityType>
+  <Association Name="FK__Cart__id_account__403A8C7D">
+    <End Type="SHMLYModel.Account" Role="Account" Multiplicity="0..1" />
+    <End Type="SHMLYModel.Cart" Role="Cart" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Account">
+        <PropertyRef Name="id_account" />
+      </Principal>
+      <Dependent Role="Cart">
+        <PropertyRef Name="id_account" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Cart__id_product__3E52440B">
+    <End Type="SHMLYModel.Product" Role="Product" Multiplicity="0..1" />
+    <End Type="SHMLYModel.Cart" Role="Cart" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="id_product" />
+      </Principal>
+      <Dependent Role="Cart">
+        <PropertyRef Name="id_product" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Invoice__id_cart__440B1D61">
+    <End Type="SHMLYModel.Cart" Role="Cart" Multiplicity="0..1" />
+    <End Type="SHMLYModel.Invoice" Role="Invoice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cart">
+        <PropertyRef Name="id_cart" />
+      </Principal>
+      <Dependent Role="Invoice">
+        <PropertyRef Name="id_cart" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Discount">
+    <Key>
+      <PropertyRef Name="id_discount" />
+    </Key>
+    <Property Name="id_discount" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="key" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="discount" Type="Double" />
+    <Property Name="link" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="meta" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="hide" Type="Boolean" />
+    <Property Name="order" Type="Int32" />
+    <Property Name="datebegin" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="Cart" Relationship="SHMLYModel.FK__Cart__id_discoun__412EB0B6" FromRole="Discount" ToRole="Cart" />
+  </EntityType>
+  <Association Name="FK__Cart__id_discoun__412EB0B6">
+    <End Type="SHMLYModel.Discount" Role="Discount" Multiplicity="0..1" />
+    <End Type="SHMLYModel.Cart" Role="Cart" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Discount">
+        <PropertyRef Name="id_discount" />
+      </Principal>
+      <Dependent Role="Cart">
+        <PropertyRef Name="id_discount" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="New">
+    <Key>
+      <PropertyRef Name="id_new" />
+    </Key>
+    <Property Name="id_new" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name_new" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="img" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="link" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="meta" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="hide" Type="Boolean" />
+    <Property Name="order" Type="Int32" />
+    <Property Name="datebegin" Type="DateTime" Precision="0" />
+    <Property Name="detail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="id_cate" />
+    </Key>
+    <Property Name="id_cate" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name_cate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="link" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="meta" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="hide" Type="Boolean" />
+    <Property Name="order" Type="Int32" />
+    <Property Name="datebegin" Type="DateTime" Precision="0" />
+    <Property Name="meta_parent" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Product" Relationship="SHMLYModel.FK__Product__id_cate__2C3393D0" FromRole="Category" ToRole="Product" />
+  </EntityType>
+  <Association Name="FK__Product__id_cate__2C3393D0">
+    <End Type="SHMLYModel.Category" Role="Category" Multiplicity="0..1" />
+    <End Type="SHMLYModel.Product" Role="Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="id_cate" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="id_cate" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Menu">
+    <Key>
+      <PropertyRef Name="id_menu" />
+    </Key>
+    <Property Name="id_menu" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name_menu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="isCategory" Type="Boolean" />
+    <Property Name="link" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="meta" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="hide" Type="Boolean" />
+    <Property Name="order" Type="Int32" />
+    <Property Name="datebegin" Type="DateTime" Precision="0" />
+  </EntityType>
+</Schema>

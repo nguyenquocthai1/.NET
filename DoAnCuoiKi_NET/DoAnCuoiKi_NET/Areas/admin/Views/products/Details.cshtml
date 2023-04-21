@@ -1,0 +1,238 @@
+﻿@model DoAnCuoiKi_NET.Models.Product
+
+@{
+    ViewBag.Title = "Chi tiết Sản Phẩm";
+    Layout = "~/Areas/admin/Views/Shared/_MyLayout.cshtml";
+}
+
+<div class="card-header py-3">
+    <h4 class="m-0 font-weight-bold text-center" style="color: #1a53bd">Chi tiết Sản Phẩm: @Model.name_product</h4>
+</div>
+
+
+<div class="card shadow mb-4 border-bottom-primary border-left-primary">
+    <dl class="card-body py-3">
+        <div class="row" style="border: 1px solid #ccc; padding: 10px;">
+            <div class="col-md-6">
+                <dt style="margin-bottom: 10px; margin-top: 15px">
+                    Tên sản phẩm:
+                    @if (Model.name_product != null)
+                    {
+                        <span style="color: #ff006e">@Html.DisplayFor(model => model.name_product) </span>
+                    }
+                    else
+                    {
+                        <span style="color: #ff006e">Unknown</span>
+                    }
+                </dt>
+                <dt style="margin-bottom:10px;">
+                    Thuộc danh mục:
+                    @if (Model.Category.name_cate != null)
+                    {
+                        <span style="color: #ff006e">@Html.DisplayFor(model => model.Category.name_cate) </span>
+                    }
+                    else
+                    {
+                        <span style="color: #ff006e">Unknown</span>
+                    }
+                </dt>
+                <dt style="margin-bottom:10px">
+                    Giá sản phẩm:
+                    @if (Model.price != null)
+                    {
+                        <span style="color: #ff006e">@Html.DisplayFor(model => model.price) </span>
+                    }
+                    else
+                    {
+                        <span style="color: #ff006e">Unknown</span>
+                    }
+                </dt>
+
+
+                <dt style="margin-bottom:10px">
+                    Màu sắc:
+                    @if (Model.color != null)
+                    {
+                        <span style="color: #ff006e">@Html.DisplayFor(model => model.color) </span>
+                    }
+                    else
+                    {
+                        <span style="color: #ff006e">Unknown</span>
+                    }
+                </dt>
+
+                <dt style="margin-bottom:10px">
+                    Size:
+                    @if (Model.size != null)
+                    {
+                        <span style="color: #ff006e">@Html.DisplayFor(model => model.size) </span>
+                    }
+                    else
+                    {
+                        <span style="color: #ff006e">Unknown</span>
+                    }
+                </dt>
+                <dt style="margin-bottom:10px">
+                    Số lượng hiện có:
+                    @if (Model.amount != null)
+                    {
+                        <span style="color: #ff006e">@Html.DisplayFor(model => model.amount) </span>
+                    }
+                    else
+                    {
+                        <span style="color: #ff006e">Unknown</span>
+                    }
+                </dt>
+
+                <dt style="margin-bottom:10px">
+                    Số lượng đã bán:
+                    @if (Model.sale_amount != null)
+                    {
+                        <span style="color: #ff006e">@Html.DisplayFor(model => model.sale_amount) </span>
+                    }
+                    else
+                    {
+                        <span style="color: #ff006e">Unknown</span>
+                    }
+                </dt>
+            </div>
+            <div class="col-md-6">
+                <dt style="margin-bottom:10px; margin-top:15px">
+                    Khuyến mãi (%):
+                    @if (Model.discount != null)
+                    {
+                        <span style="color: #ff006e">@Html.DisplayFor(model => model.discount) </span>
+                    }
+                    else
+                    {
+                        <span style="color: #ff006e">Unknown</span>
+                    }
+                </dt>
+
+                <dt style="margin-bottom:10px">
+                    Tình trạng:
+                    @if (Model.meta != null)
+                    {
+                        <span style="color: #ff006e">@Html.DisplayFor(model => model.status) </span>
+                    }
+                    else
+                    {
+                        <span style="color: #ff006e">Unknown</span>
+                    }
+                </dt>
+                <dt style="margin-bottom:10px">
+                    Link:
+                    @if (Model.link != null)
+                    {
+                        <span style="color: #0094ff">@Html.DisplayFor(model => model.link) </span>
+                    }
+                    else
+                    {
+                        <span style="color: #0094ff">Unknown</span>
+                    }
+                </dt>
+
+                <dt style="margin-bottom:10px">
+                    Meta:
+                    @if (Model.meta != null)
+                    {
+                        <span style="color: #ff006e">@Html.DisplayFor(model => model.meta) </span>
+                    }
+                    else
+                    {
+                        <span style="color: #ff006e">Unknown</span>
+                    }
+                </dt>
+
+                <dt style="margin-bottom:10px">
+                    Hiển thị:
+                    <span style="color: #ff006e">@Html.DisplayFor(model => model.hide) </span>
+                </dt>
+
+                <dt style="margin-bottom:10px">
+                    Thứ tự:
+                    @if (Model.order != null)
+                    {
+                        <span style="color: #ff006e">@Html.DisplayFor(model => model.order) </span>
+                    }
+                    else
+                    {
+                        <span style="color: #ff006e">Unknown</span>
+                    }
+                </dt>
+
+                <dt style="margin-bottom:10px">
+                    Ngày tạo:
+                    @if (Model.datebegin != null)
+                    {
+                        <span style="color: #ff006e">@Html.DisplayFor(model => model.datebegin) </span>
+                    }
+                    else
+                    {
+                        <span style="color: #ff006e">Unknown</span>
+                    }
+                </dt>
+            </div>
+            <div style="border: 1px solid #ccc; padding: 10px;">
+                <dt style="margin-bottom:10px">
+                    Hình ảnh:
+                    <img src="~/Upload/images/@(Model.img)" alt="Image" style="max-width: 150px; height: auto;">
+                    <img src="~/Upload/images/@(Model.img1)" alt="Image" style="max-width: 150px; height: auto;">
+                    <img src="~/Upload/images/@(Model.img2)" alt="Image" style="max-width: 150px; height: auto;">
+                    <img src="~/Upload/images/@(Model.img3)" alt="Image" style="max-width: 150px; height: auto;">
+                    <img src="~/Upload/images/@(Model.img4)" alt="Image" style="max-width: 150px; height: auto;">
+                    <img src="~/Upload/images/@(Model.img)" alt="Image" style="max-width: 150px; height: auto;">
+                </dt>
+                <dt style="margin-bottom:10px;margin-top:20px;text-align: justify">
+                    Mô tả:
+                    @if (Model.description != null)
+                    {
+                        <span style="color: #ff006e">@Html.DisplayFor(model => model.description) </span>
+                    }
+                    else
+                    {
+                        <span style="color: #ff006e">Unknown</span>
+                    }
+                </dt>
+
+                <dt style="margin-bottom: 5px; margin-top: 15px; text-align: justify">
+                    Chi tiết sản phẩm:
+                    @if (Model.detail != null)
+                    {
+                        <span style="color: #ff006e">@Html.DisplayFor(model => model.detail) </span>
+                    }
+                    else
+                    {
+                        <span style="color: #ff006e">Unknown</span>
+                    }
+                </dt>
+            </div>
+        </div>
+
+
+</dl>
+</div>
+<div class="d-flex">
+    <a href="@Url.Action("Edit", "products", new { id = Model.id_product })" class="btn btn-warning btn-icon-split mr-4">
+        <span class="icon text-white-50">
+            <i class="fas fa-edit"></i>
+        </span>
+        <span class="text">Sửa</span>
+    </a>
+
+    <a href="@Url.Action("Delete", "products", new { id = Model.id_product })" class="btn btn-danger btn-icon-split">
+        <span class="icon text-white-50">
+            <i class="fas fa-trash"></i>
+        </span>
+        <span class="text">Xóa</span>
+    </a>
+</div>
+
+<div class="text-center">
+    <a href="@Url.Action("Index", "products")" class="btn btn-secondary btn-icon-split">
+        <span class="icon text-white-50">
+            <i class="fa fa-reply-all"></i>
+        </span>
+        <span class="text">Về trang quản lý</span>
+    </a>
+</div>
